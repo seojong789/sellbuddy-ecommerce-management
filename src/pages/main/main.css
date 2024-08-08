@@ -1,7 +1,6 @@
 #content {
-  width: 100vw;
-  height: calc(100vh-10px);
-  padding: 10px;
+  width: calc(100vw - 100px);
+  height: calc(100vh - 20px);
 
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -10,18 +9,20 @@
 
   div {
     border: 1px solid black;
-    padding: 10px;
+    padding: 1vh;
 
     h1 {
       border: 1px solid black;
-      height: 35px;
-      padding: 2px;
+      height: 5vh;
+      min-height: 35px;
+      padding: 1vh;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      font-size: clamp(80%, 2.5vw, 25px);
+      font-size: clamp(100%, 2.5vw, 25px);
+      white-space: nowrap;
     }
   }
 }
@@ -30,34 +31,46 @@
   grid-column: 1/7;
   grid-row-start: 1;
 
-  span {
-    background-color: pink;
+  p {
     border: 1px solid black;
-    padding: 2px;
+    height: 5vh;
+    min-height: 35px;
+    padding: 1vh;
 
-    font-size: clamp(80%, 2vw, 20px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      background-color: yellow;
+      border: 1px solid black;
+      height: 4vh;
+      min-height: 30px;
+      padding: 1vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      font-size: clamp(80%, 3vw, 20px);
+    }
   }
 }
 
 #main-notice {
-  background-color: yellow;
   grid-column: 1/3;
   grid-row-start: 2;
-  padding: 510000000000000px;
 
   ul {
-    border: 1px solid black;
-
     p {
-      font-size: clamp(80%, 1.5vw, 15px);
+      font-size: 1vw;
       text-align: right;
+      padding: 1vh;
     }
 
     li {
-      margin: 10px;
-
-      font-size: clamp(80%, 2vw, 20px);
-      text-decoration: none;
+      border: 1px solid black;
+      padding: 1vh;
     }
   }
 }
@@ -67,12 +80,14 @@
   grid-row-start: 2;
 
   ol {
-    border: 1px solid black;
+    select {
+      font-size: 1vw;
+      padding: 1vh;
+    }
 
     li {
-      margin: 5px;
-
-      text-decoration: none;
+      border: 1px solid black;
+      padding: 1vh;
     }
   }
 }
@@ -80,11 +95,26 @@
 #main-popular-product {
   grid-column: 5/7;
   grid-row-start: 2;
+
+  ol {
+    select {
+      font-size: 1vw;
+      padding: 1vh;
+    }
+
+    li {
+      border: 1px solid black;
+      padding: 1vh;
+    }
+  }
 }
 
 #main-sales-chart {
   grid-column: 1/4;
   grid-row-start: 3;
+  img {
+    border: 1px solid black;
+  }
 }
 
 #main-sales-calendar {
