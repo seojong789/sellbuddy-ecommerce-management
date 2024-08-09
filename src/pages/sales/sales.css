@@ -1,0 +1,38 @@
+.sales-container {
+  display: grid;
+  width: calc(100vw - 80px);
+  height: 100vh;
+  grid-template-rows: auto 1fr 1fr; /* 첫 번째 행은 내용에 맞추고, 나머지 두 행은 균등하게 분배 */
+  gap: 20px; /* 섹션 사이의 간격 추가 */
+}
+
+.select-section {
+  display: grid;
+  background-color: aqua;
+  grid-template-columns: 0.5fr 2fr 2fr;
+}
+#sales-info {
+  display: flex;
+  p {
+    margin-right: 1rem;
+  }
+}
+
+.week-month-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: white;
+  padding: 2%;
+  /* overflow: hidden; */
+}
+
+.year-section {
+  overflow: hidden; /* 컨텐츠가 넘치는 것을 방지 */
+}
+
+.chart-container {
+  position: relative;
+  width: 90%;
+  height: 300px;
+  min-height: 200px; /* 최소 높이 설정 */
+}
