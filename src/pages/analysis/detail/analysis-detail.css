@@ -60,7 +60,7 @@ h1 {
   background-color: #ffffff;
 }
 /* 플랫폼분석 */
-#flatform-analysis {
+#platform-analysis {
   border: 1px solid #f2f2f2;
   border-radius: 0.5em;
   box-shadow: 0.25em 0.25em 0.625em #f2f2f2;
@@ -68,23 +68,24 @@ h1 {
   height: 45vh;
   background-color: #ffffff;
 }
+
+/* 섹션 컨텐츠 ------------------------------------------------------------------ */
 .product-img {
   width: 200px;
   height: 200px;
 }
-/* 섹션 컨텐츠 ------------------------------------------------------------------ */
 /* 상품정보 컨텐츠 */
 .product-detail-info {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   display: flex;
   text-align: left;
   padding-left: 3vw;
   padding-right: 3vw;
-  padding-bottom: 5vh;
+  /* padding-bottom: 5vh; */
 }
 
 .product-detail-info-table1 {
-  /* border: 1px solid blue; */
+  border: 1px solid blue;
   width: 100%;
   height: 100%;
   justify-content: space-between;
@@ -95,7 +96,7 @@ h1 {
   /* padding-right: 5vh; */
 }
 #product-detail-info-table1-basic {
-  /* border: 2px solid yellow; */
+  border: 2px solid yellow;
   width: 100%;
   height: 17vh;
   padding-bottom: 1vh;
@@ -118,7 +119,7 @@ h1 {
 } */
 /* -------------------------------------------------------------------- */
 .product-detail-info-table2 {
-  /* border: 2px solid green; */
+  border: 2px solid green;
   display: flex;
   justify-content: first baseline;
   align-items: flex-start; /* 상단 정렬 */
@@ -160,4 +161,153 @@ h1 {
 }
 .product-info hr {
   color: #dbdfe9;
+}
+/* 해시태그 비교 ---------------------------------------------------------------------- */
+.hashtag-comparison-content {
+  border: 1px solid red;
+  display: flex;
+  /* text-align: left; */
+  padding-left: 3vw;
+  padding-right: 3vw;
+  /* padding-bottom: 5vh; */
+  flex-direction: column;
+  /* height: ; */
+}
+.hashtag-comparison-graph {
+  border: 1px solid yellow;
+  display: flex;
+  flex-direction: row;
+  height: 7vh;
+  /* justify-items: center; */
+  align-items: center;
+  justify-content: left;
+}
+
+.hashtag-comparison-good {
+  width: 40px;
+  height: 25px;
+  padding: 1px;
+  border: 2px solid #39a1f4;
+  color: #39a1f4;
+  font-weight: bold;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 25px; /* height와 동일하게 설정 */
+}
+.hashtag-comparison-table {
+  border: 1px solid green;
+  height: 22vh;
+  border-collapse: collapse;
+}
+.hashtag-comparison-table th {
+  border-bottom: 1px solid #dbdfe9;
+}
+.hashtag-comparison-table td {
+  color: #4b5675;
+  text-align: center;
+  border-bottom: 1px dotted #dbdfe9;
+  /* border top: 1px solid palevioletred; */
+  width: 50%;
+}
+
+.hashtag-comparison-bar-graph {
+  padding-left: 2vw;
+}
+/* 종합분석---------------------------------------------- */
+.total-analysis-content {
+  border: 1px solid red;
+  display: flex;
+  /* text-align: left; */
+  padding-left: 3vw;
+  padding-right: 3vw;
+  padding-bottom: 5vh;
+  padding-top: 2vh;
+  flex-direction: column;
+  /* height: ; */
+}
+.total-analysis-table {
+  border: 1px solid green;
+}
+.total-analysis-table td {
+  border: 1px solid green;
+  height: 7vh;
+}
+
+.total-analysis-table tr td:first-child {
+  font-weight: bold;
+  width: 8vw;
+  font-size: large;
+}
+.total-analysis-good {
+  width: 40px;
+  height: 25px;
+  padding: 1px;
+  border: 2px solid #39a1f4;
+  color: #39a1f4;
+  font-weight: bold;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 25px; /* height와 동일하게 설정 */
+}
+.total-analysis-normal {
+  width: 40px;
+  height: 25px;
+  padding: 1px;
+  border: 2px solid #ffce38;
+  color: #ffce38;
+  font-weight: bold;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 25px; /* height와 동일하게 설정 */
+}
+
+.total-analysis-bad {
+  width: 40px;
+  height: 25px;
+  padding: 1px;
+  border: 2px solid #e25959;
+  color: #e25959;
+  font-weight: bold;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 25px; /* height와 동일하게 설정 */
+}
+.total-analysis-coment {
+  /* width: 7vw;
+  height: 7vh; */
+  font-size: smaller;
+  padding: 3px 0 3px 1vw;
+}
+
+/* 플랫폼 분석---------------------------------------------- */
+.platform-analysis-content {
+  border: 1px solid red;
+  display: flex;
+  /* text-align: left; */
+  padding-left: 3vw;
+  padding-right: 3vw;
+  padding-bottom: 5vh;
+  padding-top: 2vh;
+  flex-direction: column;
+  /* height: ; */
+}
+.platform-analysis-table {
+  border: 1px solid green;
+}
+.platform-analysis-table td {
+  border: 1px solid green;
+  height: 7vh;
+}
+
+.platform-analysis-table tr td:first-child {
+  font-weight: bold;
+  width: 8vw;
+  font-size: large;
+}
+
+.total-analysis-coment {
+  /* width: 7vw;
+  height: 7vh; */
+  font-size: smaller;
+  padding: 3px 0 3px 1vw;
 }
