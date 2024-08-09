@@ -2,92 +2,86 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Main Page</title>
-  <link rel="stylesheet" href="../../index.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="../../index.css">
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
-  <div id="content">
+  <div id="main-container">
 
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Main Page</title>
-      <link rel="stylesheet" href="../../index.css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-      <link rel="stylesheet" href="./main.css" />
-    </head>
+    <div id="main-order" class="content-box">
+    </div>
 
-    <body>
-      <div id="content">
-        <div id="main-order">
-          <h1>주문현황(당일 0시 기준)</h1>
-          <p>
-            <span>미확정 주문 0건</span>
-            <span>신규 주문 0건</span>
-            <span>주문 확인 0건</span>
-            <span>총 매출 0,000원</span>
-          </p>
-        </div>
-        <div id="main-notice">
-          <h1>공지사항</h1>
-          <ul>
-            <p>최신순</p>
-            <li><a href="">게시글</a></li>
-            <li><a href="">게시글</a></li>
-            <li><a href="">게시글</a></li>
-            <li><a href="">게시글</a></li>
-            <li><a href="">게시글</a></li>
-          </ul>
-        </div>
-        <div id="main-hashtag">
-          <h1>오늘 인기 해시태그</h1>
-          <ol>
-            <p>
-              <select name="hashtag-platform" id="hashtag-platform">
-                <option value="ably">에이블리</option>
-                <option value="zigzag">지그재그</option>
-              </select>
-            </p>
-            <li>해시태그</li>
-            <li>해시태그</li>
-            <li>해시태그</li>
-            <li>해시태그</li>
-            <li>해시태그</li>
-          </ol>
-        </div>
-        <div id="main-popular-product">
-          <h1>오늘 인기 상품</h1>
-          <ol>
-            <p>
-              <select name="product-platform" id="product-platform">
-                <option value="ably">에이블리</option>
-                <option value="zigzag">지그재그</option>
-              </select>
-            </p>
-            <li>상품</li>
-            <li>상품</li>
-            <li>상품</li>
-            <li>상품</li>
-            <li>상품</li>
-          </ol>
-        </div>
-        <div id="main-sales-chart">
-          <h1>주간 매출/주문 통계</h1>
-          <select name="chart-data" id="chart-data">
-            <option value="product-count">주문량</option>
-            <option value="product-sale">매출</option>
+    <div id="main-notice" class="content-box">
+      <h1>공지사항</h1>
+      <ul>
+        <p>최신순</p>
+        <li><a href="">[공지] 공지글 <span>12-15</span></a></li>
+        <li><a href="">[정보] 정보글 <span>08-02</span></a></li>
+        <li><a href="">[정보] 정보글 <span>02-05</span></a></li>
+      </ul>
+    </div>
+
+    <div id="main-popular-product" class="content-box">
+      <h1>오늘 인기 상품</h1>
+      <ol>
+        <p>
+          <select name="product-platform" id="product-platform">
+            <option value="ably">에이블리</option>
+            <option value="zigzag">지그재그</option>
           </select>
-        </div>
-        <div id="main-sales-calendar">
-          <h1>매출 캘린더</h1>
-        </div>
+        </p>
+        <li>1위 상품</li>
+        <li>2위 상품</li>
+        <li>3위 상품</li>
+        <li>4위 상품</li>
+        <li>5위 상품</li>
+      </ol>
+    </div>
+
+    <div id="main-hashtag" class="content-box">
+      <h1>오늘 인기 해시태그</h1>
+      <ol>
+        <p>
+          <select name="hashtag-platform" id="hashtag-platform">
+            <option value="ably">에이블리</option>
+            <option value="zigzag">지그재그</option>
+          </select>
+        </p>
+        <li>1위 해시태그</li>
+        <li>2위 해시태그</li>
+        <li>3위 해시태그</li>
+        <li>4위 해시태그</li>
+        <li>5위 해시태그</li>
+      </ol>
+    </div>
+
+    <div id="main-sales-chart" class="content-box">
+      <h1>주간 매출/주문 통계</h1>
+      <div>
+        <select name="chart-data" id="chart-data">
+          <option value="product-count">주문량</option>
+          <option value="product-sale">매출</option>
+        </select>
       </div>
-      <script src="../../components/sidebar.js" type="module"></script>
-      <script src="./main.js" type="module"></script>
-    </body>
+      <div class="week-chart">
+        <canvas id="week-count"></canvas>
+      </div>
+    </div>
+
+    <div id="main-sales-calendar" class="content-box">
+      <h1>매출 캘린더</h1>
+    </div>
+  </div>
+  <script src="../../components/sidebar.js" type="module"></script>
+  <!-- <script src="./calendar.js" type="module"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+x  <script src="./main.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
 
 </html>
