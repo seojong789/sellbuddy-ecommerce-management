@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Page</title>
+    <link rel="stylesheet" href="../../index.css" />
+    <link rel="stylesheet" href="./sales.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="sales-container">
+      <div class="select-section">
+        <section>
+          <select name="flatform" id="">
+            <option value="total">전체</option>
+            <option value="ably">에이블리</option>
+            <option value="zigzag">지그재그</option>
+          </select>
+        </section>
+        <section>
+          <span>일자선택</span>
+          <input type="date" />
+          <button type="submit">확인?</button>
+        </section>
+        <section id="sales-info">
+          <p>x월 매출 : 100,000\</p>
+          <p>x일 매출 : 10,000\</p>
+        </section>
+      </div>
+
+      <div class="week-month-section">
+        <section>
+          주간 매출 차트
+          <div class="chart-container">
+            <canvas id="week"></canvas>
+          </div>
+        </section>
+        <section>
+          분기 매출 차트
+          <div class="chart-container">
+            <canvas id="quarter"></canvas>
+          </div>
+        </section>
+      </div>
+
+      <div class="year-section">
+        <div class="chart-container">
+          <canvas id="years"></canvas>
+        </div>
+      </div>
+    </div>
+    <script src="../../components/sidebar.js" type="module"></script>
+    <script src="./main.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./sales.js"></script>
+  </body>
+</html>
