@@ -36,20 +36,22 @@
           <h1>공지사항</h1>
           <ul>
             <p>최신순</p>
-            <li><a href="">게시글 제목은</a></li>
-            <li><a href="">최대 10글자</a></li>
-            <li><a href="">이후는 ...표시</a></li>
-            <li><a href="">최신 5개까지</a></li>
-            <li><a href="">클릭 = 링크</a></li>
+            <li><a href="">게시글</a></li>
+            <li><a href="">게시글</a></li>
+            <li><a href="">게시글</a></li>
+            <li><a href="">게시글</a></li>
+            <li><a href="">게시글</a></li>
           </ul>
         </div>
         <div id="main-hashtag">
           <h1>오늘 인기 해시태그</h1>
-          <select name="main-hashtag-platform" id="main-hashtag-platform">
-            <option value="opt1">에이블리</option>
-            <option value="opt2">지그재그</option>
-          </select>
           <ol>
+            <p>
+              <select name="hashtag-platform" id="hashtag-platform">
+                <option value="ably">에이블리</option>
+                <option value="zigzag">지그재그</option>
+              </select>
+            </p>
             <li>해시태그</li>
             <li>해시태그</li>
             <li>해시태그</li>
@@ -59,11 +61,13 @@
         </div>
         <div id="main-popular-product">
           <h1>오늘 인기 상품</h1>
-          <select name="main-product-platform" id="main-product-platform">
-            <option value="opt1">에이블리</option>
-            <option value="opt2">지그재그</option>
-          </select>
           <ol>
+            <p>
+              <select name="product-platform" id="product-platform">
+                <option value="ably">에이블리</option>
+                <option value="zigzag">지그재그</option>
+              </select>
+            </p>
             <li>상품</li>
             <li>상품</li>
             <li>상품</li>
@@ -73,6 +77,10 @@
         </div>
         <div id="main-sales-chart">
           <h1>주간 매출/주문 통계</h1>
+          <select name="chart-data" id="chart-data">
+            <option value="product-count">주문량</option>
+            <option value="product-sale">매출</option>
+          </select>
         </div>
         <div id="main-sales-calendar">
           <h1>매출 캘린더</h1>

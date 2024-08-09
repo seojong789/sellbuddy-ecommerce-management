@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Page</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <section class="section-1">
+        <h2>마이 상품 순위</h2>
+        <div class="sort">
+          <form>
+            <label for="period"> 기간 </label>
+            <select id="period" name="period">
+                <option value="total">전체</option>
+                <option value="day">1일</option>
+                <option value="week">1주일</option>
+                <option value="month">1개월</option>
+            </select>
+          </form>
+          <form>
+            <label for="classification"> 정렬 </label>
+            <select id="classification" name="classification">
+              <optgroup label="판매량">
+                <option value="sales-quantity-desc">판매량 ▼</option>
+                <option value="sales-quantity-asc">판매량 ▲</option>
+              </optgroup>
+              <optgroup label="매출">
+                <option value="sales-desc">매출▼</option>
+                <option value="sales-asc">매출▲</option>
+              </optgroup>
+            </select>
+          </form>
+        </div>
+          <div class="item">
+            <div>제품명</div>
+            <div>플랫폼</div>
+            <div>가격</div>
+            <div>판매량</div>
+            <div>매출</div>
+          </div>
+            <ul>
+              <li class="product-info">
+                <div class="product-name">
+                  <span>
+                    <img src="/imges/necklace01.jpg" alt="상품 대표 이미지">
+                  </span>
+                  <span>골드 18K 목걸이</span>
+                </div>
+                <div>지그재그</div>
+                <div>30,000</div>
+                <div>49</div>
+                <div>1,470,000</div>
+              </li>
+              <li class="product-info">
+                <div class="product-name">
+                  <span>
+                    <img src="/imges/necklace01.jpg" alt="상품 대표 이미지">
+                  </span>
+                  <span>골드 18K 목걸이</span>
+                </div>
+                <div>지그재그</div>
+                <div>30,000</div>
+                <div>49</div>
+                <div>1,470,000</div>
+              </li>
+              <li class="product-info">
+                <div class="product-name">
+                  <span>
+                    <img src="/imges/necklace01.jpg" alt="상품 대표 이미지">
+                  </span>
+                  <span>골드 18K 목걸이</span>
+                </div>
+                <div>지그재그</div>
+                <div>30,000</div>
+                <div>49</div>
+                <div>1,470,000</div>
+              </li>
+              <li class="product-info">
+                <div class="product-name">
+                  <span>
+                    <img src="/imges/necklace01.jpg" alt="상품 대표 이미지">
+                  </span>
+                  <span>골드 18K 목걸이</span>
+                </div>
+                <div>지그재그</div>
+                <div>30,000</div>
+                <div>49</div>
+                <div>1,470,000</div>
+              </li>
+            </ul>
+
+            <div class="pages">
+              <a href="#"><</a>
+              <a href="#">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">></a>
+            </div>
+      </section>
+      <div class="row">
+        <section class="section-2">
+          <h2>일일 해시태그 순위</h2>
+          <ul>
+            <li class="hashtag-rank">
+              <div class="rank">1</div>
+              <div class="hashtag-name">#윈터목걸이</div>
+            </li>
+            <li class="hashtag-rank">
+              <div class="rank">2</div>
+              <div class="hashtag-name">#여름팔찌</div>
+            </li>
+            <li class="hashtag-rank">
+              <div class="rank">3</div>
+              <div class="hashtag-name">#커플링</div>
+            </li>
+            <li class="hashtag-rank">
+              <div class="rank">4</div>
+              <div class="hashtag-name">#윈터목걸이</div>
+            </li>
+          </ul>
+          
+        </section>
+        <section class="section-3">
+          <h2>플랫폼 매출 순위</h2>
+          <ul>
+            <li class="sales-rank">
+              <div class="rank">1</div>
+              <div class="flatform">윈터 목걸이</div>
+            </li>
+            <li class="sales-rank">
+              <div class="rank">2</div>
+              <div class="flatform">여름팔찌</div>
+            </li>
+            <li class="sales-rank">
+              <div class="rank">3</div>
+              <div class="flatform">커플링</div>
+            </li>
+            <li class="sales-rank">
+              <div class="rank">4</div>
+              <div class="flatform">윈터목걸이</div>
+            </li>
+          </ul>
+        </section>
+      </div>
+      
+      
+    </div>
+    <script src="../../components/sidebar.js" type="module"></script>
+    <script src="./main.js" type="module"></script>
+  </body>
+</html>
