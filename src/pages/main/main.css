@@ -13,46 +13,75 @@
 
     h1 {
       border: 1px solid black;
-      height: 5vh;
-      min-height: 35px;
+      max-height: calc(50% - 2vh);
       padding: 1vh;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      font-size: clamp(100%, 2.5vw, 25px);
+      font-size: clamp(12px, 2.5vmin, 25px);
       white-space: nowrap;
+    }
+
+    ul,
+    ol {
+      font-size: clamp(10px, 2vmin, 20px);
+
+      p {
+        height: 3vmin;
+        padding: 1vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: right;
+
+        select {
+          height: 100%;
+          font-size: clamp(10px, 2vmin, 20px);
+        }
+      }
+
+      li {
+        border-top: 1px solid gray;
+        padding: 1vh;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+
+    ol {
+      list-style-type: "i";
     }
   }
 }
 
 #main-order {
+  background-color: yellow;
   grid-column: 1/7;
   grid-row-start: 1;
 
   p {
-    border: 1px solid black;
-    height: 5vh;
-    min-height: 35px;
-    padding: 1vh;
+    max-height: calc(50% - 2vh);
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 
     span {
-      background-color: yellow;
-      border: 1px solid black;
-      height: 4vh;
-      min-height: 30px;
+      width: 25%;
+      height: 100%;
       padding: 1vh;
 
       display: flex;
       align-items: center;
       justify-content: space-around;
 
-      font-size: clamp(80%, 3vw, 20px);
+      font-size: clamp(12px, 2.5vmin, 25px);
+      white-space: nowrap;
     }
   }
 }
@@ -61,60 +90,25 @@
   grid-column: 1/3;
   grid-row-start: 2;
 
-  ul {
-    p {
-      font-size: 1vw;
-      text-align: right;
-      padding: 1vh;
-    }
-
-    li {
-      border: 1px solid black;
-      padding: 1vh;
-    }
-  }
 }
 
 #main-hashtag {
   grid-column: 3/5;
   grid-row-start: 2;
 
-  ol {
-    select {
-      font-size: 1vw;
-      padding: 1vh;
-    }
-
-    li {
-      border: 1px solid black;
-      padding: 1vh;
-    }
-  }
 }
 
 #main-popular-product {
   grid-column: 5/7;
   grid-row-start: 2;
 
-  ol {
-    select {
-      font-size: 1vw;
-      padding: 1vh;
-    }
-
-    li {
-      border: 1px solid black;
-      padding: 1vh;
-    }
-  }
 }
 
 #main-sales-chart {
   grid-column: 1/4;
   grid-row-start: 3;
-  img {
-    border: 1px solid black;
-  }
+
+  select {}
 }
 
 #main-sales-calendar {
