@@ -16,7 +16,6 @@ axios
       }
     }
     let productsHTML = `
-      <h1 class = "title">주문현황 <span>(당일 0시 기준)</span></h1>
       <p>
         <span>미확정 주문 321건</span>
         <span>신규 주문 ${todayCount}건</span>
