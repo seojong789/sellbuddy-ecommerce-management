@@ -1,28 +1,31 @@
 axios
-  .get("http://127.0.0.1:5500/v4.json")
+  .get("http://localhost:5500/v4.json")
   .then((res) => {
     let products = res.data;
-    let todayCount = 0;
-    let todaySale = 0;
-
+    // 주문현황
+    let orderToday = 0; // 신규 주문
+    let saleToday = 0; // 금일 매출
     for (let i = 0; i < products.length; i++) {
       for (let j = 0; j < products[i].platforms.length; j++) {
         for (let k = 0; k < products[i].platforms[j].sales.length; k++) {
           if (products[i].platforms[j].sales[k].date == "2023-12-31") {
-            todayCount += products[i].platforms[j].sales[k].quantity;
-            todaySale += products[i].platforms[j].sales[k].quantity * products[i].price;
+            orderToday += products[i].platforms[j].sales[k].quantity;
+            saleToday +=
+              products[i].platforms[j].sales[k].quantity * products[i].price;
           }
         }
       }
     }
+    let orderUnknown = Math.round(orderToday / 5); // 미확인 주문 (임시)
+    let orderKnown = Math.round(orderToday / 3); // 주문 확정 (임시)
     let productsHTML = `
+      <h1 class="title">주문 현황<span>(당일 0시 기준)</span></h1>
       <p>
-        <span>미확정 주문 321건</span>
-        <span>신규 주문 ${todayCount}건</span>
-        <span>주문 확인 123건</span>
-        <span>총 매출 ${todaySale}원</span>
+        <span>미확인 주문 ${orderUnknown.toLocaleString()}건</span>
+        <span>신규 주문 ${orderToday.toLocaleString()}건</span>
+        <span>주문 확정 ${orderKnown.toLocaleString()}건</span>
+        <span>금일 매출 ${saleToday.toLocaleString()}원</span>
       </p>`;
-
     document.querySelector("#main-order").innerHTML = productsHTML;
   })
   .catch((error) => {
