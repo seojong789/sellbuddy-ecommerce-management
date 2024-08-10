@@ -22,13 +22,19 @@
     align-items: center;
     justify-content: center;
 
-    font-size: 25px;
+    font-size: 20px;
+
+    span {
+      margin-left: 10px;
+
+      font-size: 15px;
+    }
   }
 
   .list {
     border-bottom: 1px solid gray;
 
-    font-size: 20px;
+    font-size: 15px;
 
     p {
       height: 10px;
@@ -45,22 +51,45 @@
       }
     }
 
+    .list-title {
+      display: flex;
+      justify-content: space-between;
+    }
+
     li {
       border-top: 1px solid gray;
       padding: 10px;
 
-      a {
-        text-decoration: none;
-        color: inherit;
+      display: flex;
+      justify-content: space-between;
 
-        span {
-          float: right;
+      span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
 
-          font-size: 15px;
-        }
+      .list-side {
+        width: 10%;
+      }
+
+      .list-center {
+        width: 70%;
+      }
+    }
+
+    a {
+      color: inherit;
+
+      span {
+        font-size: 15px;
       }
     }
   }
+}
+
+.main-popular-product-list {
+  color: inherit;
 }
 
 #main-order {
@@ -83,7 +112,7 @@
       align-items: center;
       justify-content: space-around;
 
-      font-size: 15px;
+      font-size: 20px;
     }
   }
 }
@@ -96,6 +125,11 @@
 #main-popular-product {
   grid-column: 3/5;
   grid-row-start: 2;
+}
+
+.main-popular-product-list {
+  background-color: y;
+  color: black;
 }
 
 #main-hashtag {
@@ -121,10 +155,87 @@
 
   .week-chart {
     border: 1px solid black;
+    min-height: 75%;
   }
 }
 
 #main-sales-calendar {
   grid-column: 4/7;
   grid-row-start: 3;
+
+  font-size: 15px;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .year-month {
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+  }
+
+  .weeks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .week {
+    width: calc(100% / 7);
+    padding: 10px;
+
+    text-align: center;
+  }
+
+  .days {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .day {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    width: calc(100% / 7);
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .daySale {
+    padding: 5px;
+    color: black;
+
+    display: flex;
+    justify-content: right;
+  }
+
+
+  .week:nth-child(7n + 1),
+  .day:nth-child(7n + 1) {
+    color: red;
+  }
+
+  .week:nth-child(7n),
+  .day:nth-child(7n) {
+    color: blue;
+  }
+
+  .other span {
+    opacity: 0.3;
+  }
+
+  .today {
+    background-color: orange;
+  }
 }
