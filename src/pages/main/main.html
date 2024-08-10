@@ -17,18 +17,18 @@
     </div>
 
     <div id="main-notice" class="content-box">
-      <h1>공지사항</h1>
-      <ul>
+      <h1 class="title">공지사항</h1>
+      <ul class="list">
         <p>최신순</p>
-        <li><a href="">[공지] 공지글 <span>12-15</span></a></li>
-        <li><a href="">[정보] 정보글 <span>08-02</span></a></li>
-        <li><a href="">[정보] 정보글 <span>02-05</span></a></li>
+        <li><a href="">[광고] 광고글 <span>12-03</span></a></li>
+        <li><a href="">[정보] 정보글 <span>07-02</span></a></li>
+        <li><a href="">[공지] 공지글 <span>02-01</span></a></li>
       </ul>
     </div>
 
     <div id="main-popular-product" class="content-box">
-      <h1>오늘 인기 상품</h1>
-      <ol>
+      <h1 class="title">오늘 인기 상품</h1>
+      <ol class="list">
         <p>
           <select name="product-platform" id="product-platform">
             <option value="ably">에이블리</option>
@@ -44,8 +44,8 @@
     </div>
 
     <div id="main-hashtag" class="content-box">
-      <h1>오늘 인기 해시태그</h1>
-      <ol>
+      <h1 class="title">오늘 인기 해시태그</h1>
+      <ol class="list">
         <p>
           <select name="hashtag-platform" id="hashtag-platform">
             <option value="ably">에이블리</option>
@@ -61,7 +61,7 @@
     </div>
 
     <div id="main-sales-chart" class="content-box">
-      <h1>주간 매출/주문 통계</h1>
+      <h1 class="title">주간 매출/주문 통계</h1>
       <div>
         <select name="chart-data" id="chart-data">
           <option value="product-count">주문량</option>
@@ -74,14 +74,15 @@
     </div>
 
     <div id="main-sales-calendar" class="content-box">
-      <h1>매출 캘린더</h1>
+      <h1 class="title">매출 달력</h1>
     </div>
   </div>
-  <script src="../../components/sidebar.js" type="module"></script>
-  <!-- <script src="./calendar.js" type="module"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-x  <script src="./main.js" type="module"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../../components/sidebar.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- <script src="./calendar.js" type="module"></script> -->
+  <script src="./main.js" type="module"></script>
 </body>
 
 </html>
