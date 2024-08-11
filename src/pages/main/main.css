@@ -176,7 +176,7 @@
     align-items: center;
     justify-content: center;
 
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .weeks {
@@ -184,13 +184,12 @@
     align-items: center;
     justify-content: center;
 
-  }
+    .week {
+      width: calc(100% / 7);
+      padding: 10px;
 
-  .week {
-    width: calc(100% / 7);
-    padding: 10px;
-
-    text-align: center;
+      text-align: center;
+    }
   }
 
   .days {
@@ -199,27 +198,33 @@
 
     display: flex;
     flex-flow: row wrap;
+
+    .day {
+      border-bottom: 1px solid black;
+      border-right: 1px solid black;
+      width: calc(100% / 7);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .today {
+        background-color: orange;
+      }
+
+      .daySale {
+        padding: 5px;
+        color: black;
+
+        display: flex;
+        justify-content: right;
+      }
+    }
+
+    .other div {
+      opacity: 0.3;
+    }
   }
-
-  .day {
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-    width: calc(100% / 7);
-    padding: 10px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .daySale {
-    padding: 5px;
-    color: black;
-
-    display: flex;
-    justify-content: right;
-  }
-
 
   .week:nth-child(7n + 1),
   .day:nth-child(7n + 1) {
@@ -229,13 +234,5 @@
   .week:nth-child(7n),
   .day:nth-child(7n) {
     color: blue;
-  }
-
-  .other span {
-    opacity: 0.3;
-  }
-
-  .today {
-    background-color: orange;
   }
 }

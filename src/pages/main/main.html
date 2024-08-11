@@ -21,7 +21,9 @@
       <ul class="list">
         <p>최신순</p>
         <p class="list-title">
+          <span></span>
           <span>제목</span>
+          <span></span>
           <span>일자</span>
         </p>
         <li>
@@ -40,7 +42,7 @@
     </div>
 
     <div id="main-popular-product" class="content-box">
-      <h1 class="title">나의 인기 상품</h1>
+      <h1 class="title">오늘 나의 인기 상품</h1>
       <ol class="list">
         <p>
           <select name="product-platform" id="product-platform">
@@ -88,10 +90,9 @@
 
     <div id="main-sales-calendar" class="content-box">
       <h1 class="title">매출 달력</h1>
-      <div id = "canlendar">
-        <div class="header">
-          <div class="year-month"></div>
-        </div>
+      <div id="canlendar">
+        <p></p>
+        <div class="year-month"></div>
         <div class="main">
           <div class="weeks">
             <div class="week">일</div>
@@ -112,8 +113,6 @@
   <script src="../../components/sidebar.js" type="module"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="./main.js" type="module"></script>
-  <script src="./main-chart.js" type="module"></script>
-  <script src="./main-canlendar.js"></script>
 </body>
 
 </html>
