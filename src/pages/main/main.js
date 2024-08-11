@@ -245,14 +245,14 @@ const printCalender = () => {
             });
           });
         });
-        const condition =
-          firstDateIndex <= i && i <= lastDateIndex ? "this" : "other";
+        const condition = firstDateIndex <= i && i <= lastDateIndex ? "this" : "other";
         const saleText = saleDate ? `${Math.round(saleDate / Math.pow(10, 7 - 1)) / 10}천만원` : " - ";
 
         dates[i] = `
           <div class="day ${condition}">
-            <div class="dayNumber">${date}</div>
-            <div class="daySale">${saleText}</div>
+            <div class="day-number">${date}</div>
+            <div class="day-sale day-sale-detail">${date}일 매출 : ${saleDate.toLocaleString()}원</div>
+            <div class="day-sale">${saleText}</div>
           </div>
         `;
 

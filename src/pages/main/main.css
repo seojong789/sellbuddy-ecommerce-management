@@ -212,13 +212,33 @@
         background-color: orange;
       }
 
-      .daySale {
+      .day-sale {
         padding: 5px;
         color: black;
 
         display: flex;
         justify-content: right;
       }
+
+      .day-sale-detail {
+        background-color: gray;
+        opacity: 1;
+
+        width: 100%;
+        height: 100%;
+        
+        display: none;
+        position: relative;
+      }
+    }
+
+    .day:hover .day-number,
+    .day:hover .day-sale {
+      display: none;
+    }
+
+    .day:hover .day-sale-detail {
+      display: block;
     }
 
     .other div {
