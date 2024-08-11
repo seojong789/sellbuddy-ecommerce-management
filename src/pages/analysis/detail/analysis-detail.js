@@ -18,9 +18,9 @@ window.onload = () => {
     let productReview = productId.platforms.review; //상품리뷰수
     let productStarReview = productId.platforms.starReview; //상품별점
     let productRegistrationDate = productId.platforms.registrationDate; //상품등록일
-
+    let productHashtags = productId.platforms.hashtags; //상품해시태그
     // let productDescription = productId.description; //상품키워드
-    let productHashtags = productId.platforms.hashtags; //상품별점
+
     // 상품명 ------------------------------------------------------------
     // console.log("상품명 : " + productId.name);
     let productNameElement = document.querySelector(".product-name");
@@ -43,8 +43,8 @@ window.onload = () => {
 
     // 판매량----------------------------------------------------------
     if (productId.platforms.sales != 0) {
-      for (let i = 0; i < products[id].platforms.sales.length; i++) {
-        productsalesVolume += products[id].platforms.sales[i].quantity;
+      for (let i = 0; i < productId.platforms.sales.length; i++) {
+        productsalesVolume += productId.platforms.sales[i].quantity;
       }
       let productsalesVolumeElement = document.querySelector(
         ".product-sales-volume"
@@ -147,5 +147,97 @@ window.onload = () => {
     );
 
     productRegistrationDateElement.innerText = `${formattedDate} (${daysDiff}일 전)`;
-  });
-};
+
+    // ★★★★★★★★★★★★★★★★★★★★★★해시태그★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+    let myHashtags = productHashtags;
+    console.log(myHashtags);
+    //비교할 해시태그는 플랫폼의 당일 인기상품 5개의 해시태그를 뽑아서 공통 해시태그 5개로 선정한다
+    // 모든 해시태그 배열 결합
+    const platformHashtags = samePlatform.flatMap(
+      (item) => item.platforms.hashtags
+    );
+    // console.log(platformHashtags);
+
+    // 해시태그 빈도 계산
+    const hashtagFrequency = platformHashtags.reduce((acc, hashtag) => {
+      acc[hashtag] = (acc[hashtag] || 0) + 1;
+      return acc;
+    }, {});
+
+    // 빈도가 높은순으로 해시태그 5개 top5Hashtags배열에 담기
+    const top5Hashtags = Object.entries(hashtagFrequency)
+      .sort(([, a], [, b]) => b - a)
+      .slice(0, 5)
+      .map(([hashtag]) => hashtag);
+
+    console.log("Top 5 Hashtags:", top5Hashtags);
+
+    let hashtagsComparisonElement = document.querySelector(
+      ".hashtags-comparison"
+    );
+    hashtagsComparisonElement.innerHTML = `<tr>
+                <th>MY</th>
+                <th>인기</th>
+              </tr>
+              <tr>
+                <td>${myHashtags[0]}</td>
+                <td>${top5Hashtags[0]}</td>
+              </tr>
+              <tr>
+                <td>${myHashtags[1]}</td>
+               <td>${top5Hashtags[1]}</td>
+              </tr>
+              <tr>
+                <td>${myHashtags[2]}</td>
+                <td>${top5Hashtags[2]}</td>
+              </tr>
+              <tr>
+                <td>${myHashtags[3]}</td>
+                <td>${top5Hashtags[3]}</td>
+              </tr>
+              <tr>
+                <td>${myHashtags[4]}</td>
+                <td>${top5Hashtags[4]}</td>
+              </tr>`;
+
+    let hashtagsComparisonCount = myHashtags.filter((hashtag) =>
+      top5Hashtags.includes(hashtag)
+    ).length;
+    console.log(hashtagsComparisonCount);
+
+    // 해시태그 비교 상태[좋음]
+    let hashtagComparisonStatusElement = document.querySelector(
+      ".hashtag-comparison-status"
+    );
+
+    if (hashtagsComparisonCount > 3) {
+      hashtagComparisonStatusElement.innerText = "좋음";
+      hashtagComparisonStatusElement.classList.add("hashtag-comparison-good");
+    } else if (hashtagsComparisonCount === 3) {
+      hashtagComparisonStatusElement.innerText = "보통";
+      hashtagComparisonStatusElement.classList.add("hashtag-comparison-normal");
+    } else {
+      hashtagComparisonStatusElement.innerText = "나쁨";
+      hashtagComparisonStatusElement.classList.add("hashtag-comparison-bad");
+    }
+
+    // 해시태그 비교 막대그래프
+
+    let hashtagComparisonBarElement = document.querySelectorAll(
+      ".hashtag-comparison-bar"
+    );
+    console.log(hashtagComparisonBarElement);
+    console.log(hashtagsComparisonCount);
+
+    for (let cnt = 0; cnt < hashtagsComparisonCount; cnt++) {
+      if (hashtagsComparisonCount > 3) {
+        hashtagComparisonBarElement[cnt].classList.add("good");
+      } else if (hashtagsComparisonCount === 3) {
+        hashtagComparisonBarElement[cnt].classList.add("normal");
+      } else {
+        hashtagComparisonBarElement[cnt].classList.add("bad");
+      }
+      // hashtagComparisonBarElement[cnt].classList.add("fill");
+    }
+  }); // 마지막1
+}; //마지막2
