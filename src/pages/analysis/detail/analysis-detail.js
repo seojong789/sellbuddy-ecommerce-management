@@ -3,6 +3,8 @@ window.onload = () => {
   const urlParams = new URLSearchParams(location.search);
   let id = urlParams.get("value");
   console.log(id);
+  // 날짜 설정
+  const fixedDate = new Date("2023-12-31");
   //================================================================================
   // json파일 가져오기
   axios.get("http://127.0.0.1:5500/v4copy.json").then((res) => {
@@ -11,6 +13,7 @@ window.onload = () => {
     let productImage; //상품이미지
     let productName = productId.name; //상품명
     let productPrice = productId.price; //상품가격
+    let avgCategoryPrice = 0; //평균가
     let productPlatform = productId.platforms.platform; //상품등록된 플랫폼
     let productCategory = productId.category; //상품의 카테고리
     let productTotalSales = 0; //상품 총매출
@@ -18,6 +21,9 @@ window.onload = () => {
     let productStarReview = productId.platforms.starReview; //상품별점
     let productRegistrationDate = productId.platforms.registrationDate; //상품등록일
     let productHashtags = productId.platforms.hashtags; //상품해시태그
+    let productVisitLastweek = productId.platforms.visitLastweek; //지난주 방문자수
+    let productVisitThisweek = productId.platforms.visitThisweek; //이번주 방문자수
+    let PurchaseConversionRate = 0; //구매전환율
     // let productDescription = productId.description; //상품키워드
 
     // 상품명 ------------------------------------------------------------
@@ -50,14 +56,10 @@ window.onload = () => {
     // console.log("판매량 : " + productTotalSales);
     // 리뷰별점---------------------------------------------------------
     // console.log("리뷰별점 : " + productId.platforms.starReview);
-    productStarReview = document.querySelector(".star-review");
-    productStarReview.innerText = productId.platforms.starReview;
-    // 리뷰 개수---------------------------------------------------------
-    // console.log("리뷰별점 : " + productId.platforms.review);
-    productReview = document.querySelector(".product-review");
-    productReview.innerText = productId.platforms.review;
+    let productReviewElement = document.querySelector(".product-review");
+    productReviewElement.innerText = `★${productStarReview} (${productReview}개)`;
 
-    // 평균가==========================================================================================
+    // 평균가 최고가 최저가--------------------------------------------------
     let matchingProductsCount = 0; //현재 상품과 플랫폼,카테고리가 같은 상품들 개수
     let sumCategoryPrice = 0; //동일 카테고리 상품들 가격의 합
 
@@ -66,30 +68,30 @@ window.onload = () => {
     );
     console.log("같은 카테고리 제품", sameCategory);
     const samePlatform = sameCategory.filter(
-      (item) => item.platforms.platform === productPlatform
+      (item) => item.platforms.platform === productPlatformText
     );
-    // function filterByPlatform(item) {
-    //   if (item.platforms.platform === productPlatform) {
-    //     return true;
-    //   }
-    //   return false;
-    // }
 
-    // const samePlatform = sameCategory.filter(filterByPlatform);
-    // console.log(item.platforms.platform);
-    console.log("같은 플랫폼 제품", samePlatform);
+    // console.log("같은 플랫폼 제품", samePlatform);
 
-    // 필터링된 배열
-    // [{ id: 15 }, { id: -1 }, { id: 3 }, { id: 12.2 }]
+    // 동일 카테고리, 플랫폼 상품들의 가격 배열 생성
+    const prices = samePlatform.map((item) => Number(item.price));
+    const highestPrice = Math.max(...prices); //최고가
+    const lowestPrice = Math.min(...prices); //최저가
 
-    // ---------------------
-    // function findSameCategory(sameCategory) {
-    //   return (sameCategory = productCategory);
-    // }
+    // console.log("가장 높은 가격:", highestPrice);
+    // console.log("가장 낮은 가격:", lowestPrice);
 
-    // const SameCategoryProducts = products.category.filter(findSameCategory);
-    // console.log(SameCategoryProducts);
-    // -------------
+    for (let e = 0; e < samePlatform.length; e++) {
+      sumCategoryPrice += Number(samePlatform[e].price);
+      matchingProductsCount++;
+    }
+    //평균가
+    avgCategoryPrice = Math.round(
+      Number(sumCategoryPrice / matchingProductsCount)
+    );
+    // console.log("매칭카운트 : " + matchingProductsCount);
+    // console.log("같은 카테고리 합 : " + sumCategoryPrice);
+    // console.log("같은 카테고리 평균가", avgCategoryPrice);
 
     const productSales = products.filter(
       (item) => item.category === productCategory
@@ -120,15 +122,16 @@ window.onload = () => {
 
     //-----------------------------
     // 오늘 날짜와 상품 등록일 계산
-    let today = new Date();
+    // let today = new Date();
+    // 오늘 날짜와 상품 등록일 계산
     let registrationDate = new Date(productRegistrationDate);
 
     // 시간을 00:00:00으로 설정하여 시간 부분 무시
-    today.setHours(0, 0, 0, 0);
+    fixedDate.setHours(0, 0, 0, 0);
     registrationDate.setHours(0, 0, 0, 0);
 
     // 날짜 차이를 밀리초로 계산
-    let timeDiff = today - registrationDate;
+    let timeDiff = fixedDate - registrationDate;
 
     // 밀리초를 일(day) 단위로 변환
     let daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
@@ -140,7 +143,7 @@ window.onload = () => {
 
     productRegistrationDateElement.innerText = `${formattedDate} (${daysDiff}일 전)`;
 
-    // ★★★★★★★★★★★★★★★★★★★★★★해시태그★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+    // 해시태그 비교 -------------------------------------------------------------------
     let myHashtags = productHashtags;
     console.log(myHashtags);
     //비교할 해시태그는 플랫폼의 당일 인기상품 5개의 해시태그를 뽑아서 공통 해시태그 5개로 선정한다
@@ -229,7 +232,320 @@ window.onload = () => {
       } else {
         hashtagComparisonBarElement[cnt].classList.add("bad");
       }
-      // hashtagComparisonBarElement[cnt].classList.add("fill");
+    }
+    // ★★★★★★★★★★★★★★★★★★★★★★종합분석★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+    // 리뷰분석
+    // 리뷰 상태 요소 선택
+    let reviewStatusElement = document.querySelector(
+      ".total-analysis-review-status"
+    );
+    // 리뷰 코멘트 요소 선택
+    let reviewCommentElement = document.querySelector(
+      ".total-analysis-review-coment"
+    );
+
+    // productReview가 10 미만인지 확인
+    if (productReview < 10) {
+      // 클래스 변경
+      reviewStatusElement.classList.replace(
+        "total-analysis-review-status",
+        "total-analysis-status-null"
+      );
+      // 텍스트 변경
+      reviewStatusElement.innerText = "없음";
+      // total-analysis-review-coment 요소 업데이트
+      reviewCommentElement.innerHTML = `
+    <p>리뷰 수가 10개 미만으로 분석이 어렵습니다</p>
+    <p>리뷰 이벤트를 진행해 리뷰 수를 늘려보세요</p>
+  `;
+    } else {
+      //별점(5점 만점) 기준으로 3점미만[나쁨] / 3점이상[보통] / 3.5점이상[좋음]
+      if (productStarReview >= 3.5) {
+        // 클래스 변경
+        reviewStatusElement.classList.replace(
+          "total-analysis-review-status",
+          "total-analysis-status-good"
+        );
+        // 텍스트 변경
+        reviewStatusElement.innerText = "좋음";
+        // total-analysis-review-coment 요소 업데이트
+        reviewCommentElement.innerHTML = `
+    <p>리뷰별점이 ${productStarReview}점으로 높은 수준입니다</p>
+    <p>지금처럼 상품과 고객 만족도를 꾸준히 관리해주세요</p>
+  `;
+      } else if (productStarReview >= 3 && productStarReview < 3.5) {
+        // 클래스 변경
+        reviewStatusElement.classList.replace(
+          "total-analysis-review-status",
+          "total-analysis-status-normal"
+        );
+        // 텍스트 변경
+        reviewStatusElement.innerText = "보통";
+        // total-analysis-review-coment 요소 업데이트
+        reviewCommentElement.innerHTML = `
+    <p>리뷰별점이 ${productStarReview}점으로 보통 수준입니다</p>
+    <p>상품 및 배송 관리에 집중해 고객 만족도를 더 높여보세요</p>
+  `;
+      } else {
+        // 클래스 변경
+        reviewStatusElement.classList.replace(
+          "total-analysis-review-status",
+          "total-analysis-status-bad"
+        );
+        // 텍스트 변경
+        reviewStatusElement.innerText = "나쁨";
+        // total-analysis-review-coment 요소 업데이트
+        reviewCommentElement.innerHTML = `
+
+    <p>리뷰별점이 ${productStarReview}점으로 낮은 수준입니다</p>
+    <p>고객들의 불만사항을 체크하고 철저한 상품 관리가 필요합니다</p>
+  `;
+      }
+    }
+    // 구매전환율 --------------------------------------------------------
+    // 총 방문수(클릭수)
+    let productVisitTotal = Number(productId.platforms.visitTotal);
+    // 구매전환율 = (구매 완료 수 / 이번주, 지난주 방문자수) * 100
+    PurchaseConversionRate = Number(
+      ((productsalesVolume / productVisitTotal) * 100).toFixed(2)
+    );
+
+    // 구매 전환율 비교값 계산 및 소수점 한자리까지 표현
+    let PurchaseConversionRateComparison = Number(
+      (PurchaseConversionRate - 2).toFixed(2)
+    );
+    // console.log("방문자수 " + productVisitTotal);
+    // console.log("판매량 " + productsalesVolume);
+    // console.log("구매전환율 : " + PurchaseConversionRate);
+    // console.log("구매전환율대비 : " + PurchaseConversionRateComparison);
+    // 구매전환율 상태 요소 선택
+    let PurchaseConversionRateStatusElement = document.querySelector(
+      ".total-analysis-Purchase-conversion-rate-status"
+    );
+    // 구매전환율 코멘트 요소 선택
+    let PurchaseConversionRateComentElement = document.querySelector(
+      ".total-analysis-Purchase-conversion-rate-coment"
+    );
+    //  1% 미만[나쁨] / 3% 미만[보통] / 3% 이상[좋음]
+    if (PurchaseConversionRate >= 3) {
+      // 클래스 변경
+      PurchaseConversionRateStatusElement.classList.remove(
+        "total-analysis-Purchase-conversion-rate-status"
+      );
+      PurchaseConversionRateStatusElement.classList.add(
+        "total-analysis-status-good"
+      );
+      // 텍스트 변경
+      PurchaseConversionRateStatusElement.innerText = "좋음";
+      // 구매전환율 요소 업데이트
+      PurchaseConversionRateComentElement.innerHTML = `
+    <p>구매전환율이 ${PurchaseConversionRate}%으로 이커머스 평균 대비 ${PurchaseConversionRateComparison}% 높아요</p>
+    <p>상품 대표 이미지와 상품이 니즈를 적중했어요</p>
+    `;
+    } else if (PurchaseConversionRate < 3 && PurchaseConversionRate >= 1) {
+      // 클래스 변경
+      PurchaseConversionRateStatusElement.classList.remove(
+        "total-analysis-Purchase-conversion-rate-status"
+      );
+      PurchaseConversionRateStatusElement.classList.add(
+        "total-analysis-status-normal"
+      );
+      // 텍스트 변경
+      PurchaseConversionRateStatusElement.innerText = "보통";
+      // 구매전환율 요소 업데이트
+      PurchaseConversionRateComentElement.innerHTML = `
+    <p>구매전환율이 ${PurchaseConversionRate}%으로 이커머스 평균 대비 ${PurchaseConversionRateComparison}% 차이가 있어요</p>
+    <p>상품 대표 이미지는 적절하나 상품 상세 설명을 보충하여 구매전환율을 높여보세요</p>
+    `;
+    } else {
+      // 클래스 변경
+      PurchaseConversionRateStatusElement.classList.remove(
+        "total-analysis-Purchase-conversion-rate-status"
+      );
+      PurchaseConversionRateStatusElement.classList.add(
+        "total-analysis-status-bad"
+      );
+      // 텍스트 변경
+      PurchaseConversionRateStatusElement.innerText = "나쁨";
+      // 구매전환율 요소 업데이트
+      PurchaseConversionRateComentElement.innerHTML = `
+    <p>구매전환율이 ${PurchaseConversionRate}%으로 이커머스 평균 대비 ${PurchaseConversionRateComparison}% 낮아요</p>
+    <p>상품 상세 설명을 상품 대표 이미지와 일치시켜 구매전환율을 높여보세요</p>
+    `;
+    }
+    // 가격분석 ----------------------------------------------------------
+    let categoryAveragePricePercent = 0;
+    // 가격차이 % =((상품가격-평균가)/평균가)*100
+    categoryAveragePricePercent = Number(
+      (((productPrice - avgCategoryPrice) / avgCategoryPrice) * 100).toFixed(1)
+    );
+
+    console.log("퍼센트:" + categoryAveragePricePercent);
+    console.log("평균가:" + avgCategoryPrice);
+    console.log("가격:" + productPrice);
+    // 가격 상태 요소 선택
+    let priceStatusElement = document.querySelector(
+      ".total-analysis-price-status"
+    );
+    // 가격 코멘트 요소 선택
+    let priceComentElement = document.querySelector(
+      ".total-analysis-price-coment"
+    );
+    // 평균가보다 -5%미만[나쁨] /평균가 ± 5%[보통] / 평균가+5%이상[좋음]
+    if (categoryAveragePricePercent > 5) {
+      // 클래스 변경
+      priceStatusElement.classList.remove("total-analysis-price-status");
+      priceStatusElement.classList.add("total-analysis-status-good");
+      // 텍스트 변경
+      priceStatusElement.innerText = "좋음";
+      // 가격 코멘트 요소 업데이트
+      priceComentElement.innerHTML = `
+    <p>${productCategory}카테고리 평균가보다 ${categoryAveragePricePercent}% 높아요</p>
+    <p>박리다매보다 질 좋은 상품을 원하는 고객들의 니즈에 적합해요</p>
+    `;
+    } else if (
+      categoryAveragePricePercent <= 5 &&
+      categoryAveragePricePercent >= -5
+    ) {
+      // 클래스 변경
+      priceStatusElement.classList.remove("total-analysis-price-status");
+      priceStatusElement.classList.add("total-analysis-status-normal");
+      // 텍스트 변경
+      priceStatusElement.innerText = "보통";
+      // 가격 코멘트 요소 업데이트
+      priceComentElement.innerHTML = `
+    <p>${productCategory}카테고리 평균가와 ${categoryAveragePricePercent}% 차이가 있어요</p>
+    <p>가격 설정이 적절하나 박리다매 상품이라면 가격을 낮춰보세요</p>
+    `;
+    } else {
+      // 클래스 변경
+      priceStatusElement.classList.remove("total-analysis-price-status");
+      priceStatusElement.classList.add("total-analysis-status-bad");
+      // 텍스트 변경
+      priceStatusElement.innerText = "나쁨";
+      // 가격 코멘트 요소 업데이트
+      priceComentElement.innerHTML = `
+<p>${productCategory}카테고리 평균가보다 ${categoryAveragePricePercent}% 낮아요</p>
+<p>박리다매 상품이 아니라면 가격을 더 높일 필요가 있어요</p>
+`;
+    }
+    // 판매율 추이 ----------------------------------------------------------------
+    // 날짜를 yyyy-mm-dd 형식으로 변환하는 함수
+    function formatDate(date) {
+      let year = date.getFullYear();
+      let month = String(date.getMonth() + 1).padStart(2, "0");
+      let day = String(date.getDate()).padStart(2, "0");
+      return `${year}-${month}-${day}`;
+    }
+    // 오늘 날짜와 7일 전, 14일 전 날짜 계산
+    // let today = new Date();
+    let sevenDaysAgo = new Date(fixedDate);
+    let fourteenDaysAgo = new Date(fixedDate);
+    // 7일 전과 14일 전 날짜 설정
+    sevenDaysAgo.setDate(fixedDate.getDate() - 7);
+    fourteenDaysAgo.setDate(fixedDate.getDate() - 14);
+    // 날짜를 문자열로 변환
+    let todayStr = formatDate(fixedDate);
+    let sevenDaysAgoStr = formatDate(sevenDaysAgo);
+    let fourteenDaysAgoStr = formatDate(fourteenDaysAgo);
+
+    // // 판매량 계산 함수
+    function getSalesForPeriod(startDate, endDate) {
+      let totalSales = 0;
+      for (let sale of productId.platforms.sales) {
+        let saleDate = new Date(sale.date);
+        let saleDateStr = formatDate(saleDate);
+        if (saleDateStr >= startDate && saleDateStr < endDate) {
+          totalSales += sale.quantity;
+        }
+      }
+      return totalSales;
+    }
+    // 오늘부터 7일 전까지와 7일 전부터 14일 전까지의 판매량 계산
+    let salesLast7Days = getSalesForPeriod(sevenDaysAgoStr, todayStr);
+    let salesPrevious7Days = getSalesForPeriod(
+      fourteenDaysAgoStr,
+      sevenDaysAgoStr
+    );
+    // 판매량 비교
+    let salesComparisonPercent =
+      ((salesLast7Days - salesPrevious7Days) / salesPrevious7Days) * 100;
+    // 결과를 소수점 한 자리로 반올림
+    salesComparisonPercent = Number(salesComparisonPercent.toFixed(1));
+    console.log("판매량 비교:", salesComparisonPercent + "%");
+    console.log("7일전:", salesLast7Days);
+    console.log("14일전:", salesPrevious7Days);
+
+    // 판매율 추이 HTML-------------------------------------------------------
+    // 판매율 상태 요소 선택
+    let salesComparisonStatusElement = document.querySelector(
+      ".total-analysis-sales-comparison-status"
+    );
+    // 판매율 코멘트 요소 선택
+    let salesComparisonComentElement = document.querySelector(
+      ".total-analysis-sales-comparison-coment"
+    );
+
+    // 판매량 상태에 따라 클래스 변경 및 텍스트 업데이트
+    if (salesComparisonPercent > 5) {
+      // 클래스 변경
+      salesComparisonStatusElement.classList.remove(
+        "total-analysis-sales-comparison-status"
+      );
+      salesComparisonStatusElement.classList.add("total-analysis-status-good");
+      // 텍스트 변경
+      salesComparisonStatusElement.innerText = "좋음";
+      // 가격 코멘트 요소 업데이트
+      salesComparisonComentElement.innerHTML = `
+            <p>지난 주 판매량보다 ${salesComparisonPercent}% 증가했어요</p>
+            <p>해당 상품의 디자인이 유행하고 있으니 유사한 상품을 추가해보세요</p>
+          `;
+    } else if (salesComparisonPercent <= 5 && salesComparisonPercent >= -5) {
+      // 클래스 변경
+      salesComparisonStatusElement.classList.remove(
+        "total-analysis-sales-comparison-status"
+      );
+      salesComparisonStatusElement.classList.add(
+        "total-analysis-status-normal"
+      );
+      salesComparisonStatusElement.innerText = "보통";
+      if (salesComparisonPercent === 0) {
+        salesComparisonComentElement.innerHTML = `
+              <p>지난 주 판매량과 동일해요</p>
+              <p>인기 해시태그를 적용해 클릭률을 늘려보세요</p>
+            `;
+      } else {
+        salesComparisonComentElement.innerHTML = `
+              <p>지난 주 판매량과 ${salesComparisonPercent}% 차이가 있어요</p>
+              <p>인기 해시태그를 적용해 클릭률을 늘려보세요</p>
+            `;
+      }
+    } else if (salesComparisonPercent < -5) {
+      // 클래스 변경
+      salesComparisonStatusElement.classList.remove(
+        "total-analysis-sales-comparison-status"
+      );
+      salesComparisonStatusElement.classList.add("total-analysis-status-bad");
+      // 텍스트 변경
+      salesComparisonStatusElement.innerText = "나쁨";
+      // 가격 코멘트 요소 업데이트
+      salesComparisonComentElement.innerHTML = `
+            <p>지난 주 판매량보다 ${salesComparisonPercent}% 감소했어요</p>
+            <p>인기 해시태그를 적용해 클릭률을 늘리거나 현재 트렌드를 반영하는 디자인을 체크해보세요</p>
+          `;
+    } else {
+      // 클래스 변경
+      salesComparisonStatusElement.classList.remove(
+        "total-analysis-sales-comparison-status"
+      );
+      salesComparisonStatusElement.classList.add("total-analysis-status-null");
+      // 텍스트 변경
+      salesComparisonStatusElement.innerText = "없음";
+      // 가격 코멘트 요소 업데이트
+      salesComparisonComentElement.innerHTML = `
+            <p>총 판매량이 0개입니다</p>
+            <p>판매량이 1개 이상일 때부터 분석이 가능해요</p>
+          `;
     }
   }); // 마지막1
 }; //마지막2

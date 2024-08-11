@@ -282,7 +282,18 @@ h1 {
   width: 8vw;
   font-size: large;
 }
-.total-analysis-good {
+.total-analysis-status-null {
+  width: 40px;
+  height: 25px;
+  padding: 1px;
+  border: 2px solid #b0b8c8;
+  color: #b0b8c8;
+  font-weight: bold;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 25px; /* height와 동일하게 설정 */
+}
+.total-analysis-status-good {
   width: 40px;
   height: 25px;
   padding: 1px;
@@ -293,7 +304,7 @@ h1 {
   text-align: center;
   line-height: 25px; /* height와 동일하게 설정 */
 }
-.total-analysis-normal {
+.total-analysis-status-normal {
   width: 40px;
   height: 25px;
   padding: 1px;
@@ -305,7 +316,7 @@ h1 {
   line-height: 25px; /* height와 동일하게 설정 */
 }
 
-.total-analysis-bad {
+.total-analysis-status-bad {
   width: 40px;
   height: 25px;
   padding: 1px;
@@ -316,13 +327,15 @@ h1 {
   text-align: center;
   line-height: 25px; /* height와 동일하게 설정 */
 }
-.total-analysis-coment {
-  /* width: 7vw;
-  height: 7vh; */
+/* .total-analysis-table {
+
+  font-size: smaller;
+  padding: 3px 0 3px 1vw;
+} */
+.total-analysis-table tr td:nth-child(3) p {
   font-size: smaller;
   padding: 3px 0 3px 1vw;
 }
-
 /* 플랫폼 분석---------------------------------------------- */
 .platform-analysis-content {
   border: 1px solid red;
