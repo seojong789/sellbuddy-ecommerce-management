@@ -1,3 +1,5 @@
+import { animateValue } from '../../components/util.js';
+
 const chartOptions = {
   responsive: true,
   maintainAspectRatio: false,
@@ -94,6 +96,8 @@ async function initializeCharts() {
       );
 
       weeklyChart.data.labels = Object.keys(salesData.weeklySales);
+      console.log(salesData);
+      console.log(salesData.weeklySales);
       weeklyChart.data.datasets[0].data = Object.values(salesData.weeklySales);
       weeklyChart.update();
 
@@ -103,14 +107,32 @@ async function initializeCharts() {
       yearlyChart.data.datasets[0].data = salesData.monthlySales;
       yearlyChart.update();
 
-      document.getElementById('sales-info').innerHTML = `
-      <p>${
-        new Date(selectedDate).getMonth() + 1
-      }월 매출: ${salesData.monthlySales[
-        new Date(selectedDate).getMonth()
-      ].toLocaleString()}원</p>
-      <p>${selectedDate}일 매출: ${salesData.dailySales.toLocaleString()}원</p>
-    `;
+      // 일(월) 매출
+      //   document.getElementById('sales-info').innerHTML = `
+      //   <p>${
+      //     new Date(selectedDate).getMonth() + 1
+      //   }월 매출: ${salesData.monthlySales[
+      //     new Date(selectedDate).getMonth()
+      //   ].toLocaleString()}원</p>
+      //   <p>${selectedDate}일 매출: ${salesData.dailySales.toLocaleString()}원</p>
+      // `;
+
+      const monthlySalesEmt = document.getElementById('monthly-sales');
+      const dailySalesEmt = document.getElementById('daily-sales');
+
+      const currentMonthlySales =
+        parseInt(monthlySalesEmt.innerText.replace(/,/g, '')) || 0;
+      const currentDailySales =
+        parseInt(dailySalesEmt.innerText.replace(/,/g, '')) || 0;
+      console.log('일', currentDailySales);
+
+      const newMonthlySales =
+        salesData.monthlySales[new Date(selectedDate).getMonth()];
+      const newDailySales = salesData.dailySales;
+      console.log('일2', newDailySales);
+
+      animateValue('monthly-sales', currentMonthlySales, newMonthlySales, 1000);
+      animateValue('daily-sales', currentDailySales, newDailySales, 1000);
     });
 }
 
@@ -120,6 +142,18 @@ function calculateSales(data, selectedDate = null, platform = 'total') {
   const monthlySales = Array(12).fill(0);
   let yearlySales = 0;
 
+  const selectedDateObj = new Date(selectedDate);
+  const startDate = new Date(selectedDateObj);
+  startDate.setDate(selectedDateObj.getDate() - 6); // 7일 전 날짜 계산
+
+  // 7일간의 날짜 키 생성
+  for (let i = 0; i < 7; i++) {
+    const currentDate = new Date(startDate);
+    currentDate.setDate(startDate.getDate() + i);
+    const dateKey = currentDate.toISOString().split('T')[0];
+    weeklySales[dateKey] = 0;
+  }
+
   data.forEach((product) => {
     product.platforms.forEach((platformData) => {
       if (platform === 'total' || platformData.platform === platform) {
@@ -127,24 +161,22 @@ function calculateSales(data, selectedDate = null, platform = 'total') {
           const saleDate = new Date(sale.date);
           const saleAmount = sale.quantity * product.price;
 
-          // 주간
-          const weekNumber = Math.ceil(saleDate.getDate() / 7);
-          const weekKey = `${saleDate.getFullYear()}-${
-            saleDate.getMonth() + 1
-          }-week${weekNumber}`;
-          if (!weeklySales[weekKey]) {
-            weeklySales[weekKey] = 0;
+          // 주간 매출 (선택한 날짜 기준 마지막 7일 동안의 매출만 계산)
+          if (saleDate >= startDate && saleDate <= selectedDateObj) {
+            const dateKey = saleDate.toISOString().split('T')[0];
+            if (weeklySales[dateKey] !== undefined) {
+              weeklySales[dateKey] += saleAmount;
+            }
           }
-          weeklySales[weekKey] += saleAmount;
 
-          // 분기
+          // 분기 매출
           const quarter = Math.floor(saleDate.getMonth() / 3);
           quarterlySales[quarter] += saleAmount;
 
-          // 월간
+          // 월간 매출
           monthlySales[saleDate.getMonth()] += saleAmount;
 
-          // 연간
+          // 연간 매출
           yearlySales += saleAmount;
         });
       }
@@ -172,96 +204,3 @@ function calculateSales(data, selectedDate = null, platform = 'total') {
 document.addEventListener('DOMContentLoaded', () => {
   initializeCharts();
 });
-
-// initializeCharts();
-
-// document.addEventListener('DOMContentLoaded', (event) => {
-//   const weeklyChart = new Chart(
-//     document.getElementById('week').getContext('2d'),
-//     {
-//       type: 'line',
-//       data: {
-//         labels: ['2/4', '2/5', '2/6', '2/7', '2/8', '2/9', '2/10'],
-//         datasets: [
-//           {
-//             label: '매출',
-//             data: [15000, 12000, 5800, 9000, 7600, 7000, 5800],
-//             borderWidth: 1,
-//           },
-//         ],
-//       },
-//       options: chartOptions,
-//     }
-//   );
-
-//   const quarterlyChart = new Chart(
-//     document.getElementById('quarter').getContext('2d'),
-//     {
-//       type: 'line',
-//       data: {
-//         labels: ['1분기', '2분기', '3분기', '4분기'],
-//         datasets: [
-//           {
-//             label: '매출',
-//             data: [1538000, 2838000, 1230000, 873000],
-//             backgroundColor: [
-//               'rgba(255, 206, 86, 0.2)',
-//               'rgba(54, 162, 235, 0.2)',
-//               'rgba(255, 99, 132, 0.2)',
-//               'rgba(255, 99, 132, 0.2)',
-//             ],
-//             borderColor: [
-//               'rgba(255, 206, 86, 1)',
-//               'rgba(54, 162, 235, 1)',
-//               'rgba(255, 99, 132, 1)',
-//               'rgba(255, 99, 132, 1)',
-//             ],
-//             borderWidth: 1,
-//           },
-//         ],
-//       },
-//       options: chartOptions,
-//     }
-//   );
-
-//   const yearlyChart = new Chart(
-//     document.getElementById('years').getContext('2d'),
-//     {
-//       type: 'line',
-//       data: {
-//         labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-//         datasets: [
-//           {
-//             label: '매출',
-//             data: [
-//               1538000, 2838000, 1230000, 873000, 1500000, 2000000, 1800000,
-//               2200000, 2200000, 2200000, 2200000, 2200000,
-//             ],
-//             backgroundColor: [
-//               'rgba(255, 206, 86, 0.2)',
-//               'rgba(54, 162, 235, 0.2)',
-//               'rgba(255, 99, 132, 0.2)',
-//               'rgba(255, 99, 132, 0.2)',
-//               'rgba(75, 192, 192, 0.2)',
-//               'rgba(153, 102, 255, 0.2)',
-//               'rgba(255, 159, 64, 0.2)',
-//               'rgba(201, 203, 207, 0.2)',
-//             ],
-//             borderColor: [
-//               'rgba(255, 206, 86, 1)',
-//               'rgba(54, 162, 235, 1)',
-//               'rgba(255, 99, 132, 1)',
-//               'rgba(255, 99, 132, 1)',
-//               'rgba(75, 192, 192, 1)',
-//               'rgba(153, 102, 255, 1)',
-//               'rgba(255, 159, 64, 1)',
-//               'rgba(201, 203, 207, 1)',
-//             ],
-//             borderWidth: 1,
-//           },
-//         ],
-//       },
-//       options: chartOptions,
-//     }
-//   );
-// });
