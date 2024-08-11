@@ -1,3 +1,5 @@
+/* 8.11수정 */
+
 main {
   width: calc(100vw - 80px);
   /* margin-left: 80px; */
@@ -131,9 +133,9 @@ h1 {
 .product-detail-info-table2 tr {
   height: 3vh;
 }
-.product-detail-info-table2 td {
-  /* border: 1px solid salmon; */
-}
+/* .product-detail-info-table2 td {
+  border: 1px solid salmon;
+} */
 .product-detail-info-table2 table:first-child {
   padding-right: 5vh;
 }
@@ -365,6 +367,10 @@ h1 {
 .total-analysis-coment {
   /* width: 7vw;
   height: 7vh; */
+  font-size: smaller;
+  padding: 3px 0 3px 1vw;
+}
+.platform-analysis-table tr td:nth-child(2) p {
   font-size: smaller;
   padding: 3px 0 3px 1vw;
 }
