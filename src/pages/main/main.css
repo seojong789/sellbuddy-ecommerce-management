@@ -2,12 +2,14 @@
   background-color: #f8f8f8;
   width: calc(100vw - 80px);
   height: calc(100vh - 20px);
-  padding: 10px;
+  padding: 10px 30px;
 
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto auto 1fr;
   gap: 10px;
+
+  text-align: center;
 }
 
 .content-box {
@@ -102,7 +104,7 @@
 }
 
 .list-title {
-  font-size: clamp(10px, 1vw, 15px);
+  font-size: clamp(10px, 1vw, 12px);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -110,7 +112,7 @@
 
 .list li {
   border-top: 1px solid gray;
-  padding: 5px 0px;
+  padding: 5px;
 
   display: flex;
   text-align: center;
@@ -119,7 +121,7 @@
 
 .list li span,
 .list li a {
-  font-size: clamp(10px, 1vw, 15px);
+  font-size: clamp(10px, 1vw, 12px);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -183,32 +185,34 @@
 #main-sales-calendar {
   grid-column: 4/7;
   grid-row-start: 3;
-
-  font-size: 10px;
 }
 
-#calendar *:not(.title) {
+#calendar *:not(.title):not(.year-month):not(p) {
   box-sizing: border-box;
 
   font-size: clamp(10px, 1vw, 12px);
 }
 
 #calendar {
-  padding: 5px;
+  max-height: 70%;
+  padding: 0px 20px 5px 20px;
 }
 
 .year-month {
-  padding: 0px 10px;
+  box-sizing: border-box;
+  padding: 5px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: clamp(10px, 1.5vw, 15px);
+  font-size: clamp(15px, 2vw, 20px);
+  font-weight: bold;
 }
 
 .weeks {
-  padding: 10px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
 
   display: flex;
   align-items: center;
@@ -216,16 +220,17 @@
 }
 
 .week {
+  border-right: 1px solid black;
   width: calc(100% / 7);
+  padding: 5px 0px;
 
+  font-weight: bold;
   text-align: center;
 }
 
 .days {
   border-top: 1px solid black;
   border-left: 1px solid black;
-  height: 200%;
-  min-height: 300px;
 
   display: flex;
   flex-flow: row wrap;
@@ -235,21 +240,26 @@
   border-bottom: 1px solid black;
   border-right: 1px solid black;
   width: calc(100% / 7);
+  min-height: 42px;
   padding: 5px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  text-align: left;
 }
 
 .day:has(.today) {
-  background-color: #f0f0;
+  border: 3px solid orange;
+}
+
+.day-number {
+  font-weight: bold;
 }
 
 .day-sale {
-  padding: 5px;
   color: black;
-
   text-align: right;
   white-space: nowrap;
   overflow: hidden;
@@ -258,6 +268,8 @@
 
 .day-sale-detail {
   background-color: navy;
+  margin: 0;
+  padding: 10px;
   opacity: 1;
 
   width: fit-content;
@@ -289,6 +301,10 @@
 
 .week:nth-child(7n + 1),
 .day:nth-child(7n + 1) {
+  color: red;
+}
+
+.holiday {
   color: red;
 }
 
