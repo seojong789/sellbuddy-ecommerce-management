@@ -1,6 +1,6 @@
 body {
   background-color: #f8f8f8;
-  color: #4B5675;
+  color: #4b5675;
   user-select: none;
 }
 
@@ -49,8 +49,6 @@ section {
   padding: 10px 0;
 }
 
-
-
 .item,
 ul .product-info {
   display: grid;
@@ -60,7 +58,7 @@ ul .product-info {
   font-weight: bold;
 }
 
-.item{
+.item {
   font-weight: bolder;
   color: #000;
 }
@@ -124,12 +122,12 @@ ul .product-info .product-name img {
   font-size: 20px;
 }
 
-.section-2 .temp{
+.section-2 .temp {
   display: flex;
   justify-content: space-between;
 }
 
-.section-2 .temp > form{
+.section-2 .temp > form {
   margin-right: 10px;
 }
 
@@ -149,14 +147,14 @@ ul .product-info .product-name img {
   grid-template-columns: 50px 3fr;
 }
 
-.section-2 .hashtag-rank-list{
+.section-2 .hashtag-rank-list {
   background-color: #f8f8f8;
   border-radius: 5px;
-  padding: 1px 0px 2px 0px ;
+  padding: 1px 0px 2px 0px;
   height: 37.5vh;
 }
 
-.section-3 .platform-sales-rank{
+.section-3 .platform-sales-rank {
   background-color: #f8f8f8;
   height: 25.5vh;
   border-radius: 5px;
@@ -165,7 +163,7 @@ ul .product-info .product-name img {
 .section-3 .sales-rank {
   grid-template-columns: 50px 2fr 120px;
 }
-.section-3 .platform-sales-rank :nth-child(1){
+.section-3 .platform-sales-rank :nth-child(1) {
   padding-top: 10px;
 }
 
@@ -181,7 +179,7 @@ ul .product-info .product-name img {
   margin: 10px 0;
 }
 
-input[type="date"],
+input[type='date'],
 select {
   background-color: #b0b8c8;
   color: #ffffff;
@@ -257,7 +255,7 @@ optgroup {
 }
 
 .btn-13:after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 0;
