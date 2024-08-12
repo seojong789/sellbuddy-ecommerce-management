@@ -10,6 +10,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
     <link rel="stylesheet" href="./index.css" />
+    <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -43,48 +45,33 @@
               </select>
             </form>
           </div>
-          <div class="item">
-            <div>제품명</div>
-            <div>플랫폼</div>
-            <div>가격</div>
-            <div>판매량</div>
-            <div>매출</div>
+          <div class="box">
+            <div class="item">
+              <div>제품명</div>
+              <div>플랫폼</div>
+              <div>가격</div>
+              <div>판매량</div>
+              <div>매출</div>
+            </div>
+            <ul class="registered-product-list">
+              <li class="product-info">
+                <a href="/src/pages/analysis/detail/analysis-detail.html?value=1" class="product-name">
+                  <span>
+                    <img
+                      src="/src/assets/images/목걸이1.jpg"
+                      alt="상품 대표 이미지"
+                    />
+                  </span>
+                  <span class="registered-product-name">골드 18K 목걸이</span>
+                </a>
+                <div class="registered-product-platform">지그재그</div>
+                <div class="registered-product-price">30,000 원</div>
+                <div class="registered-product-sales">49 개</div>
+                <div class="registered-product-total-sales">1,470,000 원</div>
+              </li>
+            </ul>
           </div>
-          <ul>
-            <li class="product-info">
-              <div class="product-name">
-                <span>
-                  <img
-                    src="/src/assets/images/목걸이1.jpg"
-                    alt="상품 대표 이미지"
-                  />
-                </span>
-                <a
-                  href="/src/pages/analysis/detail/analysis-detail.html?value=1"
-                  >골드 18K 목걸이</a
-                >
-              </div>
-              <div>지그재그</div>
-              <div>30,000 원</div>
-              <div>49 개</div>
-              <div>1,470,000 원</div>
-            </li>
-            <li class="product-info">
-              <div class="product-name">
-                <span>
-                  <img
-                    src="/src/assets/images/목걸이1.jpg"
-                    alt="상품 대표 이미지"
-                  />
-                </span>
-                <span>골드 18K 목걸이</span>
-              </div>
-              <div>지그재그</div>
-              <div>30,000 원</div>
-              <div>49 개</div>
-              <div>1,470,000 원</div>
-            </li>
-          </ul>
+          
 
           <div class="pages">
             <span><</span>
@@ -102,25 +89,14 @@
             <form>
               <label for="platform-rank"></label>
               <select id="platform-rank" name="platform-rank">
+                <option value="all">전체</option>
                 <option value="zigzag">지그재그</option>
                 <option value="ably">에이블리</option>
               </select>
             </form>
-            <ul>
+            <ul class="hashtag-rank-list">
               <li class="hashtag-rank">
                 <div class="rank">1</div>
-                <div class="hashtag-name">#윈터목걸이</div>
-              </li>
-              <li class="hashtag-rank">
-                <div class="rank">2</div>
-                <div class="hashtag-name">#여름팔찌</div>
-              </li>
-              <li class="hashtag-rank">
-                <div class="rank">3</div>
-                <div class="hashtag-name">#커플링</div>
-              </li>
-              <li class="hashtag-rank">
-                <div class="rank">4</div>
                 <div class="hashtag-name">#윈터목걸이</div>
               </li>
             </ul>
@@ -128,16 +104,11 @@
           <section class="section-3">
             <h2>플랫폼 매출 순위</h2>
 
-            <ul>
+            <ul class="paltform-sales-rank">
               <li class="sales-rank">
                 <div class="rank">1</div>
                 <div class="platform">지그재그</div>
                 <div class="total-sales">809,000</div>
-              </li>
-              <li class="sales-rank">
-                <div class="rank">2</div>
-                <div class="platform">에이블리</div>
-                <div class="total-sales">621,000</div>
               </li>
             </ul>
           </section>
@@ -145,5 +116,6 @@
       </div>
     </div>
     <script src="/src/components/sidebar.js" type="module"></script>
+    
   </body>
 </html>

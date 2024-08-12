@@ -5,8 +5,9 @@
     "age": "40s",
     "gender": "F",
     "description": "사랑스러운, 하트, 여성용, 데일리, 인기",
-    "price": 55555,
+    "price": 26300,
     "category": "Necklaces",
+    "img": "/src/assets/images/윈터착용BEST_베이비_하트_네크리스.jpg",
     "platforms": {
       "platform": "ably",
       "review": 10,
@@ -16,6 +17,7 @@
       "visitThisweek": 216,
       "hashtags": ["Rings", "패션", "트렌드", "인기", "스타일"],
       "registrationDate": "2023-01-01",
+
       "sales": [
         {
           "date": "2023-01-01",
@@ -658,8 +660,8 @@
     "age": "40s",
     "gender": "F",
     "description": "고급스러운, 진주, 반지, 실버, 데일리",
-    "price": "800000",
-    "category": "Necklaces",
+    "price": "38540",
+    "category": "Rings",
     "platforms": {
       "platform": "ably",
       "review": 6,
@@ -1308,7 +1310,7 @@
   {
     "id": 3,
     "name": "[여름특가] 심플 진주 발찌",
-    "age": "50s",
+    "age": "30s",
     "gender": "F",
     "description": "심플, 진주, 여름, 발찌, 여성용",
     "price": "18850",
@@ -1966,1290 +1968,647 @@
     "description": "고급스러운, 진주, 반지, 실버, 데일리",
     "price": 34510,
     "category": "Rings",
-    "platforms": [
-      {
-        "platform": "ably",
-        "visitLastweek": 200,
-        "visitThisweek": 201,
-        "hashtags": ["Rings", "패션", "트렌드", "인기", "스타일"],
-        "registrationDate": "2023-01-01",
-        "sales": [
-          {
-            "date": "2023-01-01",
-            "quantity": 3
-          },
-          {
-            "date": "2023-01-02",
-            "quantity": 25
-          },
-          {
-            "date": "2023-01-03",
-            "quantity": 5
-          },
-          {
-            "date": "2023-01-04",
-            "quantity": 32
-          },
-          {
-            "date": "2023-01-08",
-            "quantity": 1
-          },
-          {
-            "date": "2023-01-09",
-            "quantity": 38
-          },
-          {
-            "date": "2023-01-15",
-            "quantity": 29
-          },
-          {
-            "date": "2023-01-16",
-            "quantity": 35
-          },
-          {
-            "date": "2023-01-22",
-            "quantity": 31
-          },
-          {
-            "date": "2023-01-23",
-            "quantity": 42
-          },
-          {
-            "date": "2023-01-24",
-            "quantity": 22
-          },
-          {
-            "date": "2023-01-25",
-            "quantity": 28
-          },
-          {
-            "date": "2023-01-29",
-            "quantity": 29
-          },
-          {
-            "date": "2023-01-30",
-            "quantity": 25
-          },
-          {
-            "date": "2023-01-31",
-            "quantity": 6
-          },
-          {
-            "date": "2023-02-05",
-            "quantity": 27
-          },
-          {
-            "date": "2023-02-06",
-            "quantity": 38
-          },
-          {
-            "date": "2023-02-12",
-            "quantity": 48
-          },
-          {
-            "date": "2023-02-13",
-            "quantity": 49
-          },
-          {
-            "date": "2023-02-14",
-            "quantity": 9
-          },
-          {
-            "date": "2023-02-15",
-            "quantity": 45
-          },
-          {
-            "date": "2023-02-19",
-            "quantity": 24
-          },
-          {
-            "date": "2023-02-20",
-            "quantity": 4
-          },
-          {
-            "date": "2023-02-21",
-            "quantity": 4
-          },
-          {
-            "date": "2023-02-22",
-            "quantity": 33
-          },
-          {
-            "date": "2023-02-26",
-            "quantity": 10
-          },
-          {
-            "date": "2023-02-27",
-            "quantity": 9
-          },
-          {
-            "date": "2023-03-05",
-            "quantity": 48
-          },
-          {
-            "date": "2023-03-06",
-            "quantity": 47
-          },
-          {
-            "date": "2023-03-12",
-            "quantity": 11
-          },
-          {
-            "date": "2023-03-13",
-            "quantity": 5
-          },
-          {
-            "date": "2023-03-14",
-            "quantity": 47
-          },
-          {
-            "date": "2023-03-19",
-            "quantity": 30
-          },
-          {
-            "date": "2023-03-20",
-            "quantity": 6
-          },
-          {
-            "date": "2023-03-21",
-            "quantity": 31
-          },
-          {
-            "date": "2023-03-26",
-            "quantity": 31
-          },
-          {
-            "date": "2023-03-27",
-            "quantity": 31
-          },
-          {
-            "date": "2023-04-02",
-            "quantity": 36
-          },
-          {
-            "date": "2023-04-03",
-            "quantity": 5
-          },
-          {
-            "date": "2023-04-04",
-            "quantity": 46
-          },
-          {
-            "date": "2023-04-05",
-            "quantity": 43
-          },
-          {
-            "date": "2023-04-09",
-            "quantity": 10
-          },
-          {
-            "date": "2023-04-10",
-            "quantity": 48
-          },
-          {
-            "date": "2023-04-11",
-            "quantity": 10
-          },
-          {
-            "date": "2023-04-16",
-            "quantity": 24
-          },
-          {
-            "date": "2023-04-17",
-            "quantity": 4
-          },
-          {
-            "date": "2023-04-23",
-            "quantity": 25
-          },
-          {
-            "date": "2023-04-24",
-            "quantity": 23
-          },
-          {
-            "date": "2023-04-25",
-            "quantity": 19
-          },
-          {
-            "date": "2023-04-26",
-            "quantity": 5
-          },
-          {
-            "date": "2023-04-30",
-            "quantity": 26
-          },
-          {
-            "date": "2023-05-01",
-            "quantity": 24
-          },
-          {
-            "date": "2023-05-02",
-            "quantity": 20
-          },
-          {
-            "date": "2023-05-03",
-            "quantity": 29
-          },
-          {
-            "date": "2023-05-07",
-            "quantity": 18
-          },
-          {
-            "date": "2023-05-08",
-            "quantity": 48
-          },
-          {
-            "date": "2023-05-09",
-            "quantity": 20
-          },
-          {
-            "date": "2023-05-14",
-            "quantity": 5
-          },
-          {
-            "date": "2023-05-15",
-            "quantity": 21
-          },
-          {
-            "date": "2023-05-16",
-            "quantity": 32
-          },
-          {
-            "date": "2023-05-17",
-            "quantity": 47
-          },
-          {
-            "date": "2023-05-21",
-            "quantity": 14
-          },
-          {
-            "date": "2023-05-22",
-            "quantity": 41
-          },
-          {
-            "date": "2023-05-28",
-            "quantity": 13
-          },
-          {
-            "date": "2023-05-29",
-            "quantity": 4
-          },
-          {
-            "date": "2023-05-30",
-            "quantity": 7
-          },
-          {
-            "date": "2023-06-04",
-            "quantity": 28
-          },
-          {
-            "date": "2023-06-05",
-            "quantity": 48
-          },
-          {
-            "date": "2023-06-11",
-            "quantity": 44
-          },
-          {
-            "date": "2023-06-12",
-            "quantity": 50
-          },
-          {
-            "date": "2023-06-13",
-            "quantity": 15
-          },
-          {
-            "date": "2023-06-18",
-            "quantity": 19
-          },
-          {
-            "date": "2023-06-19",
-            "quantity": 12
-          },
-          {
-            "date": "2023-06-20",
-            "quantity": 42
-          },
-          {
-            "date": "2023-06-25",
-            "quantity": 41
-          },
-          {
-            "date": "2023-06-26",
-            "quantity": 32
-          },
-          {
-            "date": "2023-06-27",
-            "quantity": 40
-          },
-          {
-            "date": "2023-06-28",
-            "quantity": 20
-          },
-          {
-            "date": "2023-07-02",
-            "quantity": 26
-          },
-          {
-            "date": "2023-07-03",
-            "quantity": 29
-          },
-          {
-            "date": "2023-07-09",
-            "quantity": 5
-          },
-          {
-            "date": "2023-07-10",
-            "quantity": 50
-          },
-          {
-            "date": "2023-07-11",
-            "quantity": 37
-          },
-          {
-            "date": "2023-07-12",
-            "quantity": 24
-          },
-          {
-            "date": "2023-07-16",
-            "quantity": 38
-          },
-          {
-            "date": "2023-07-17",
-            "quantity": 42
-          },
-          {
-            "date": "2023-07-18",
-            "quantity": 17
-          },
-          {
-            "date": "2023-07-23",
-            "quantity": 43
-          },
-          {
-            "date": "2023-07-24",
-            "quantity": 34
-          },
-          {
-            "date": "2023-07-25",
-            "quantity": 29
-          },
-          {
-            "date": "2023-07-30",
-            "quantity": 6
-          },
-          {
-            "date": "2023-07-31",
-            "quantity": 12
-          },
-          {
-            "date": "2023-08-01",
-            "quantity": 20
-          },
-          {
-            "date": "2023-08-02",
-            "quantity": 36
-          },
-          {
-            "date": "2023-08-06",
-            "quantity": 25
-          },
-          {
-            "date": "2023-08-07",
-            "quantity": 42
-          },
-          {
-            "date": "2023-08-08",
-            "quantity": 18
-          },
-          {
-            "date": "2023-08-13",
-            "quantity": 7
-          },
-          {
-            "date": "2023-08-14",
-            "quantity": 6
-          },
-          {
-            "date": "2023-08-20",
-            "quantity": 36
-          },
-          {
-            "date": "2023-08-21",
-            "quantity": 41
-          },
-          {
-            "date": "2023-08-27",
-            "quantity": 36
-          },
-          {
-            "date": "2023-08-28",
-            "quantity": 24
-          },
-          {
-            "date": "2023-09-03",
-            "quantity": 14
-          },
-          {
-            "date": "2023-09-04",
-            "quantity": 17
-          },
-          {
-            "date": "2023-09-05",
-            "quantity": 35
-          },
-          {
-            "date": "2023-09-10",
-            "quantity": 5
-          },
-          {
-            "date": "2023-09-11",
-            "quantity": 31
-          },
-          {
-            "date": "2023-09-12",
-            "quantity": 8
-          },
-          {
-            "date": "2023-09-17",
-            "quantity": 29
-          },
-          {
-            "date": "2023-09-18",
-            "quantity": 41
-          },
-          {
-            "date": "2023-09-19",
-            "quantity": 26
-          },
-          {
-            "date": "2023-09-24",
-            "quantity": 30
-          },
-          {
-            "date": "2023-09-25",
-            "quantity": 7
-          },
-          {
-            "date": "2023-10-01",
-            "quantity": 37
-          },
-          {
-            "date": "2023-10-02",
-            "quantity": 13
-          },
-          {
-            "date": "2023-10-03",
-            "quantity": 50
-          },
-          {
-            "date": "2023-10-04",
-            "quantity": 33
-          },
-          {
-            "date": "2023-10-08",
-            "quantity": 3
-          },
-          {
-            "date": "2023-10-09",
-            "quantity": 11
-          },
-          {
-            "date": "2023-10-10",
-            "quantity": 11
-          },
-          {
-            "date": "2023-10-11",
-            "quantity": 48
-          },
-          {
-            "date": "2023-10-15",
-            "quantity": 24
-          },
-          {
-            "date": "2023-10-16",
-            "quantity": 31
-          },
-          {
-            "date": "2023-10-17",
-            "quantity": 39
-          },
-          {
-            "date": "2023-10-18",
-            "quantity": 11
-          },
-          {
-            "date": "2023-10-22",
-            "quantity": 20
-          },
-          {
-            "date": "2023-10-23",
-            "quantity": 21
-          },
-          {
-            "date": "2023-10-24",
-            "quantity": 44
-          },
-          {
-            "date": "2023-10-29",
-            "quantity": 6
-          },
-          {
-            "date": "2023-10-30",
-            "quantity": 28
-          },
-          {
-            "date": "2023-11-05",
-            "quantity": 15
-          },
-          {
-            "date": "2023-11-06",
-            "quantity": 31
-          },
-          {
-            "date": "2023-11-12",
-            "quantity": 46
-          },
-          {
-            "date": "2023-11-13",
-            "quantity": 1
-          },
-          {
-            "date": "2023-11-14",
-            "quantity": 1
-          },
-          {
-            "date": "2023-11-15",
-            "quantity": 24
-          },
-          {
-            "date": "2023-11-19",
-            "quantity": 28
-          },
-          {
-            "date": "2023-11-20",
-            "quantity": 49
-          },
-          {
-            "date": "2023-11-21",
-            "quantity": 40
-          },
-          {
-            "date": "2023-11-22",
-            "quantity": 49
-          },
-          {
-            "date": "2023-11-26",
-            "quantity": 38
-          },
-          {
-            "date": "2023-11-27",
-            "quantity": 11
-          },
-          {
-            "date": "2023-11-28",
-            "quantity": 44
-          },
-          {
-            "date": "2023-11-29",
-            "quantity": 16
-          },
-          {
-            "date": "2023-12-03",
-            "quantity": 43
-          },
-          {
-            "date": "2023-12-04",
-            "quantity": 16
-          },
-          {
-            "date": "2023-12-05",
-            "quantity": 38
-          },
-          {
-            "date": "2023-12-10",
-            "quantity": 16
-          },
-          {
-            "date": "2023-12-11",
-            "quantity": 23
-          },
-          {
-            "date": "2023-12-17",
-            "quantity": 7
-          },
-          {
-            "date": "2023-12-18",
-            "quantity": 11
-          },
-          {
-            "date": "2023-12-19",
-            "quantity": 11
-          },
-          {
-            "date": "2023-12-20",
-            "quantity": 49
-          },
-          {
-            "date": "2023-12-24",
-            "quantity": 17
-          },
-          {
-            "date": "2023-12-25",
-            "quantity": 21
-          },
-          {
-            "date": "2023-12-26",
-            "quantity": 44
-          },
-          {
-            "date": "2023-12-31",
-            "quantity": 7
-          }
-        ]
-      },
-      {
-        "platform": "zigzag",
-        "visitLastweek": 148,
-        "visitThisweek": 200,
-        "hashtags": ["Rings", "패션", "트렌드", "인기", "스타일"],
-        "registrationDate": "2023-01-01",
-        "sales": [
-          {
-            "date": "2023-01-01",
-            "quantity": 50
-          },
-          {
-            "date": "2023-01-02",
-            "quantity": 20
-          },
-          {
-            "date": "2023-01-03",
-            "quantity": 7
-          },
-          {
-            "date": "2023-01-04",
-            "quantity": 1
-          },
-          {
-            "date": "2023-01-08",
-            "quantity": 9
-          },
-          {
-            "date": "2023-01-09",
-            "quantity": 29
-          },
-          {
-            "date": "2023-01-15",
-            "quantity": 12
-          },
-          {
-            "date": "2023-01-16",
-            "quantity": 5
-          },
-          {
-            "date": "2023-01-22",
-            "quantity": 18
-          },
-          {
-            "date": "2023-01-23",
-            "quantity": 21
-          },
-          {
-            "date": "2023-01-24",
-            "quantity": 26
-          },
-          {
-            "date": "2023-01-25",
-            "quantity": 20
-          },
-          {
-            "date": "2023-01-29",
-            "quantity": 32
-          },
-          {
-            "date": "2023-01-30",
-            "quantity": 7
-          },
-          {
-            "date": "2023-01-31",
-            "quantity": 42
-          },
-          {
-            "date": "2023-02-05",
-            "quantity": 44
-          },
-          {
-            "date": "2023-02-06",
-            "quantity": 17
-          },
-          {
-            "date": "2023-02-12",
-            "quantity": 42
-          },
-          {
-            "date": "2023-02-13",
-            "quantity": 21
-          },
-          {
-            "date": "2023-02-14",
-            "quantity": 39
-          },
-          {
-            "date": "2023-02-15",
-            "quantity": 50
-          },
-          {
-            "date": "2023-02-19",
-            "quantity": 32
-          },
-          {
-            "date": "2023-02-20",
-            "quantity": 25
-          },
-          {
-            "date": "2023-02-21",
-            "quantity": 23
-          },
-          {
-            "date": "2023-02-22",
-            "quantity": 10
-          },
-          {
-            "date": "2023-02-26",
-            "quantity": 8
-          },
-          {
-            "date": "2023-02-27",
-            "quantity": 20
-          },
-          {
-            "date": "2023-03-05",
-            "quantity": 18
-          },
-          {
-            "date": "2023-03-06",
-            "quantity": 17
-          },
-          {
-            "date": "2023-03-12",
-            "quantity": 36
-          },
-          {
-            "date": "2023-03-13",
-            "quantity": 25
-          },
-          {
-            "date": "2023-03-14",
-            "quantity": 6
-          },
-          {
-            "date": "2023-03-19",
-            "quantity": 14
-          },
-          {
-            "date": "2023-03-20",
-            "quantity": 1
-          },
-          {
-            "date": "2023-03-21",
-            "quantity": 35
-          },
-          {
-            "date": "2023-03-26",
-            "quantity": 29
-          },
-          {
-            "date": "2023-03-27",
-            "quantity": 23
-          },
-          {
-            "date": "2023-04-02",
-            "quantity": 44
-          },
-          {
-            "date": "2023-04-03",
-            "quantity": 48
-          },
-          {
-            "date": "2023-04-04",
-            "quantity": 17
-          },
-          {
-            "date": "2023-04-05",
-            "quantity": 39
-          },
-          {
-            "date": "2023-04-09",
-            "quantity": 22
-          },
-          {
-            "date": "2023-04-10",
-            "quantity": 35
-          },
-          {
-            "date": "2023-04-11",
-            "quantity": 8
-          },
-          {
-            "date": "2023-04-16",
-            "quantity": 16
-          },
-          {
-            "date": "2023-04-17",
-            "quantity": 17
-          },
-          {
-            "date": "2023-04-23",
-            "quantity": 50
-          },
-          {
-            "date": "2023-04-24",
-            "quantity": 37
-          },
-          {
-            "date": "2023-04-25",
-            "quantity": 10
-          },
-          {
-            "date": "2023-04-26",
-            "quantity": 7
-          },
-          {
-            "date": "2023-04-30",
-            "quantity": 43
-          },
-          {
-            "date": "2023-05-01",
-            "quantity": 36
-          },
-          {
-            "date": "2023-05-02",
-            "quantity": 48
-          },
-          {
-            "date": "2023-05-03",
-            "quantity": 49
-          },
-          {
-            "date": "2023-05-07",
-            "quantity": 24
-          },
-          {
-            "date": "2023-05-08",
-            "quantity": 44
-          },
-          {
-            "date": "2023-05-09",
-            "quantity": 1
-          },
-          {
-            "date": "2023-05-14",
-            "quantity": 9
-          },
-          {
-            "date": "2023-05-15",
-            "quantity": 23
-          },
-          {
-            "date": "2023-05-16",
-            "quantity": 39
-          },
-          {
-            "date": "2023-05-17",
-            "quantity": 14
-          },
-          {
-            "date": "2023-05-21",
-            "quantity": 40
-          },
-          {
-            "date": "2023-05-22",
-            "quantity": 6
-          },
-          {
-            "date": "2023-05-28",
-            "quantity": 44
-          },
-          {
-            "date": "2023-05-29",
-            "quantity": 47
-          },
-          {
-            "date": "2023-05-30",
-            "quantity": 5
-          },
-          {
-            "date": "2023-06-04",
-            "quantity": 30
-          },
-          {
-            "date": "2023-06-05",
-            "quantity": 13
-          },
-          {
-            "date": "2023-06-11",
-            "quantity": 35
-          },
-          {
-            "date": "2023-06-12",
-            "quantity": 50
-          },
-          {
-            "date": "2023-06-13",
-            "quantity": 31
-          },
-          {
-            "date": "2023-06-18",
-            "quantity": 27
-          },
-          {
-            "date": "2023-06-19",
-            "quantity": 50
-          },
-          {
-            "date": "2023-06-20",
-            "quantity": 40
-          },
-          {
-            "date": "2023-06-25",
-            "quantity": 37
-          },
-          {
-            "date": "2023-06-26",
-            "quantity": 25
-          },
-          {
-            "date": "2023-06-27",
-            "quantity": 48
-          },
-          {
-            "date": "2023-06-28",
-            "quantity": 10
-          },
-          {
-            "date": "2023-07-02",
-            "quantity": 49
-          },
-          {
-            "date": "2023-07-03",
-            "quantity": 44
-          },
-          {
-            "date": "2023-07-09",
-            "quantity": 29
-          },
-          {
-            "date": "2023-07-10",
-            "quantity": 33
-          },
-          {
-            "date": "2023-07-11",
-            "quantity": 5
-          },
-          {
-            "date": "2023-07-12",
-            "quantity": 9
-          },
-          {
-            "date": "2023-07-16",
-            "quantity": 25
-          },
-          {
-            "date": "2023-07-17",
-            "quantity": 25
-          },
-          {
-            "date": "2023-07-18",
-            "quantity": 43
-          },
-          {
-            "date": "2023-07-23",
-            "quantity": 7
-          },
-          {
-            "date": "2023-07-24",
-            "quantity": 5
-          },
-          {
-            "date": "2023-07-25",
-            "quantity": 6
-          },
-          {
-            "date": "2023-07-30",
-            "quantity": 17
-          },
-          {
-            "date": "2023-07-31",
-            "quantity": 11
-          },
-          {
-            "date": "2023-08-01",
-            "quantity": 45
-          },
-          {
-            "date": "2023-08-02",
-            "quantity": 22
-          },
-          {
-            "date": "2023-08-06",
-            "quantity": 34
-          },
-          {
-            "date": "2023-08-07",
-            "quantity": 13
-          },
-          {
-            "date": "2023-08-08",
-            "quantity": 49
-          },
-          {
-            "date": "2023-08-13",
-            "quantity": 29
-          },
-          {
-            "date": "2023-08-14",
-            "quantity": 37
-          },
-          {
-            "date": "2023-08-20",
-            "quantity": 28
-          },
-          {
-            "date": "2023-08-21",
-            "quantity": 21
-          },
-          {
-            "date": "2023-08-27",
-            "quantity": 44
-          },
-          {
-            "date": "2023-08-28",
-            "quantity": 44
-          },
-          {
-            "date": "2023-09-03",
-            "quantity": 25
-          },
-          {
-            "date": "2023-09-04",
-            "quantity": 14
-          },
-          {
-            "date": "2023-09-05",
-            "quantity": 42
-          },
-          {
-            "date": "2023-09-10",
-            "quantity": 1
-          },
-          {
-            "date": "2023-09-11",
-            "quantity": 6
-          },
-          {
-            "date": "2023-09-12",
-            "quantity": 33
-          },
-          {
-            "date": "2023-09-17",
-            "quantity": 27
-          },
-          {
-            "date": "2023-09-18",
-            "quantity": 41
-          },
-          {
-            "date": "2023-09-19",
-            "quantity": 9
-          },
-          {
-            "date": "2023-09-24",
-            "quantity": 48
-          },
-          {
-            "date": "2023-09-25",
-            "quantity": 44
-          },
-          {
-            "date": "2023-10-01",
-            "quantity": 5
-          },
-          {
-            "date": "2023-10-02",
-            "quantity": 43
-          },
-          {
-            "date": "2023-10-03",
-            "quantity": 4
-          },
-          {
-            "date": "2023-10-04",
-            "quantity": 20
-          },
-          {
-            "date": "2023-10-08",
-            "quantity": 48
-          },
-          {
-            "date": "2023-10-09",
-            "quantity": 22
-          },
-          {
-            "date": "2023-10-10",
-            "quantity": 29
-          },
-          {
-            "date": "2023-10-11",
-            "quantity": 8
-          },
-          {
-            "date": "2023-10-15",
-            "quantity": 19
-          },
-          {
-            "date": "2023-10-16",
-            "quantity": 7
-          },
-          {
-            "date": "2023-10-17",
-            "quantity": 12
-          },
-          {
-            "date": "2023-10-18",
-            "quantity": 45
-          },
-          {
-            "date": "2023-10-22",
-            "quantity": 10
-          },
-          {
-            "date": "2023-10-23",
-            "quantity": 17
-          },
-          {
-            "date": "2023-10-24",
-            "quantity": 1
-          },
-          {
-            "date": "2023-10-29",
-            "quantity": 45
-          },
-          {
-            "date": "2023-10-30",
-            "quantity": 35
-          },
-          {
-            "date": "2023-11-05",
-            "quantity": 19
-          },
-          {
-            "date": "2023-11-06",
-            "quantity": 6
-          },
-          {
-            "date": "2023-11-12",
-            "quantity": 14
-          },
-          {
-            "date": "2023-11-13",
-            "quantity": 10
-          },
-          {
-            "date": "2023-11-14",
-            "quantity": 25
-          },
-          {
-            "date": "2023-11-15",
-            "quantity": 25
-          },
-          {
-            "date": "2023-11-19",
-            "quantity": 1
-          },
-          {
-            "date": "2023-11-20",
-            "quantity": 19
-          },
-          {
-            "date": "2023-11-21",
-            "quantity": 2
-          },
-          {
-            "date": "2023-11-22",
-            "quantity": 46
-          },
-          {
-            "date": "2023-11-26",
-            "quantity": 48
-          },
-          {
-            "date": "2023-11-27",
-            "quantity": 42
-          },
-          {
-            "date": "2023-11-28",
-            "quantity": 38
-          },
-          {
-            "date": "2023-11-29",
-            "quantity": 35
-          },
-          {
-            "date": "2023-12-03",
-            "quantity": 39
-          },
-          {
-            "date": "2023-12-04",
-            "quantity": 33
-          },
-          {
-            "date": "2023-12-05",
-            "quantity": 35
-          },
-          {
-            "date": "2023-12-10",
-            "quantity": 17
-          },
-          {
-            "date": "2023-12-11",
-            "quantity": 13
-          },
-          {
-            "date": "2023-12-17",
-            "quantity": 50
-          },
-          {
-            "date": "2023-12-18",
-            "quantity": 18
-          },
-          {
-            "date": "2023-12-19",
-            "quantity": 17
-          },
-          {
-            "date": "2023-12-20",
-            "quantity": 30
-          },
-          {
-            "date": "2023-12-24",
-            "quantity": 39
-          },
-          {
-            "date": "2023-12-25",
-            "quantity": 5
-          },
-          {
-            "date": "2023-12-26",
-            "quantity": 20
-          },
-          {
-            "date": "2023-12-31",
-            "quantity": 2
-          }
-        ]
-      }
-    ]
+    "platforms": {
+      "platform": "ably",
+      "visitLastweek": 200,
+      "visitThisweek": 201,
+      "hashtags": ["Rings", "패션", "트렌드", "인기", "스타일"],
+      "registrationDate": "2023-01-01",
+      "sales": [
+        {
+          "date": "2023-01-01",
+          "quantity": 3
+        },
+        {
+          "date": "2023-01-02",
+          "quantity": 25
+        },
+        {
+          "date": "2023-01-03",
+          "quantity": 5
+        },
+        {
+          "date": "2023-01-04",
+          "quantity": 32
+        },
+        {
+          "date": "2023-01-08",
+          "quantity": 1
+        },
+        {
+          "date": "2023-01-09",
+          "quantity": 38
+        },
+        {
+          "date": "2023-01-15",
+          "quantity": 29
+        },
+        {
+          "date": "2023-01-16",
+          "quantity": 35
+        },
+        {
+          "date": "2023-01-22",
+          "quantity": 31
+        },
+        {
+          "date": "2023-01-23",
+          "quantity": 42
+        },
+        {
+          "date": "2023-01-24",
+          "quantity": 22
+        },
+        {
+          "date": "2023-01-25",
+          "quantity": 28
+        },
+        {
+          "date": "2023-01-29",
+          "quantity": 29
+        },
+        {
+          "date": "2023-01-30",
+          "quantity": 25
+        },
+        {
+          "date": "2023-01-31",
+          "quantity": 6
+        },
+        {
+          "date": "2023-02-05",
+          "quantity": 27
+        },
+        {
+          "date": "2023-02-06",
+          "quantity": 38
+        },
+        {
+          "date": "2023-02-12",
+          "quantity": 48
+        },
+        {
+          "date": "2023-02-13",
+          "quantity": 49
+        },
+        {
+          "date": "2023-02-14",
+          "quantity": 9
+        },
+        {
+          "date": "2023-02-15",
+          "quantity": 45
+        },
+        {
+          "date": "2023-02-19",
+          "quantity": 24
+        },
+        {
+          "date": "2023-02-20",
+          "quantity": 4
+        },
+        {
+          "date": "2023-02-21",
+          "quantity": 4
+        },
+        {
+          "date": "2023-02-22",
+          "quantity": 33
+        },
+        {
+          "date": "2023-02-26",
+          "quantity": 10
+        },
+        {
+          "date": "2023-02-27",
+          "quantity": 9
+        },
+        {
+          "date": "2023-03-05",
+          "quantity": 48
+        },
+        {
+          "date": "2023-03-06",
+          "quantity": 47
+        },
+        {
+          "date": "2023-03-12",
+          "quantity": 11
+        },
+        {
+          "date": "2023-03-13",
+          "quantity": 5
+        },
+        {
+          "date": "2023-03-14",
+          "quantity": 47
+        },
+        {
+          "date": "2023-03-19",
+          "quantity": 30
+        },
+        {
+          "date": "2023-03-20",
+          "quantity": 6
+        },
+        {
+          "date": "2023-03-21",
+          "quantity": 31
+        },
+        {
+          "date": "2023-03-26",
+          "quantity": 31
+        },
+        {
+          "date": "2023-03-27",
+          "quantity": 31
+        },
+        {
+          "date": "2023-04-02",
+          "quantity": 36
+        },
+        {
+          "date": "2023-04-03",
+          "quantity": 5
+        },
+        {
+          "date": "2023-04-04",
+          "quantity": 46
+        },
+        {
+          "date": "2023-04-05",
+          "quantity": 43
+        },
+        {
+          "date": "2023-04-09",
+          "quantity": 10
+        },
+        {
+          "date": "2023-04-10",
+          "quantity": 48
+        },
+        {
+          "date": "2023-04-11",
+          "quantity": 10
+        },
+        {
+          "date": "2023-04-16",
+          "quantity": 24
+        },
+        {
+          "date": "2023-04-17",
+          "quantity": 4
+        },
+        {
+          "date": "2023-04-23",
+          "quantity": 25
+        },
+        {
+          "date": "2023-04-24",
+          "quantity": 23
+        },
+        {
+          "date": "2023-04-25",
+          "quantity": 19
+        },
+        {
+          "date": "2023-04-26",
+          "quantity": 5
+        },
+        {
+          "date": "2023-04-30",
+          "quantity": 26
+        },
+        {
+          "date": "2023-05-01",
+          "quantity": 24
+        },
+        {
+          "date": "2023-05-02",
+          "quantity": 20
+        },
+        {
+          "date": "2023-05-03",
+          "quantity": 29
+        },
+        {
+          "date": "2023-05-07",
+          "quantity": 18
+        },
+        {
+          "date": "2023-05-08",
+          "quantity": 48
+        },
+        {
+          "date": "2023-05-09",
+          "quantity": 20
+        },
+        {
+          "date": "2023-05-14",
+          "quantity": 5
+        },
+        {
+          "date": "2023-05-15",
+          "quantity": 21
+        },
+        {
+          "date": "2023-05-16",
+          "quantity": 32
+        },
+        {
+          "date": "2023-05-17",
+          "quantity": 47
+        },
+        {
+          "date": "2023-05-21",
+          "quantity": 14
+        },
+        {
+          "date": "2023-05-22",
+          "quantity": 41
+        },
+        {
+          "date": "2023-05-28",
+          "quantity": 13
+        },
+        {
+          "date": "2023-05-29",
+          "quantity": 4
+        },
+        {
+          "date": "2023-05-30",
+          "quantity": 7
+        },
+        {
+          "date": "2023-06-04",
+          "quantity": 28
+        },
+        {
+          "date": "2023-06-05",
+          "quantity": 48
+        },
+        {
+          "date": "2023-06-11",
+          "quantity": 44
+        },
+        {
+          "date": "2023-06-12",
+          "quantity": 50
+        },
+        {
+          "date": "2023-06-13",
+          "quantity": 15
+        },
+        {
+          "date": "2023-06-18",
+          "quantity": 19
+        },
+        {
+          "date": "2023-06-19",
+          "quantity": 12
+        },
+        {
+          "date": "2023-06-20",
+          "quantity": 42
+        },
+        {
+          "date": "2023-06-25",
+          "quantity": 41
+        },
+        {
+          "date": "2023-06-26",
+          "quantity": 32
+        },
+        {
+          "date": "2023-06-27",
+          "quantity": 40
+        },
+        {
+          "date": "2023-06-28",
+          "quantity": 20
+        },
+        {
+          "date": "2023-07-02",
+          "quantity": 26
+        },
+        {
+          "date": "2023-07-03",
+          "quantity": 29
+        },
+        {
+          "date": "2023-07-09",
+          "quantity": 5
+        },
+        {
+          "date": "2023-07-10",
+          "quantity": 50
+        },
+        {
+          "date": "2023-07-11",
+          "quantity": 37
+        },
+        {
+          "date": "2023-07-12",
+          "quantity": 24
+        },
+        {
+          "date": "2023-07-16",
+          "quantity": 38
+        },
+        {
+          "date": "2023-07-17",
+          "quantity": 42
+        },
+        {
+          "date": "2023-07-18",
+          "quantity": 17
+        },
+        {
+          "date": "2023-07-23",
+          "quantity": 43
+        },
+        {
+          "date": "2023-07-24",
+          "quantity": 34
+        },
+        {
+          "date": "2023-07-25",
+          "quantity": 29
+        },
+        {
+          "date": "2023-07-30",
+          "quantity": 6
+        },
+        {
+          "date": "2023-07-31",
+          "quantity": 12
+        },
+        {
+          "date": "2023-08-01",
+          "quantity": 20
+        },
+        {
+          "date": "2023-08-02",
+          "quantity": 36
+        },
+        {
+          "date": "2023-08-06",
+          "quantity": 25
+        },
+        {
+          "date": "2023-08-07",
+          "quantity": 42
+        },
+        {
+          "date": "2023-08-08",
+          "quantity": 18
+        },
+        {
+          "date": "2023-08-13",
+          "quantity": 7
+        },
+        {
+          "date": "2023-08-14",
+          "quantity": 6
+        },
+        {
+          "date": "2023-08-20",
+          "quantity": 36
+        },
+        {
+          "date": "2023-08-21",
+          "quantity": 41
+        },
+        {
+          "date": "2023-08-27",
+          "quantity": 36
+        },
+        {
+          "date": "2023-08-28",
+          "quantity": 24
+        },
+        {
+          "date": "2023-09-03",
+          "quantity": 14
+        },
+        {
+          "date": "2023-09-04",
+          "quantity": 17
+        },
+        {
+          "date": "2023-09-05",
+          "quantity": 35
+        },
+        {
+          "date": "2023-09-10",
+          "quantity": 5
+        },
+        {
+          "date": "2023-09-11",
+          "quantity": 31
+        },
+        {
+          "date": "2023-09-12",
+          "quantity": 8
+        },
+        {
+          "date": "2023-09-17",
+          "quantity": 29
+        },
+        {
+          "date": "2023-09-18",
+          "quantity": 41
+        },
+        {
+          "date": "2023-09-19",
+          "quantity": 26
+        },
+        {
+          "date": "2023-09-24",
+          "quantity": 30
+        },
+        {
+          "date": "2023-09-25",
+          "quantity": 7
+        },
+        {
+          "date": "2023-10-01",
+          "quantity": 37
+        },
+        {
+          "date": "2023-10-02",
+          "quantity": 13
+        },
+        {
+          "date": "2023-10-03",
+          "quantity": 50
+        },
+        {
+          "date": "2023-10-04",
+          "quantity": 33
+        },
+        {
+          "date": "2023-10-08",
+          "quantity": 3
+        },
+        {
+          "date": "2023-10-09",
+          "quantity": 11
+        },
+        {
+          "date": "2023-10-10",
+          "quantity": 11
+        },
+        {
+          "date": "2023-10-11",
+          "quantity": 48
+        },
+        {
+          "date": "2023-10-15",
+          "quantity": 24
+        },
+        {
+          "date": "2023-10-16",
+          "quantity": 31
+        },
+        {
+          "date": "2023-10-17",
+          "quantity": 39
+        },
+        {
+          "date": "2023-10-18",
+          "quantity": 11
+        },
+        {
+          "date": "2023-10-22",
+          "quantity": 20
+        },
+        {
+          "date": "2023-10-23",
+          "quantity": 21
+        },
+        {
+          "date": "2023-10-24",
+          "quantity": 44
+        },
+        {
+          "date": "2023-10-29",
+          "quantity": 6
+        },
+        {
+          "date": "2023-10-30",
+          "quantity": 28
+        },
+        {
+          "date": "2023-11-05",
+          "quantity": 15
+        },
+        {
+          "date": "2023-11-06",
+          "quantity": 31
+        },
+        {
+          "date": "2023-11-12",
+          "quantity": 46
+        },
+        {
+          "date": "2023-11-13",
+          "quantity": 1
+        },
+        {
+          "date": "2023-11-14",
+          "quantity": 1
+        },
+        {
+          "date": "2023-11-15",
+          "quantity": 24
+        },
+        {
+          "date": "2023-11-19",
+          "quantity": 28
+        },
+        {
+          "date": "2023-11-20",
+          "quantity": 49
+        },
+        {
+          "date": "2023-11-21",
+          "quantity": 40
+        },
+        {
+          "date": "2023-11-22",
+          "quantity": 49
+        },
+        {
+          "date": "2023-11-26",
+          "quantity": 38
+        },
+        {
+          "date": "2023-11-27",
+          "quantity": 11
+        },
+        {
+          "date": "2023-11-28",
+          "quantity": 44
+        },
+        {
+          "date": "2023-11-29",
+          "quantity": 16
+        },
+        {
+          "date": "2023-12-03",
+          "quantity": 43
+        },
+        {
+          "date": "2023-12-04",
+          "quantity": 16
+        },
+        {
+          "date": "2023-12-05",
+          "quantity": 38
+        },
+        {
+          "date": "2023-12-10",
+          "quantity": 16
+        },
+        {
+          "date": "2023-12-11",
+          "quantity": 23
+        },
+        {
+          "date": "2023-12-17",
+          "quantity": 7
+        },
+        {
+          "date": "2023-12-18",
+          "quantity": 11
+        },
+        {
+          "date": "2023-12-19",
+          "quantity": 11
+        },
+        {
+          "date": "2023-12-20",
+          "quantity": 49
+        },
+        {
+          "date": "2023-12-24",
+          "quantity": 17
+        },
+        {
+          "date": "2023-12-25",
+          "quantity": 21
+        },
+        {
+          "date": "2023-12-26",
+          "quantity": 44
+        },
+        {
+          "date": "2023-12-31",
+          "quantity": 7
+        }
+      ]
+    }
   },
   {
     "id": 5,
