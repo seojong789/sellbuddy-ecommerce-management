@@ -17,7 +17,8 @@ window.onload = () => {
     let avgCategoryPrice = 0; //평균가
     let productPlatform = productId.platforms.platform; //상품등록된 플랫폼
     let productCategory = productId.category; //상품의 카테고리
-    let productTotalSales = 0; //상품 총매출
+    let productsalesVolume = 0; // 상품 판매량
+    let productTotalSales = 0; // 상품 총매출
     let productReview = productId.platforms.review; //상품리뷰수
     let productStarReview = productId.platforms.starReview; //상품별점
     let productRegistrationDate = productId.platforms.registrationDate; //상품등록일
@@ -31,21 +32,22 @@ window.onload = () => {
 
     // 상품명 ------------------------------------------------------------
     // console.log("상품명 : " + productId.name);
-    productName = document.querySelector(".product-name");
-    productName.innerText = productId.name;
+    let productNameElement = document.querySelector(".product-name");
+    productNameElement.innerText = productId.name;
     // 가격-----------------------------------------------------
     // console.log("가격 : " + productId.price);
-    productPrice = document.querySelector(".product-price");
-    productPrice.innerText = productId.price;
+    let productPriceElement = document.querySelector(".product-price");
+    productPriceElement.innerText = `${productId.price}원`;
     // 플랫폼------------------------------------------------------
     // console.log("플랫폼 : " + productId.platforms.platform);
-    productPlatform = document.querySelector(".product-platform");
+    const productPlatformText = productPlatform.toLowerCase();
+    let productPlatformElement = document.querySelector(".product-platform");
     if (productId.platforms.platform === "ably") {
-      productPlatform.innerText = "에이블리";
+      productPlatformElement.innerText = "에이블리";
     } else if (productId.platforms.platform === "zigzag") {
-      productPlatform.innerText = "지그재그";
+      productPlatformElement.innerText = "지그재그";
     } else {
-      productPlatform.innerText = "ablyy";
+      productPlatformElement.innerText = "ablyy";
     }
 
     // 판매량----------------------------------------------------------
@@ -53,10 +55,18 @@ window.onload = () => {
       for (let i = 0; i < productId.platforms.sales.length; i++) {
         productsalesVolume += productId.platforms.sales[i].quantity;
       }
-      productSales = document.querySelector(".product-sales");
-      productSales.innerText = productTotalSales;
+      let productsalesVolumeElement = document.querySelector(
+        ".product-sales-volume"
+      );
+      productsalesVolumeElement.innerText = `${productsalesVolume}개`;
     }
-    // console.log("판매량 : " + productTotalSales);
+    // console.log("판매량 : " + productsalesVolume);
+    // 총매출----------------------------------------------------------
+    productTotalSales = Number(productId.price) * productsalesVolume;
+    let productTotalSalesElement = document.querySelector(
+      ".product-total-sales"
+    );
+    productTotalSalesElement.innerText = `${productTotalSales}원`;
     // 리뷰별점---------------------------------------------------------
     // console.log("리뷰별점 : " + productId.platforms.starReview);
     let productReviewElement = document.querySelector(".product-review");
@@ -69,7 +79,8 @@ window.onload = () => {
     const sameCategory = products.filter(
       (item) => item.category === productCategory
     );
-    console.log("같은 카테고리 제품", sameCategory);
+    // console.log("같은 카테고리 제품", sameCategory);
+
     const samePlatform = sameCategory.filter(
       (item) => item.platforms.platform === productPlatformText
     );

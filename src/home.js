@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
       { text: '17 Jan 2019', fontSize: 12, color: '#000', delay: 500 },
       { text: 'Creating a Diary.', fontSize: 14, delay: 4000 },
       { text: 'View the library on,', fontSize: 14, delay: 3500 },
-      { text: 'Github.', fontSize: 14, color: '#3f51b5', delay: 1500 },
+      { text: '시작해보세요.', fontSize: 14, color: '#3f51b5', delay: 1500 },
     ],
   ];
 
