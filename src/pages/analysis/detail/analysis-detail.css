@@ -1,3 +1,5 @@
+/* 8.11수정 */
+
 main {
   width: calc(100vw - 80px);
   /* margin-left: 80px; */
@@ -131,9 +133,9 @@ h1 {
 .product-detail-info-table2 tr {
   height: 3vh;
 }
-.product-detail-info-table2 td {
-  /* border: 1px solid salmon; */
-}
+/* .product-detail-info-table2 td {
+  border: 1px solid salmon;
+} */
 .product-detail-info-table2 table:first-child {
   padding-right: 5vh;
 }
@@ -180,9 +182,30 @@ h1 {
   height: 7vh;
   /* justify-items: center; */
   align-items: center;
-  justify-content: left;
+  justify-content: first baseline;
+}
+.hashtag-comparison-bar-graph {
+  display: flex;
+  justify-content: space-between;
+  width: 14.5vw; /* 그래프 전체 너비 */
 }
 
+.hashtag-comparison-bar {
+  width: 2.9vw; /* 각 막대 너비 */
+  height: 3.5vh; /* 각 막대 높이 */
+  background-color: #e0e3e9; /* 막대 배경색 */
+  position: relative;
+}
+
+.hashtag-comparison-bar.good {
+  background-color: #39a1f4; /* 채워진 막대의 색상 */
+}
+.hashtag-comparison-bar.normal {
+  background-color: #ffce38; /* 채워진 막대의 색상 */
+}
+.hashtag-comparison-bar.bad {
+  background-color: #e25959; /* 채워진 막대의 색상 */
+}
 .hashtag-comparison-good {
   width: 40px;
   height: 25px;
@@ -192,17 +215,40 @@ h1 {
   font-weight: bold;
   border-radius: 4px;
   text-align: center;
+  line-height: 25px;
+}
+.hashtag-comparison-normal {
+  width: 40px;
+  height: 25px;
+  padding: 1px;
+  border: 2px solid #ffce38;
+  color: #ffce38;
+  font-weight: bold;
+  border-radius: 4px;
+  text-align: center;
   line-height: 25px; /* height와 동일하게 설정 */
 }
-.hashtag-comparison-table {
+
+.hashtag-comparison-bad {
+  width: 40px;
+  height: 25px;
+  padding: 1px;
+  border: 2px solid #e25959;
+  color: #e25959;
+  font-weight: bold;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 25px; /* height와 동일하게 설정 */
+}
+.hashtags-comparison {
   border: 1px solid green;
   height: 22vh;
   border-collapse: collapse;
 }
-.hashtag-comparison-table th {
+.hashtags-comparison th {
   border-bottom: 1px solid #dbdfe9;
 }
-.hashtag-comparison-table td {
+.hashtags-comparison td {
   color: #4b5675;
   text-align: center;
   border-bottom: 1px dotted #dbdfe9;
@@ -238,7 +284,18 @@ h1 {
   width: 8vw;
   font-size: large;
 }
-.total-analysis-good {
+.total-analysis-status-null {
+  width: 40px;
+  height: 25px;
+  padding: 1px;
+  border: 2px solid #b0b8c8;
+  color: #b0b8c8;
+  font-weight: bold;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 25px; /* height와 동일하게 설정 */
+}
+.total-analysis-status-good {
   width: 40px;
   height: 25px;
   padding: 1px;
@@ -249,7 +306,7 @@ h1 {
   text-align: center;
   line-height: 25px; /* height와 동일하게 설정 */
 }
-.total-analysis-normal {
+.total-analysis-status-normal {
   width: 40px;
   height: 25px;
   padding: 1px;
@@ -261,7 +318,7 @@ h1 {
   line-height: 25px; /* height와 동일하게 설정 */
 }
 
-.total-analysis-bad {
+.total-analysis-status-bad {
   width: 40px;
   height: 25px;
   padding: 1px;
@@ -272,13 +329,15 @@ h1 {
   text-align: center;
   line-height: 25px; /* height와 동일하게 설정 */
 }
-.total-analysis-coment {
-  /* width: 7vw;
-  height: 7vh; */
+/* .total-analysis-table {
+
+  font-size: smaller;
+  padding: 3px 0 3px 1vw;
+} */
+.total-analysis-table tr td:nth-child(3) p {
   font-size: smaller;
   padding: 3px 0 3px 1vw;
 }
-
 /* 플랫폼 분석---------------------------------------------- */
 .platform-analysis-content {
   border: 1px solid red;
@@ -308,6 +367,10 @@ h1 {
 .total-analysis-coment {
   /* width: 7vw;
   height: 7vh; */
+  font-size: smaller;
+  padding: 3px 0 3px 1vw;
+}
+.platform-analysis-table tr td:nth-child(2) p {
   font-size: smaller;
   padding: 3px 0 3px 1vw;
 }

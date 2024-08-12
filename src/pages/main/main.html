@@ -17,71 +17,102 @@
     </div>
 
     <div id="main-notice" class="content-box">
-      <h1>공지사항</h1>
-      <ul>
+      <h1 class="title">공지사항</h1>
+      <ul class="list">
         <p>최신순</p>
-        <li><a href="">[공지] 공지글 <span>12-15</span></a></li>
-        <li><a href="">[정보] 정보글 <span>08-02</span></a></li>
-        <li><a href="">[정보] 정보글 <span>02-05</span></a></li>
+        <p class="list-title">
+          <span></span>
+          <span>제목</span>
+          <span></span>
+          <span>일자</span>
+        </p>
+        <li>
+          <span><a href="">[광고] 광고글</span>
+          <span>12-03</span></a>
+        </li>
+        <li>
+          <span><a href="">[정보] 정보글</span>
+          <span>07-02</span></a>
+        </li>
+        <li>
+          <span><a href="">[공지] 공지글</span>
+          <span>02-01</span></a>
+        </li>
       </ul>
     </div>
 
     <div id="main-popular-product" class="content-box">
-      <h1>오늘 인기 상품</h1>
-      <ol>
+      <h1 class="title">오늘 나의 인기 상품</h1>
+      <ol class="list">
         <p>
           <select name="product-platform" id="product-platform">
             <option value="ably">에이블리</option>
-            <option value="zigzag">지그재그</option>
+            <option value="zigzag">지그재그
           </select>
         </p>
-        <li>1위 상품</li>
-        <li>2위 상품</li>
-        <li>3위 상품</li>
-        <li>4위 상품</li>
-        <li>5위 상품</li>
+        <a href="/src/pages/analysis/main/analysis.html">
+          <section id="main-popular-product-list">
+          </section>
+        </a>
       </ol>
     </div>
 
     <div id="main-hashtag" class="content-box">
-      <h1>오늘 인기 해시태그</h1>
-      <ol>
+      <h1 class="title">오늘 인기 해시태그</h1>
+      <ol class="list">
         <p>
           <select name="hashtag-platform" id="hashtag-platform">
             <option value="ably">에이블리</option>
             <option value="zigzag">지그재그</option>
           </select>
         </p>
-        <li>1위 해시태그</li>
-        <li>2위 해시태그</li>
-        <li>3위 해시태그</li>
-        <li>4위 해시태그</li>
-        <li>5위 해시태그</li>
+        <a href="/src/pages/analysis/main/analysis.html">
+          <section id="main-hashtag-list">
+          </section>
+        </a>
       </ol>
     </div>
 
     <div id="main-sales-chart" class="content-box">
-      <h1>주간 매출/주문 통계</h1>
+      <h1 class="title">주간 매출/주문 통계</h1>
       <div>
         <select name="chart-data" id="chart-data">
           <option value="product-count">주문량</option>
           <option value="product-sale">매출</option>
         </select>
       </div>
-      <div class="week-chart">
-        <canvas id="week-count"></canvas>
-      </div>
+      <a href="/src/pages/sales/sales.html">
+        <div class="week-chart">
+          <canvas id="week-chart"></canvas>
+        </div>
+      </a>
     </div>
 
     <div id="main-sales-calendar" class="content-box">
-      <h1>매출 캘린더</h1>
+      <h1 class="title">매출 달력</h1>
+      <div id="canlendar">
+        <p></p>
+        <div class="year-month"></div>
+        <div class="main">
+          <div class="weeks">
+            <div class="week">일</div>
+            <div class="week">월</div>
+            <div class="week">화</div>
+            <div class="week">수</div>
+            <div class="week">목</div>
+            <div class="week">금</div>
+            <div class="week">토</div>
+          </div>
+          <div class="days"></div>
+        </div>
+      </div>
     </div>
   </div>
-  <script src="../../components/sidebar.js" type="module"></script>
-  <!-- <script src="./calendar.js" type="module"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-x  <script src="./main.js" type="module"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../../components/sidebar.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./main.js" type="module"></script>
 </body>
 
 </html>
