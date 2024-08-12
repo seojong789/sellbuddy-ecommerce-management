@@ -59,4 +59,5 @@ typings/
 *.njsproj
 *.sln
 *.sw?
-*.json
+
+# json 추가하지마.
