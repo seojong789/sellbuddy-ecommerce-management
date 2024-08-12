@@ -1,399 +1,227 @@
 window.onload = () => {
-    axios.get("http://127.0.0.1:5500/v4.json").then((res) => {
-        let products = res.data;
+  // 오늘 날짜를 기본값으로 설정
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById("date-picker").value = today;
 
-        // -------------------------------------마이 상품 순위------------------------------------------------
+  axios.all([
+    axios.get("http://127.0.0.1:5500/product.json"),
+    axios.get("http://127.0.0.1:5500/platform1.json")
+  ])
+  .then((res) => {
+    let products = res[0].data;
+    let platforms = res[1].data;
+    let filteredProducts = products; // 필터링된 데이터를 저장할 변수
 
-        // 상품 등록
-        const renderProducts = (products) => {
-            let productsHTML = "";
-            for (let i = 0; i < 4; i++) {
-                let product = products[i];
-                let totalQuantityA = product.platforms[0].sales.reduce(
-                    (sum, sale) => sum + sale.quantity,
-                    0
-                );
-                let totalQuantityZ = product.platforms[1].sales.reduce(
-                    (sum, sale) => sum + sale.quantity,
-                    0
-                );
-                let totalSalesA = totalQuantityA * product.price;
-                let totalSalesZ = totalQuantityZ * product.price;
-                productsHTML += `
-          <li class="product-info">
-                <a href="/src/pages/analysis/detail/analysis-detail.html?value=1" class="product-name">
+    // 총 판매량 및 매출 계산 함수
+    const calculateTotal = (product) => {
+      const totalQuantity = product.sales.reduce((sum, sale) => sum + sale.quantity, 0);
+      const totalSales = totalQuantity * product.price;
+      return { totalQuantity, totalSales };
+    };
+
+    // 제품 리스트를 렌더링하는 함수
+    const renderProducts = (productsToRender) => {
+      const productsHTML = productsToRender
+        .map((product) => {
+          const { totalQuantity, totalSales } = calculateTotal(product);
+          return `
+            <li class="product-info">
+              <a href="/src/pages/analysis/detail/analysis-detail.html?value=${product.id}" class="product-name">
                 <span>
-                    <img
-                      src="/src/assets/images/목걸이1.jpg"
-                      alt="상품 대표 이미지"
-                    />
-                  </span>
-                  <span class="registered-product-name">${product.name}</span>
-                </a>
-                <div class="registered-product-platform">${
-                    product.platforms[0].platform
-                }</div>
-                <div class="registered-product-price">${product.price.toLocaleString()}원</div>
-                <div class="registered-product-sales"> ${totalQuantityA.toLocaleString()}개</div>
-                <div class="registered-product-total-sales">${totalSalesA.toLocaleString()}원</div>
-              </li>
-              <li class="product-info">
-                <a href="/src/pages/analysis/detail/analysis-detail.html?value=1" class="product-name">
-                <span>
-                    <img
-                      src="/src/assets/images/목걸이1.jpg"
-                      alt="상품 대표 이미지"
-                    />
-                  </span>
-                  <span class="registered-product-name">${product.name}</span>
-                </a>
-                <div class="registered-product-platform">${
-                    product.platforms[1].platform
-                }</div>
-                <div class="registered-product-price">${product.price.toLocaleString()}원</div>
-                <div class="registered-product-sales"> ${totalQuantityZ.toLocaleString()}개</div>
-                <div class="registered-product-total-sales">${totalSalesZ.toLocaleString()}원</div>
-              </li>
+                  <img src="/src/assets/images/목걸이1.jpg" alt="상품 대표 이미지" />
+                </span>
+                <span class="registered-product-name">${product.name}</span>
+              </a>
+              <div class="registered-product-platform">${product.platform}</div>
+              <div class="registered-product-price">${product.price.toLocaleString()}원</div>
+              <div class="registered-product-sales">${totalQuantity.toLocaleString()}개</div>
+              <div class="registered-product-total-sales">${totalSales.toLocaleString()}원</div>
+            </li>
           `;
-            }
+        })
+        .join(""); // 배열을 문자열로 변환하여 HTML에 삽입
+      document.querySelector(".registered-product-list").innerHTML = productsHTML;
+    };
 
-            document.querySelector(".registered-product-list").innerHTML =
-                productsHTML;
-        };
-        renderProducts(products);
+    // 날짜와 기간에 따라 제품을 필터링하는 함수
+    const filterProductsByDate = (date, period) => {
+      const selectedDate = new Date(date);
+      filteredProducts = products.map((product) => {
+        let filteredSales = [];
 
-        // 정렬 기능
-        document
-            .getElementById("classification")
-            .addEventListener("change", (event) => {
-                switch (event.target.value) {
-                    case "sales-quantity-desc":
-                        // 상품 판매량 내림차순
-                        products.sort((a, b) => {
-                            let totalQuantityA = a.platforms[0].sales.reduce(
-                                (sum, sale) => sum + sale.quantity,
-                                0
-                            );
-                            let totalQuantityB = b.platforms[0].sales.reduce(
-                                (sum, sale) => sum + sale.quantity,
-                                0
-                            );
-                            return totalQuantityB - totalQuantityA;
-                        });
-                        break;
-
-                    case "sales-quantity-asc":
-                        // 상품 판매량 오름차순
-                        products.sort((a, b) => {
-                            let totalQuantityA = a.platforms[0].sales.reduce(
-                                (sum, sale) => sum + sale.quantity,
-                                0
-                            );
-                            let totalQuantityB = b.platforms[0].sales.reduce(
-                                (sum, sale) => sum + sale.quantity,
-                                0
-                            );
-                            return totalQuantityA - totalQuantityB;
-                        });
-                        break;
-
-                    case "sales-desc":
-                        // 총 매출 내림차순
-                        products.sort((a, b) => {
-                            let totalSalesA =
-                                a.platforms[0].sales.reduce(
-                                    (sum, sale) => sum + sale.quantity,
-                                    0
-                                ) * a.price;
-                            let totalSalesB =
-                                b.platforms[0].sales.reduce(
-                                    (sum, sale) => sum + sale.quantity,
-                                    0
-                                ) * b.price;
-                            return totalSalesB - totalSalesA;
-                        });
-                        break;
-
-                    case "sales-asc":
-                        // 총 매출 오름차순
-                        products.sort((a, b) => {
-                            let totalSalesA =
-                                a.platforms[0].sales.reduce(
-                                    (sum, sale) => sum + sale.quantity,
-                                    0
-                                ) * a.price;
-                            let totalSalesB =
-                                b.platforms[0].sales.reduce(
-                                    (sum, sale) => sum + sale.quantity,
-                                    0
-                                ) * b.price;
-                            return totalSalesA - totalSalesB;
-                        });
-                        break;
-                }
-
-                // Re-render the sorted products
-                renderProducts(products);
+        // 기간에 따라 판매 데이터를 필터링
+        switch (period) {
+          case "total":
+            filteredSales = product.sales.filter((sale) => new Date(sale.date) <= selectedDate);
+            break;
+          case "day":
+            filteredSales = product.sales.filter((sale) => new Date(sale.date).toDateString() === selectedDate.toDateString());
+            break;
+          case "week":
+            const weekAgo = new Date(selectedDate);
+            weekAgo.setDate(weekAgo.getDate() - 7);
+            filteredSales = product.sales.filter(
+              (sale) => new Date(sale.date) >= weekAgo && new Date(sale.date) <= selectedDate
+            );
+            break;
+          case "month":
+            filteredSales = product.sales.filter((sale) => {
+              const saleDate = new Date(sale.date);
+              return (
+                saleDate.getMonth() === selectedDate.getMonth() &&
+                saleDate.getFullYear() === selectedDate.getFullYear() &&
+                saleDate <= selectedDate
+              );
             });
+            break;
+        }
 
-        // 페이지네이션 기능
-        let currentPage = 1;
-        const itemsPerPage = 4;
-        const totalPages = Math.ceil(products.length / itemsPerPage);
+        return { ...product, sales: filteredSales };
+      }).filter(product => product.sales.length > 0); // 판매 데이터가 있는 제품만 필터링
 
-        const renderProduct = (page) => {
-            let start = (page - 1) * itemsPerPage;
-            let end = start + itemsPerPage;
-            let paginatedProducts = products.slice(start, end);
-            let productsHTML = "";
+      renderProducts(filteredProducts.slice(0, itemsPerPage)); // 필터링된 제품을 렌더링
+      updatePagination(); // 페이지네이션 업데이트
+    };
 
-            paginatedProducts.forEach((product) => {
-                let totalQuantityA = product.platforms[0].sales.reduce(
-                    (sum, sale) => sum + sale.quantity,
-                    0
-                );
-                let totalQuantityZ = product.platforms[1].sales.reduce(
-                    (sum, sale) => sum + sale.quantity,
-                    0
-                );
-                let totalSalesA = totalQuantityA * product.price;
-                let totalSalesZ = totalQuantityZ * product.price;
-                productsHTML += `
-          <li class="product-info">
-                <a href="/src/pages/analysis/detail/analysis-detail.html?value=1" class="product-name">
-                <span>
-                    <img
-                      src="/src/assets/images/목걸이1.jpg"
-                      alt="상품 대표 이미지"
-                    />
-                  </span>
-                  <span class="registered-product-name">${product.name}</span>
-                </a>
-                <div class="registered-product-platform">${
-                    product.platforms[0].platform
-                }</div>
-                <div class="registered-product-price">${product.price.toLocaleString()}원</div>
-                <div class="registered-product-sales"> ${totalQuantityA.toLocaleString()}개</div>
-                <div class="registered-product-total-sales">${totalSalesA.toLocaleString()}원</div>
-              </li>
-              <li class="product-info">
-                <a href="/src/pages/analysis/detail/analysis-detail.html?value=1" class="product-name">
-                <span>
-                    <img
-                      src="/src/assets/images/목걸이1.jpg"
-                      alt="상품 대표 이미지"
-                    />
-                  </span>
-                  <span class="registered-product-name">${product.name}</span>
-                </a>
-                <div class="registered-product-platform">${
-                    product.platforms[1].platform
-                }</div>
-                <div class="registered-product-price">${product.price.toLocaleString()}원</div>
-                <div class="registered-product-sales"> ${totalQuantityZ.toLocaleString()}개</div>
-                <div class="registered-product-total-sales">${totalSalesZ.toLocaleString()}원</div>
-              </li>
-          `;
-            });
-            document.querySelector(".registered-product-list").innerHTML =
-                productsHTML;
-        };
+    // 정렬 기능
+    document.getElementById("classification").addEventListener("change", (event) => {
+      const sortBy = event.target.value;
+      const sortFunctions = {
+        "sales-quantity-desc": (a, b) => calculateTotal(b).totalQuantity - calculateTotal(a).totalQuantity,
+        "sales-quantity-asc": (a, b) => calculateTotal(a).totalQuantity - calculateTotal(b).totalQuantity,
+        "sales-desc": (a, b) => calculateTotal(b).totalSales - calculateTotal(a).totalSales,
+        "sales-asc": (a, b) => calculateTotal(a).totalSales - calculateTotal(b).totalSales,
+      };
+      filteredProducts.sort(sortFunctions[sortBy]);
+      renderProducts(filteredProducts.slice(0, itemsPerPage)); // 정렬된 제품을 렌더링
+      updatePagination(); // 페이지네이션 업데이트
+    });
 
-        const renderPagination = () => {
-            let paginationHTML = "";
+    // 날짜 선택 및 필터링 적용
+    document.querySelector(".custom-btn.btn-13").addEventListener("click", () => {
+      const selectedDate = document.getElementById("date-picker").value;
+      const selectedPeriod = document.getElementById("period").value;
+      filterProductsByDate(selectedDate, selectedPeriod); // 날짜 및 기간 선택에 따라 제품 필터링
+    });
 
-            if (currentPage > 1) {
-                paginationHTML += `<span class="page-control prev">&lt;</span>`;
-            } else {
-                paginationHTML += `<span class="page-control prev disabled">&lt;</span>`;
-            }
+    // 페이지네이션 기능
+    const itemsPerPage = 8;
+    let currentPage = 1;
 
-            for (let i = 1; i <= totalPages; i++) {
-                paginationHTML += `<span class="page-number ${
-                    i === currentPage ? "active" : ""
-                }">${i}</span>`;
-            }
+    // 페이지네이션 렌더링 함수
+    const renderPagination = () => {
+      const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+      const paginationHTML = `
+        <span class="page-control prev ${currentPage === 1 ? 'disabled' : ''}">&lt;</span>
+        ${Array.from({ length: totalPages }, (_, i) => `<span class="page-number ${i + 1 === currentPage ? 'active' : ''}">${i + 1}</span>`).join('')}
+        <span class="page-control next ${currentPage === totalPages ? 'disabled' : ''}">&gt;</span>
+      `;
+      document.querySelector(".pages").innerHTML = paginationHTML;
+    };
 
-            if (currentPage < totalPages) {
-                paginationHTML += `<span class="page-control next">&gt;</span>`;
-            } else {
-                paginationHTML += `<span class="page-control next disabled">&gt;</span>`;
-            }
+    // 페이지 변경 함수
+    const changePage = (page) => {
+      currentPage = page;
+      renderProducts(filteredProducts.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)); // 선택된 페이지의 제품만 렌더링
+      renderPagination(); // 페이지네이션 업데이트
+    };
 
-            document.querySelector(".pages").innerHTML = paginationHTML;
-        };
+    // 페이지네이션 업데이트 함수
+    const updatePagination = () => {
+      renderPagination(); // 필터링 후에 페이지네이션을 업데이트
+      changePage(1); // 첫 페이지로 이동하여 렌더링
+    };
 
-        renderProduct(currentPage);
-        renderPagination();
+    // 페이지 클릭 이벤트 리스너
+    document.querySelector(".pages").addEventListener("click", (event) => {
+      if (event.target.classList.contains("page-number")) {
+        changePage(parseInt(event.target.textContent));
+      } else if (event.target.classList.contains("prev") && currentPage > 1) {
+        changePage(currentPage - 1);
+      } else if (event.target.classList.contains("next") && currentPage < totalPages) {
+        changePage(currentPage + 1);
+      }
+    });
 
-        document.querySelector(".pages").addEventListener("click", (event) => {
-            if (event.target.classList.contains("page-number")) {
-                currentPage = parseInt(event.target.textContent);
-                renderProduct(currentPage);
-                renderPagination();
-            } else if (
-                event.target.classList.contains("prev") &&
-                currentPage > 1
-            ) {
-                currentPage--;
-                renderProduct(currentPage);
-                renderPagination();
-            } else if (
-                event.target.classList.contains("next") &&
-                currentPage < totalPages
-            ) {
-                currentPage++;
-                renderProduct(currentPage);
-                renderPagination();
-            }
-        });
+    // 초기 렌더링
+    changePage(currentPage);
 
-        // ------------------------------------플랫폼 매출 순위--------------------------------------------
+    // 플랫폼별 매출 계산 및 렌더링
+    const platformSales = products.reduce((acc, product) => {
+      const platformTotalSales = calculateTotal(product).totalSales;
+      acc[product.platform] = (acc[product.platform] || 0) + platformTotalSales;
+      return acc;
+    }, {});
 
-        // 플랫폼별 매출 합산을 위한 객체
-        const platformSales = {};
+    const sortedPlatformSales = Object.entries(platformSales)
+      .map(([platform, totalSales]) => ({ platform, totalSales }))
+      .sort((a, b) => b.totalSales - a.totalSales);
 
-        // 각 플랫폼별 매출 합산
-        products.forEach((product) => {
-            product.platforms.forEach((platform) => {
-                const platformName = platform.platform;
-                const platformTotalSales =
-                    platform.sales.reduce(
-                        (sum, sale) => sum + sale.quantity,
-                        0
-                    ) * product.price;
-
-                if (platformSales[platformName]) {
-                    platformSales[platformName] += platformTotalSales;
-                } else {
-                    platformSales[platformName] = platformTotalSales;
-                }
-            });
-        });
-
-        // 플랫폼별 매출 데이터를 배열로 변환 후 정렬
-        const sortedPlatformSales = Object.entries(platformSales)
-            .map(([platform, totalSales]) => ({
-                platform,
-                totalSales,
-            }))
-            .sort((a, b) => b.totalSales - a.totalSales);
-
-        // HTML에 매출 순위 표시
-        const platformSalesRankElement = document.querySelector(
-            ".paltform-sales-rank"
-        );
-        let platformSalesHTML = "";
-
-        sortedPlatformSales.forEach((platformSales, index) => {
-            let platformNameInKorean = "";
-            if (platformSales.platform === "zigzag") {
-                platformNameInKorean = "지그재그";
-            } else if (platformSales.platform === "ably") {
-                platformNameInKorean = "에이블리";
-            } else {
-                platformNameInKorean = platformSales.platform; // 다른 경우는 원래 이름 그대로
-            }
-            platformSalesHTML += `
+    const platformSalesHTML = sortedPlatformSales
+      .map((platformSales, index) => {
+        const platformNameInKorean = platformSales.platform === "zigzag" ? "지그재그" : "에이블리";
+        return `
           <li class="sales-rank">
             <div class="rank">${index + 1}</div>
             <div class="platform">${platformNameInKorean}</div>
             <div class="total-sales">${platformSales.totalSales.toLocaleString()} 원</div>
           </li>
         `;
-        });
+      })
+      .join("");
 
-        platformSalesRankElement.innerHTML = platformSalesHTML;
+    document.querySelector(".platform-sales-rank").innerHTML = platformSalesHTML;
 
-        // --------------------------------------인기 해쉬태그 순위---------------------------------------
+    // 해시태그 순위 계산 함수
+    const getHashtagRanking = (data, categoryFilter = 'all') => {
+      const hashtags = {};
 
-// 오늘의 날짜를 변수로 설정 (YYYY-MM-DD 형식으로 설정)
-const todayDate = "2023-01-02"; // 현재 날짜로 설정: new Date().toISOString().split('T')[0]
-
-// 오늘의 인기 상품을 저장하기 위한 배열
-let todayPopularProducts = [];
-
-// 플랫폼 선택 기능
-document.getElementById("platform-rank").addEventListener("change", (event) => {
-    const selectedPlatform = event.target.value; // 선택된 플랫폼
-    calculateAndRenderPopularProducts(selectedPlatform);
-});
-
-// 상품과 해시태그 계산 및 렌더링 함수
-function calculateAndRenderPopularProducts(platformFilter) {
-    todayPopularProducts = [];
-
-    products.forEach((product) => {
-        let totalQuantityForDate = 0;
-
-        product.platforms.forEach((platform) => {
-            // 플랫폼 필터링 적용
-            if (platformFilter === "all" || platform.platform === platformFilter) {
-                platform.sales.forEach((sale) => {
-                    if (sale.date === todayDate) {
-                        totalQuantityForDate += sale.quantity;
-                    }
-                });
-            }
-        });
-
-        if (totalQuantityForDate > 0) {
-            todayPopularProducts.push({
-                product: product,
-                totalQuantity: totalQuantityForDate,
+      // 각 플랫폼과 카테고리에서 해시태그를 집계
+      data.forEach(platform => {
+        platform.category.forEach(category => {
+          if (categoryFilter === 'all' || category.name === categoryFilter) {
+            category.인기해시태그.forEach(tag => {
+              hashtags[tag] = (hashtags[tag] || 0) + 1;
             });
-        }
-    });
-
-    // 오늘의 인기 상품을 판매량 기준으로 내림차순 정렬하고 상위 5개 상품을 선정
-    todayPopularProducts.sort((a, b) => b.totalQuantity - a.totalQuantity);
-    todayPopularProducts = todayPopularProducts.slice(0, 5);
-
-    // 인기 상품들의 해시태그를 카운트하기 위한 객체 생성
-    const hashtagCounts = {};
-
-    // 상위 5개 상품의 해시태그를 카운트
-    todayPopularProducts.forEach((item) => {
-        item.product.platforms.forEach((platform) => {
-            // 플랫폼 필터링 적용
-            if (platformFilter === "all" || platform.platform === platformFilter) {
-                if (Array.isArray(platform.hashtags)) {  // hashtags가 배열인지 확인
-                    platform.hashtags.forEach((hashtag) => {
-                        if (hashtagCounts[hashtag]) {
-                            hashtagCounts[hashtag]++;
-                        } else {
-                            hashtagCounts[hashtag] = 1;
-                        }
-                    });
-                }
-            }
+          }
         });
-    });
+      });
 
-    // 해시태그 카운트를 기반으로 정렬
-    const sortedHashtags = Object.entries(hashtagCounts)
-        .sort(([, a], [, b]) => b - a)
-        .slice(0, 10);
+      // 가장 많이 사용된 해시태그 순으로 정렬하고 상위 8개만 반환
+      return Object.entries(hashtags)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 9);
+    };
 
-    // 정렬된 해시태그를 HTML에 출력
-    const hashtagRankListElement = document.querySelector(".hashtag-rank-list");
-    let hashtagRankHTML = "";
+    // 해시태그 순위를 렌더링하는 함수
+    const renderHashtagRankings = () => {
+      const selectedPlatform = document.getElementById('platform-rank').value;
+      const selectedCategory = document.getElementById('category-rank').value;
 
-    sortedHashtags.forEach(([hashtag, count], index) => {
-        hashtagRankHTML += `
-            <li class="hashtag-rank">
-                <div class="rank">${index + 1}위</div>
-                <div class="hashtag-name">#${hashtag}</div>
-                <div class="count">${count}회</div>
-            </li>
-        `;
-    });
+      let filteredData = platforms;
+      if (selectedPlatform !== 'all') {
+        filteredData = platforms.filter(platform => platform.name === selectedPlatform);
+      }
 
-    document.querySelector(".hashtag-rank-list").innerHTML = hashtagRankHTML;
-}
+      const rankings = getHashtagRanking(filteredData, selectedCategory);
 
-// 초기 실행 - 전체 데이터를 바탕으로 인기 상품과 해시태그 계산
-calculateAndRenderPopularProducts("all");
+      const hashtagRankList = document.querySelector('.hashtag-rank-list');
+      hashtagRankList.innerHTML = '';
 
-    });
+      // 해시태그 순위를 HTML로 렌더링
+      rankings.forEach(([tag, count], index) => {
+        const li = document.createElement('li');
+        li.className = 'hashtag-rank';
+        li.innerHTML = `<div class="rank">${index + 1}</div><div class="hashtag-name">#${tag}</div>`;
+        hashtagRankList.appendChild(li);
+      });
+    };
+
+    // 플랫폼 및 카테고리 선택 변경 시 해시태그 순위 렌더링
+    document.getElementById('platform-rank').addEventListener('change', renderHashtagRankings);
+    document.getElementById('category-rank').addEventListener('change', renderHashtagRankings);
+
+    // 초기 해시태그 순위 렌더링
+    renderHashtagRankings();
+  });
 };
