@@ -11,12 +11,12 @@ window.onload = () => {
   axios.get("http://127.0.0.1:5500/v4copy.json").then((res) => {
     let products = res.data;
     let productId = products[id - 1]; //상품번호
-    let productImage; //상품이미지
-    let productName = productId.name; //상품명
+    // let productName = productId.name; //상품명
     let productPrice = productId.price; //상품가격
     let avgCategoryPrice = 0; //평균가
     let productPlatform = productId.platforms.platform; //상품등록된 플랫폼
     let productCategory = productId.category; //상품의 카테고리
+    // let productsalesVolume = 0; // 상품 판매량
     let productsalesVolume = 0; // 상품 판매량
     let productTotalSales = 0; // 상품 총매출
     let productReview = productId.platforms.review; //상품리뷰수
@@ -29,6 +29,15 @@ window.onload = () => {
     let targetAge = 20; //내 쇼핑몰 타겟연령층
     let targetGender = "여성"; //내 쇼핑몰 타겟연령층
     // let productDescription = productId.description; //상품키워드
+
+    // 상품이미지-------------------------------------------------
+    // 실제 product 객체의 img 값을 src로 설정
+    let productImageElement = document.querySelector(".product-img");
+    productImageElement.src = productId.img;
+    // //  productImage; //상품이미지
+    console.log(productId.img);
+    // let productImageElement = document.querySelector(".product-img");
+    // productImageElement.src = "productId.img";
 
     // 상품명 ------------------------------------------------------------
     // console.log("상품명 : " + productId.name);
