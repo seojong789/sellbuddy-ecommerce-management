@@ -164,20 +164,8 @@ const chartOptions = {
   responsive: true,
   maintainAspectRatio: false,
   scales: {
-    x: {
-      ticks: {
-        font: {
-          size: 15
-        }
-      }
-    },
     y: {
       beginAtZero: true,
-      ticks: {
-        font: {
-          size: 15
-        }
-      }
     },
   },
   plugins: {
