@@ -20,7 +20,7 @@ async function initializeCharts() {
   let jsonData = [];
 
   try {
-    const response = await fetch('/product.json');
+    const response = await fetch('./product.json');
     jsonData = await response.json();
   } catch (error) {
     console.error('Error loading JSON data:', error);
