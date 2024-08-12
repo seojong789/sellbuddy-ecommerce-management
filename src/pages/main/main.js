@@ -3,22 +3,20 @@ today.setHours(0, 0, 0, 0);
 let compareDate;
 
 axios
-  .get("http://localhost:5500/v4.json")
+  .get("http://localhost:5500/v6.json")
   .then((res) => {
     const products = res.data;
     // 주문현황
     let orderToday = 0; // 신규 주문
     let saleToday = 0; // 금일 매출
     products.forEach((product) => {
-      product.platforms.forEach((platform) => {
-        platform.sales.forEach((sale) => {
-          compareDate = new Date(sale.date);
-          compareDate.setHours(0, 0, 0, 0);
-          if (today.getTime() == compareDate.getTime()) {
-            orderToday += sale.quantity;
-            saleToday += sale.quantity * product.price;
-          }
-        });
+      product.sales.forEach((sale) => {
+        compareDate = new Date(sale.date);
+        compareDate.setHours(0, 0, 0, 0);
+        if (today.getTime() == compareDate.getTime()) {
+          orderToday += sale.quantity;
+          saleToday += sale.quantity * product.price;
+        }
       });
     });
     const orderUnknown = Math.round(orderToday / 5); // 미확인 주문 (임시)
@@ -33,31 +31,29 @@ axios
       </p>`;
     document.querySelector("#main-order").innerHTML = orderHTML;
 
-    // 오늘 나의 인기 상품
-    const platformSelect = document.getElementById("product-platform");
+    // 인기 상품
+    const productPlatformSelect = document.getElementById("product-platform");
 
     const printPopluarProduct = () => {
       let popularProduct = [];
       products.forEach((product) => {
-        product.platforms.forEach((platform) => {
-          platform.sales.forEach((sale) => {
-            if (platform.platform == platformSelect.value) {
-              compareDate = new Date(sale.date);
-              compareDate.setHours(0, 0, 0, 0);
-              if (today.getTime() == compareDate.getTime()) {
-                popularProduct.push([product.name, sale.quantity]);
-              }
+        product.sales.forEach((sale) => {
+          if (product.platform == productPlatformSelect.value) {
+            compareDate = new Date(sale.date);
+            compareDate.setHours(0, 0, 0, 0);
+            if (today.getTime() == compareDate.getTime()) {
+              popularProduct.push([product.name, sale.quantity]);
             }
-          });
+          }
         });
       });
       popularProduct.sort((a, b) => b[1] - a[1]);
 
       let popularProductHTML = `
-        <p class="list-title">
-          <span class="list-side">순위</span>
-          <span class="list-center">상품</span>
-          <span class="list-side">판매량</span>
+        <p class="list-titles">
+          <span class="list-title">순위</span>
+          <span class="list-title">상품</span>
+          <span class="list-title">판매량</span>
         </p>`;
       for (let i = 0; i < Math.min(5, popularProduct.length); i++) {
         if (i > 0 && popularProduct[i][1] == popularProduct[i - 1][1]) {
@@ -76,23 +72,70 @@ axios
           </li>`;
         }
       }
-      document.querySelector("#main-popular-product-list").innerHTML = popularProductHTML;
+      document.querySelector("#main-popular-product-list").innerHTML =
+        popularProductHTML;
     };
     printPopluarProduct();
-    platformSelect.addEventListener("change", printPopluarProduct);
+    productPlatformSelect.addEventListener("change", printPopluarProduct);
 
     // 인기 해시태그
-    let printPopluarHashtag = () => {
+    const hashtagPlatformSelect = document.getElementById("hashtag-platform");
+
+    const printPopluarHashtag = () => {
+      let hashtagSales = [];
+      products.forEach((product) => {
+        product.hashtags.forEach((hashtag) => {
+          product.sales.forEach((sale) => {
+            if (product.platform == hashtagPlatformSelect.value) {
+              compareDate = new Date(sale.date);
+              compareDate.setHours(0, 0, 0, 0);
+              if (today.getTime() == compareDate.getTime()) {
+                hashtagSales.push([hashtag, sale.quantity]);
+              }
+            }
+          });
+        });
+      });
+
+      let popularHashtag = {};
+      hashtagSales.forEach(([key, value]) => {
+        if (popularHashtag[key]) {
+          popularHashtag[key] += value;
+        } else {
+          popularHashtag[key] = value;
+        }
+      });
+      popularHashtag = Object.entries(popularHashtag);
+      popularHashtag.sort((a, b) => b[1] - a[1]);
+
       let popularHashtagHTML = `
-      <p class="list-title">
-        <span class="list-side">순위</span>
-        <span class="list-center">해시태그</span>
-        <span class="list-side">검색량</span>
-      </p>`;
-      document.querySelector("#main-hashtag-list").innerHTML = popularHashtagHTML;
+        <p class="list-titles">
+          <span class="list-title">순위</span>
+          <span class="list-title">상품</span>
+          <span class="list-title">판매량</span>
+        </p>`;
+      for (let i = 0; i < Math.min(5, popularHashtag.length); i++) {
+        if (i > 0 && popularHashtag[i][1] == popularHashtag[i - 1][1]) {
+          popularHashtagHTML += `
+            <li>
+              <span class="list-side">${i}위</span>
+              <span class="list-center">${popularHashtag[i][0]}</span>
+              <span class="list-side">${popularHashtag[i][1]}건</span>
+            </li>`;
+        } else {
+          popularHashtagHTML += `
+          <li>
+            <span class="list-side">${i + 1}위</span>
+            <span class="list-center">${popularHashtag[i][0]}</span>
+            <span class="list-side">${popularHashtag[i][1]}건</span>
+          </li>`;
+        }
+      }
+      document.querySelector("#main-popular-hashtag-list").innerHTML =
+        popularHashtagHTML;
     };
     printPopluarHashtag();
-    platformSelect.addEventListener("change", printPopluarHashtag);
+    hashtagPlatformSelect.addEventListener("change", printPopluarHashtag);
   })
   .catch((error) => {
     console.log("error 발생 : " + error);
@@ -147,7 +190,7 @@ const printChart = () => {
   let dataLabel;
 
   axios
-    .get("http://localhost:5500/v4.json")
+    .get("http://localhost:5500/v6.json")
     .then((res) => {
       const products = res.data;
       for (let n = 0; n < 7; n++) {
@@ -158,15 +201,13 @@ const printChart = () => {
         let orderDate = 0;
         let saleDate = 0;
         products.forEach((product) => {
-          product.platforms.forEach((platform) => {
-            platform.sales.forEach((sale) => {
-              compareDate = new Date(sale.date);
-              compareDate.setHours(0, 0, 0, 0);
-              if (date.getTime() == compareDate.getTime()) {
-                orderDate += sale.quantity;
-                saleDate += sale.quantity * product.price;
-              }
-            });
+          product.sales.forEach((sale) => {
+            compareDate = new Date(sale.date);
+            compareDate.setHours(0, 0, 0, 0);
+            if (date.getTime() == compareDate.getTime()) {
+              orderDate += sale.quantity;
+              saleDate += sale.quantity * product.price;
+            }
           });
         });
 
@@ -196,7 +237,8 @@ const printCalender = () => {
   const viewYear = today.getFullYear();
   const viewMonth = today.getMonth();
 
-  document.querySelector(".year-month").innerHTML = `<p>${viewYear}년 ${viewMonth + 1}월</p>`;
+  document.querySelector(".year-month").innerHTML = `
+  <p>${viewYear}년 ${viewMonth + 1}월</p>`;
 
   const prevLast = new Date(viewYear, viewMonth, 0);
   const thisLast = new Date(viewYear, viewMonth + 1, 0);
@@ -229,29 +271,31 @@ const printCalender = () => {
   dateBase.setDate(1 - firstDateIndex);
 
   axios
-    .get("http://localhost:5500/v4.json")
+    .get("http://localhost:5500/v6.json")
     .then((res) => {
       const products = res.data;
       dates.forEach((date, i) => {
         let saleDate = 0;
         products.forEach((product) => {
-          product.platforms.forEach((platform) => {
-            platform.sales.forEach((sale) => {
-              compareDate = new Date(sale.date);
-              compareDate.setHours(0, 0, 0, 0);
-              if (dateBase.getTime() === compareDate.getTime()) {
-                saleDate += sale.quantity * product.price;
-              }
-            });
+          product.sales.forEach((sale) => {
+            compareDate = new Date(sale.date);
+            compareDate.setHours(0, 0, 0, 0);
+            if (dateBase.getTime() === compareDate.getTime()) {
+              saleDate += sale.quantity * product.price;
+            }
           });
         });
-        const condition = firstDateIndex <= i && i <= lastDateIndex ? "this" : "other";
-        const saleText = saleDate ? `${Math.round(saleDate / Math.pow(10, 7 - 1)) / 10}천만원` : " - ";
+        const condition =
+          firstDateIndex <= i && i <= lastDateIndex ? "this" : "other";
+        const saleText = saleDate
+          ? `${Math.round(saleDate / Math.pow(10, 7 - 1)) / 10}천만원`
+          : " - ";
 
         dates[i] = `
           <div class="day ${condition}">
             <div class="day-number">${date}</div>
-            <div class="day-sale day-sale-detail">${date}일 매출 : ${saleDate.toLocaleString()}원</div>
+            <div class="day-sale day-sale-detail">${dateBase.getMonth() + 1
+          }월 ${dateBase.getDate()}일 매출 : ${saleDate.toLocaleString()}원</div>
             <div class="day-sale">${saleText}</div>
           </div>
         `;
@@ -261,7 +305,7 @@ const printCalender = () => {
       document.querySelector(".days").innerHTML = dates.join("");
 
       if (today.getMonth() == viewMonth && today.getFullYear() == viewYear) {
-        document.querySelectorAll(".this > .dayNumber").forEach((date) => {
+        document.querySelectorAll(".this > .day-number").forEach((date) => {
           if (+date.innerText == today.getDate()) {
             date.classList.add("today");
           }

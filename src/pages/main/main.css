@@ -1,4 +1,5 @@
 #main-container {
+  background-color: #f8f8f8;
   width: calc(100vw - 80px);
   height: calc(100vh - 20px);
   padding: 10px;
@@ -6,115 +7,134 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto auto 1fr;
-  grid-gap: 10px;
-
-  .content-box {
-    border: 1px solid black;
-    padding: 10px;
-  }
-
-  .title {
-    border: 1px solid black;
-    max-height: 50%;
-    padding: 10px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 20px;
-
-    span {
-      margin-left: 10px;
-
-      font-size: 15px;
-    }
-  }
-
-  .list {
-    border-bottom: 1px solid gray;
-
-    font-size: 15px;
-
-    p {
-      height: 10px;
-      padding: 10px;
-
-      display: flex;
-      align-items: center;
-      justify-content: right;
-
-      font-size: 15px;
-
-      select option {
-        font-size: 15px;
-      }
-    }
-
-    .list-title {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    li {
-      border-top: 1px solid gray;
-      padding: 10px;
-
-      display: flex;
-      justify-content: space-between;
-
-      span {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .list-side {
-        width: 10%;
-      }
-
-      .list-center {
-        width: 70%;
-      }
-    }
-
-    a {
-      color: inherit;
-
-      span {
-        font-size: 15px;
-      }
-    }
-  }
+  gap: 10px;
 }
 
-.main-popular-product-list {
-  color: inherit;
+.content-box {
+  background-color: #ffffff;
+  border: 1px solid #f2f2f2;
+  border-radius: 0.5em;
+  box-shadow: 0.25em 0.25em 0.625em #f2f2f2;
+  padding: 0;
+}
+
+.title {
+  background-color: skyblue;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  max-height: 50%;
+  padding: 10px;
+
+  font-size: clamp(15px, 2vw, 20px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title span {
+  margin-left: 1vw;
+
+  font-size: clamp(10px, 1.5vw, 15px);
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 #main-order {
   grid-column: 1/7;
   grid-row-start: 1;
+}
 
-  p {
-    max-height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+#main-order p {
+  max-height: 50%;
 
-    span {
-      border: 1px solid black;
-      width: calc(25% - 0.25vh);
-      height: 100%;
-      padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
+  text-align: center;
+}
 
-      font-size: 20px;
-    }
-  }
+#main-order p span {
+  width: 25%;
+  padding: 10px;
+
+  font-size: clamp(10px, 1.5vw, 15px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#main-order p span:nth-child(1),
+#main-order p span:nth-child(2),
+#main-order p span:nth-child(3) {
+  border-right: 1px solid gray;
+}
+
+.list {
+  border-bottom: 1px solid gray;
+  margin: 5px;
+}
+
+.sort {
+  height: 10px;
+  padding: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  font-size: clamp(10px, 1vw, 12px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sort select {
+  font-size: clamp(8px, 1vw, 10px);
+}
+
+.list-titles {
+  padding: 5px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-title {
+  font-size: clamp(10px, 1vw, 15px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list li {
+  border-top: 1px solid gray;
+  padding: 5px 0px;
+
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.list li span,
+.list li a {
+  font-size: clamp(10px, 1vw, 15px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list-side {
+  width: 10%;
+}
+
+.list-center {
+  width: 70%;
+}
+
+.list a {
+  color: inherit;
 }
 
 #main-notice {
@@ -140,119 +160,139 @@
 #main-sales-chart {
   grid-column: 1/4;
   grid-row-start: 3;
+}
 
-  div {
-    padding: 10px;
+#main-sales-chart p {
+  padding: 10px;
 
-    display: flex;
-    align-items: center;
-    justify-content: right;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
 
-    select option {
-      font-size: 15px;
-    }
-  }
+#main-sales-chart p select {
+  font-size: clamp(8px, 1vw, 10px);
+}
 
-  .week-chart {
-    border: 1px solid black;
-    min-height: 75%;
-  }
+.week-chart {
+  width: auto;
+  height: 70%;
+  margin: 0px 5px;
 }
 
 #main-sales-calendar {
   grid-column: 4/7;
   grid-row-start: 3;
 
-  font-size: 15px;
+  font-size: 10px;
+}
 
-  * {
-    box-sizing: border-box;
-  }
+#calendar *:not(.title) {
+  box-sizing: border-box;
 
-  .year-month {
-    padding: 10px;
+  font-size: clamp(10px, 1vw, 12px);
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#calendar {
+  padding: 5px;
+}
 
-    font-size: 15px;
-  }
+.year-month {
+  padding: 0px 10px;
 
-  .weeks {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    .week {
-      width: calc(100% / 7);
-      padding: 10px;
+  font-size: clamp(10px, 1.5vw, 15px);
+}
 
-      text-align: center;
-    }
-  }
+.weeks {
+  padding: 10px;
 
-  .days {
-    border-top: 1px solid black;
-    border-left: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    display: flex;
-    flex-flow: row wrap;
+.week {
+  width: calc(100% / 7);
 
-    .day {
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
-      width: calc(100% / 7);
+  text-align: center;
+}
 
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+.days {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  height: 200%;
+  min-height: 300px;
 
-      .today {
-        background-color: orange;
-      }
+  display: flex;
+  flex-flow: row wrap;
+}
 
-      .day-sale {
-        padding: 5px;
-        color: black;
+.day {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  width: calc(100% / 7);
+  padding: 5px;
 
-        display: flex;
-        justify-content: right;
-      }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-      .day-sale-detail {
-        background-color: gray;
-        opacity: 1;
+.day:has(.today) {
+  background-color: #f0f0;
+}
 
-        width: 100%;
-        height: 100%;
-        
-        display: none;
-        position: relative;
-      }
-    }
+.day-sale {
+  padding: 5px;
+  color: black;
 
-    .day:hover .day-number,
-    .day:hover .day-sale {
-      display: none;
-    }
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-    .day:hover .day-sale-detail {
-      display: block;
-    }
+.day-sale-detail {
+  background-color: navy;
+  opacity: 1;
 
-    .other div {
-      opacity: 0.3;
-    }
-  }
+  width: fit-content;
+  height: fit-content;
 
-  .week:nth-child(7n + 1),
-  .day:nth-child(7n + 1) {
-    color: red;
-  }
+  color: white;
 
-  .week:nth-child(7n),
-  .day:nth-child(7n) {
-    color: blue;
-  }
+  display: none;
+  position: relative;
+}
+
+.day:hover .day-number,
+.day:hover .day-sale {
+  display: none;
+}
+
+.day:hover .day-sale-detail {
+  display: block;
+  opacity: 1;
+}
+
+.other {
+  background-color: #f0f0f0;
+}
+
+.other div {
+  opacity: 0.3;
+}
+
+.week:nth-child(7n + 1),
+.day:nth-child(7n + 1) {
+  color: red;
+}
+
+.week:nth-child(7n),
+.day:nth-child(7n) {
+  color: blue;
 }
