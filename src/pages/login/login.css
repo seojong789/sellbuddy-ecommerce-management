@@ -71,6 +71,13 @@ p {
   color: white;
 }
 
+.invalid-feedback {
+  color: red;
+  font-size: 0.9em;
+  display: block;
+  margin-top: 0.25rem;
+}
+
 .accounts_container {
   height: 550px;
   border-radius: 10px;
