@@ -124,12 +124,10 @@ async function initializeCharts() {
         parseInt(monthlySalesEmt.innerText.replace(/,/g, '')) || 0;
       const currentDailySales =
         parseInt(dailySalesEmt.innerText.replace(/,/g, '')) || 0;
-      console.log('일', currentDailySales);
 
       const newMonthlySales =
         salesData.monthlySales[new Date(selectedDate).getMonth()];
       const newDailySales = salesData.dailySales;
-      console.log('일2', newDailySales);
 
       animateValue('monthly-sales', currentMonthlySales, newMonthlySales, 1000);
       animateValue('daily-sales', currentDailySales, newDailySales, 1000);

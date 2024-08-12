@@ -1,209 +1,237 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="keywords" content="SignUp, Login, Register" />
-    <meta name="keywords" content="Sign up, Sign in" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <!--Bootstrap Css-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-    />
-    <!--Font-aweome-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
-    <!--Custom Css-->
-    <link type="text/css" rel="stylesheet" href="login.css" />
+    <title>Document</title>
   </head>
-
   <body>
-    <section class="login_section">
-      <div class="container outer_container accounts_container">
-        <div class="row h-100">
-          <div
-            class="col col-sm-12 col-md-12 col-lg-8 m-0 p-0 w-100 h-100 accounts_col"
-          >
-            <div class="accounts_image w-100 h-100">
-              <img
-                src="https://img.freepik.com/free-photo/social-media-instagram-digital-marketing-concept-3d-rendering_106244-1717.jpg?t=st=1647414398~exp=1647414998~hmac=2c478ef6affd973ccd71ea4d394d9283db4a0c6c4c686ba0b9f6091c8a56e5a1&w=1480"
-                alt="accounts_image"
-                class="img-fluid w-100 h-100"
-              />
-            </div>
-            <!--accounts_image-->
-          </div>
-          <!--account_col-->
-          <div class="col col-sm-12 col-md-12 col-lg-4 m-0 p-0 accounts_col">
-            <div class="accounts_forms signup_form w-100 h-100" id="signup">
-              <div class="title mt-4 p-4 w-100">
-                <h1>Sign Up</h1>
-                <p class="mt-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-              </div>
-              <!--title-->
-              <form method="post" name="form" class="form w-100 p-4" id="form">
-                <div class="row">
-                  <div class="col col-sm-12 col-md-12 col-lg-6 m-0">
-                    <div class="form-group">
-                      <label for="fname">Firstname</label>
-                      <input
-                        type="text"
-                        name="fname"
-                        class="form-control"
-                        id="fname"
-                        onfocus="labelUp(this)"
-                        onblur="labelDown(this)"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div class="col col-sm-12 col-md-12 col-lg-6 m-0">
-                    <div class="form-group">
-                      <label for="lname">Lastname</label>
-                      <input
-                        type="text"
-                        name="lname"
-                        class="form-control"
-                        id="lname"
-                        onfocus="labelUp(this)"
-                        onblur="labelDown(this)"
-                        required
-                      />
-                    </div>
-                  </div>
-                </div>
-                <!--form-row-->
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    class="form-control"
-                    id="email"
-                    onfocus="labelUp(this)"
-                    onblur="labelDown(this)"
-                    required
+    <section class="bg-light p-3 p-md-4 p-xl-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-xxl-11">
+            <div class="card border-light-subtle shadow-sm">
+              <div class="row g-0">
+                <div class="col-12 col-md-6">
+                  <img
+                    class="img-fluid rounded-start w-100 h-100 object-fit-cover"
+                    loading="lazy"
+                    src="./assets/img/logo-img-1.webp"
+                    alt="Welcome back you've been missed!"
                   />
                 </div>
-                <div class="form-group">
-                  <label for="signup_password">Password</label>
-                  <i class="fa fa-eye-slash" id="eye_icon_signup"></i>
-                  <input
-                    type="password"
-                    name="pass"
-                    class="form-control"
-                    id="signup_password"
-                    onfocus="labelUp(this)"
-                    onblur="labelDown(this)"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="cpass">Confirm Password</label>
-                  <input
-                    type="password"
-                    name="cpass"
-                    class="form-control"
-                    id="cpass"
-                    onfocus="labelUp(this)"
-                    onblur="labelDown(this)"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <button
-                    type="submit"
-                    class="btn btn-primary register_btn w-100"
-                  >
-                    Sign Up
-                  </button>
-                </div>
-              </form>
-
-              <div class="already_member_box">
-                <p class="text-center" id="to_login">I am already member</p>
-              </div>
-            </div>
-            <!--accounts_forms-->
-            <div class="accounts_forms w-100 h-100" id="login">
-              <div class="title mt-4 p-4 w-100">
-                <h1>Sign In</h1>
-                <p class="mt-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-              </div>
-              <!--title-->
-              <form method="post" name="form" class="form w-100 p-4" id="form">
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    class="form-control"
-                    id="email"
-                    onfocus="labelUp(this)"
-                    onblur="labelDown(this)"
-                    required
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="login_password">Password</label>
-                  <i class="fa fa-eye-slash" id="eye_icon_login"></i>
-                  <input
-                    type="password"
-                    name="pass"
-                    class="form-control"
-                    id="login_password"
-                    onfocus="labelUp(this)"
-                    onblur="labelDown(this)"
-                    required
-                  />
-                </div>
-                <div class="form-group mb-0">
-                  <button
-                    type="submit"
-                    class="btn btn-primary register_btn w-100"
-                  >
-                    Sign In
-                  </button>
-                </div>
-              </form>
-
-              <div
-                class="already_member_box d-flex justify-content-between px-4"
-              >
-                <span class="text-center" id="to_signup"
-                  >Create an account?</span
+                <div
+                  class="col-12 col-md-6 d-flex align-items-center justify-content-center"
                 >
-                <span class="text-center">Forgot password</span>
+                  <div class="col-12 col-lg-11 col-xl-10">
+                    <div class="card-body p-3 p-md-4 p-xl-5">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="mb-5">
+                            <div class="text-center mb-4">
+                              <a href="#!">
+                                <img
+                                  src="./assets/img/bsb-logo.svg"
+                                  alt="BootstrapBrain Logo"
+                                  width="175"
+                                  height="57"
+                                />
+                              </a>
+                            </div>
+                            <h4 class="text-center">
+                              Welcome back you've been missed!
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="d-flex gap-3 flex-column">
+                            <a href="#!" class="btn btn-lg btn-outline-dark">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-google"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"
+                                />
+                              </svg>
+                              <span class="ms-2 fs-6">Log in with Google</span>
+                            </a>
+                          </div>
+                          <p class="text-center mt-4 mb-5">Or sign in with</p>
+                        </div>
+                      </div>
+                      <!-- Login Form -->
+                      <form id="login-form" action="#!">
+                        <div class="row gy-3 overflow-hidden">
+                          <div class="col-12">
+                            <div class="form-floating mb-3">
+                              <input
+                                type="email"
+                                class="form-control"
+                                name="email"
+                                id="email"
+                                placeholder="name@example.com"
+                                required
+                              />
+                              <label for="email" class="form-label"
+                                >Email</label
+                              >
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="form-floating mb-3">
+                              <input
+                                type="password"
+                                class="form-control"
+                                name="password"
+                                id="password"
+                                value=""
+                                placeholder="Password"
+                                required
+                              />
+                              <label for="password" class="form-label"
+                                >Password</label
+                              >
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                name="remember_me"
+                                id="remember_me"
+                              />
+                              <label
+                                class="form-check-label text-secondary"
+                                for="remember_me"
+                              >
+                                Keep me logged in
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="d-grid">
+                              <button class="btn btn-dark btn-lg" type="submit">
+                                Log in now
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+
+                      <!-- Signup Form -->
+                      <form id="signup-form" action="#!" style="display: none">
+                        <div class="row gy-3 overflow-hidden">
+                          <div class="col-12">
+                            <div class="form-floating mb-3">
+                              <input
+                                type="text"
+                                class="form-control"
+                                name="firstname"
+                                id="firstname"
+                                placeholder="First Name"
+                                required
+                              />
+                              <label for="firstname" class="form-label"
+                                >First Name</label
+                              >
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="form-floating mb-3">
+                              <input
+                                type="text"
+                                class="form-control"
+                                name="lastname"
+                                id="lastname"
+                                placeholder="Last Name"
+                                required
+                              />
+                              <label for="lastname" class="form-label"
+                                >Last Name</label
+                              >
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="form-floating mb-3">
+                              <input
+                                type="email"
+                                class="form-control"
+                                name="email"
+                                id="signup-email"
+                                placeholder="name@example.com"
+                                required
+                              />
+                              <label for="signup-email" class="form-label"
+                                >Email</label
+                              >
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="form-floating mb-3">
+                              <input
+                                type="password"
+                                class="form-control"
+                                name="password"
+                                id="signup-password"
+                                placeholder="Password"
+                                required
+                              />
+                              <label for="signup-password" class="form-label"
+                                >Password</label
+                              >
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="d-grid">
+                              <button class="btn btn-dark btn-lg" type="submit">
+                                Create account
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+
+                      <div class="row">
+                        <div class="col-12">
+                          <div
+                            class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-5"
+                          >
+                            <a
+                              href="#!"
+                              id="create-account-link"
+                              class="link-secondary text-decoration-none"
+                              >Create new account</a
+                            >
+                            <a
+                              href="#!"
+                              class="link-secondary text-decoration-none"
+                              >Forgot password</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <!--accounts_forms-->
           </div>
-          <!--account_col-->
         </div>
-        <!--row-->
       </div>
-      <!--accounts_container-->
     </section>
-    <!--login_section-->
-
-    <!-- jQuery library -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-    <!-- Popper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <!--Custom Js-->
-    <script type="text/javascript" src="login.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <script src="./login.js"></script>
   </body>
 </html>
