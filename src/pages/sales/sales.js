@@ -20,7 +20,7 @@ async function initializeCharts() {
   let jsonData = [];
 
   try {
-    const response = await fetch('/v4.json');
+    const response = await fetch('/product.json');
     jsonData = await response.json();
   } catch (error) {
     console.error('Error loading JSON data:', error);
@@ -107,16 +107,6 @@ async function initializeCharts() {
       yearlyChart.data.datasets[0].data = salesData.monthlySales;
       yearlyChart.update();
 
-      // 일(월) 매출
-      //   document.getElementById('sales-info').innerHTML = `
-      //   <p>${
-      //     new Date(selectedDate).getMonth() + 1
-      //   }월 매출: ${salesData.monthlySales[
-      //     new Date(selectedDate).getMonth()
-      //   ].toLocaleString()}원</p>
-      //   <p>${selectedDate}일 매출: ${salesData.dailySales.toLocaleString()}원</p>
-      // `;
-
       const monthlySalesEmt = document.getElementById('monthly-sales');
       const dailySalesEmt = document.getElementById('daily-sales');
 
@@ -153,46 +143,42 @@ function calculateSales(data, selectedDate = null, platform = 'total') {
   }
 
   data.forEach((product) => {
-    product.platforms.forEach((platformData) => {
-      if (platform === 'total' || platformData.platform === platform) {
-        platformData.sales.forEach((sale) => {
-          const saleDate = new Date(sale.date);
-          const saleAmount = sale.quantity * product.price;
+    if (platform === 'total' || product.platform === platform) {
+      product.sales.forEach((sale) => {
+        const saleDate = new Date(sale.date);
+        const saleAmount = sale.quantity * product.price;
 
-          // 주간 매출 (선택한 날짜 기준 마지막 7일 동안의 매출만 계산)
-          if (saleDate >= startDate && saleDate <= selectedDateObj) {
-            const dateKey = saleDate.toISOString().split('T')[0];
-            if (weeklySales[dateKey] !== undefined) {
-              weeklySales[dateKey] += saleAmount;
-            }
+        // 주간 매출 (선택한 날짜 기준 마지막 7일 동안의 매출만 계산)
+        if (saleDate >= startDate && saleDate <= selectedDateObj) {
+          const dateKey = saleDate.toISOString().split('T')[0];
+          if (weeklySales[dateKey] !== undefined) {
+            weeklySales[dateKey] += saleAmount;
           }
+        }
 
-          // 분기 매출
-          const quarter = Math.floor(saleDate.getMonth() / 3);
-          quarterlySales[quarter] += saleAmount;
+        // 분기 매출
+        const quarter = Math.floor(saleDate.getMonth() / 3);
+        quarterlySales[quarter] += saleAmount;
 
-          // 월간 매출
-          monthlySales[saleDate.getMonth()] += saleAmount;
+        // 월간 매출
+        monthlySales[saleDate.getMonth()] += saleAmount;
 
-          // 연간 매출
-          yearlySales += saleAmount;
-        });
-      }
-    });
+        // 연간 매출
+        yearlySales += saleAmount;
+      });
+    }
   });
 
   let dailySales = 0;
   if (selectedDate) {
     data.forEach((product) => {
-      product.platforms.forEach((platformData) => {
-        if (platform === 'total' || platformData.platform === platform) {
-          platformData.sales.forEach((sale) => {
-            if (sale.date === selectedDate) {
-              dailySales += sale.quantity * product.price;
-            }
-          });
-        }
-      });
+      if (platform === 'total' || product.platform === platform) {
+        product.sales.forEach((sale) => {
+          if (sale.date === selectedDate) {
+            dailySales += sale.quantity * product.price;
+          }
+        });
+      }
     });
   }
 
