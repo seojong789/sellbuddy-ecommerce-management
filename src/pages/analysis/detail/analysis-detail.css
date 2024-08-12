@@ -27,8 +27,8 @@ h1 {
 }
 .container h2 {
   padding-left: 3vw;
-  padding-top: 1.5vh;
-  padding-bottom: 1vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }
 /* 컨테이너 섹션-------------------------------------------------------------- */
 /* 상품정보 */
@@ -78,7 +78,7 @@ h1 {
 }
 /* 상품정보 컨텐츠 */
 .product-detail-info {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   text-align: left;
   padding-left: 3vw;
@@ -87,7 +87,7 @@ h1 {
 }
 
 .product-detail-info-table1 {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   width: 100%;
   height: 100%;
   justify-content: space-between;
@@ -98,7 +98,7 @@ h1 {
   /* padding-right: 5vh; */
 }
 #product-detail-info-table1-basic {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   width: 100%;
   height: 17vh;
   padding-bottom: 1vh;
@@ -121,7 +121,7 @@ h1 {
 } */
 /* -------------------------------------------------------------------- */
 .product-detail-info-table2 {
-  border: 2px solid green;
+  /* border: 2px solid green; */
   display: flex;
   justify-content: first baseline;
   align-items: flex-start; /* 상단 정렬 */
@@ -166,7 +166,7 @@ h1 {
 }
 /* 해시태그 비교 ---------------------------------------------------------------------- */
 .hashtag-comparison-content {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   /* text-align: left; */
   padding-left: 3vw;
@@ -176,7 +176,7 @@ h1 {
   /* height: ; */
 }
 .hashtag-comparison-graph {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   display: flex;
   flex-direction: row;
   height: 7vh;
@@ -193,18 +193,18 @@ h1 {
 .hashtag-comparison-bar {
   width: 2.9vw; /* 각 막대 너비 */
   height: 3.5vh; /* 각 막대 높이 */
-  background-color: #e0e3e9; /* 막대 배경색 */
+  background-color: #e0e3e9; /* 막대그래프 기본색 */
   position: relative;
 }
-
+/* 채워진 막대그래프 */
 .hashtag-comparison-bar.good {
-  background-color: #39a1f4; /* 채워진 막대의 색상 */
+  background-color: #39a1f4;
 }
 .hashtag-comparison-bar.normal {
-  background-color: #ffce38; /* 채워진 막대의 색상 */
+  background-color: #ffce38;
 }
 .hashtag-comparison-bar.bad {
-  background-color: #e25959; /* 채워진 막대의 색상 */
+  background-color: #e25959;
 }
 .hashtag-comparison-good {
   width: 40px;
@@ -241,7 +241,7 @@ h1 {
   line-height: 25px; /* height와 동일하게 설정 */
 }
 .hashtags-comparison {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   height: 22vh;
   border-collapse: collapse;
 }
@@ -261,7 +261,7 @@ h1 {
 }
 /* 종합분석---------------------------------------------- */
 .total-analysis-content {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   /* text-align: left; */
   padding-left: 3vw;
@@ -272,10 +272,10 @@ h1 {
   /* height: ; */
 }
 .total-analysis-table {
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 .total-analysis-table td {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   height: 7vh;
 }
 
@@ -340,7 +340,7 @@ h1 {
 }
 /* 플랫폼 분석---------------------------------------------- */
 .platform-analysis-content {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   /* text-align: left; */
   padding-left: 3vw;
@@ -350,12 +350,12 @@ h1 {
   flex-direction: column;
   /* height: ; */
 }
-.platform-analysis-table {
+/* .platform-analysis-table {
   border: 1px solid green;
-}
+} */
 .platform-analysis-table td {
-  border: 1px solid green;
-  height: 7vh;
+  /* border: 1px solid green; */
+  height: 9vh;
 }
 
 .platform-analysis-table tr td:first-child {
