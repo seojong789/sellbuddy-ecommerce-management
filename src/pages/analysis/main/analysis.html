@@ -9,6 +9,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./index.css" />
     <script src="./index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -22,15 +30,22 @@
         <section class="section-1">
           <h2>마이 상품 순위</h2>
           <div class="sort">
-            <form>
+            <div>
               <label for="period"></label>
-              <select id="period" name="period">
-                <option value="total">전체</option>
-                <option value="day">1일</option>
-                <option value="week">1주일</option>
-                <option value="month">1개월</option>
-              </select>
-            </form>
+              <div class="justify-date">
+                <span>기준일 :</span>
+                <input type="date" id="date-picker" value="2023-01-01" min="2023-01-01" max="2023-12-31">
+                
+                <select id="period" name="period">
+                  <option value="total">전체</option>
+                  <option value="day">1일</option>
+                  <option value="week">1주일</option>
+                  <option value="month">1개월</option>
+                </select>
+                <div class="frame"><button class="custom-btn btn-13">확인</button></div>
+              </div>
+            </div>
+
             <form>
               <label for="classification"></label>
               <select id="classification" name="classification">
@@ -55,7 +70,10 @@
             </div>
             <ul class="registered-product-list">
               <li class="product-info">
-                <a href="/src/pages/analysis/detail/analysis-detail.html?value=1" class="product-name">
+                <a
+                  href="/src/pages/analysis/detail/analysis-detail.html?value=1"
+                  class="product-name"
+                >
                   <span>
                     <img
                       src="/src/assets/images/목걸이1.jpg"
@@ -71,7 +89,6 @@
               </li>
             </ul>
           </div>
-          
 
           <div class="pages">
             <span><</span>
@@ -85,30 +102,36 @@
         </section>
         <div class="row">
           <section class="section-2">
-            <h2>일일 해시태그 순위</h2>
+            <h2>카테고리별 해시태그 순위</h2>
+            <div class="temp">
             <form>
-              <label for="platform-rank"></label>
-              <select id="platform-rank" name="platform-rank">
-                <option value="all">전체</option>
-                <option value="zigzag">지그재그</option>
-                <option value="ably">에이블리</option>
-              </select>
+                  <select id="platform-rank" name="platform-rank">
+                    <option value="all">전체</option>
+                    <option value="zigzag">지그재그</option>
+                    <option value="ably">에이블리</option>
+                  </select>
             </form>
+            <form>
+                  <select id="category-rank" name="category-rank">
+                    <option value="all">전체</option>
+                    <option value="necklaces">목걸이</option>
+                    <option value="rings">반지</option>
+                    <option value="bracelets">팔찌</option>
+                    <option value="anklets">발찌</option>
+                    <option value="earrings">귀걸이</option>
+                  </select>
+            </form>
+          </div>
             <ul class="hashtag-rank-list">
               <li class="hashtag-rank">
-                <div class="rank">1</div>
-                <div class="hashtag-name">#윈터목걸이</div>
               </li>
             </ul>
           </section>
+
           <section class="section-3">
             <h2>플랫폼 매출 순위</h2>
-
-            <ul class="paltform-sales-rank">
+            <ul class="platform-sales-rank">
               <li class="sales-rank">
-                <div class="rank">1</div>
-                <div class="platform">지그재그</div>
-                <div class="total-sales">809,000</div>
               </li>
             </ul>
           </section>
@@ -116,6 +139,5 @@
       </div>
     </div>
     <script src="/src/components/sidebar.js" type="module"></script>
-    
   </body>
 </html>
