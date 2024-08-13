@@ -58,9 +58,8 @@ ul .product-info {
   font-weight: bold;
 }
 
-.registered-product-list :hover{
+.registered-product-list :hover {
   background-color: #fff;
-  padding: 3px 0px;
 }
 
 .item {
