@@ -591,35 +591,45 @@ window.onload = () => {
         }
       }
       //플랫폼 분석--------------------------------------------------------------------------
-
-      //동일상품찾기
+      // 동일 상품 찾기
       let sameProducts = products.filter(
         (product) => product.name === productId.name
       );
       console.log("Same Products:", sameProducts);
 
-      // 동일상품들의 age 값이 같은지 확인
+      // 동일상품들의 age 값이 서로 같은지 확인
       let sameProductsAgeCheck = sameProducts.every(
         (product) => product.age === sameProducts[0].age
       );
-      //동일상품들의 평균연령층
-      let sameProductsAge;
 
-      if (sameProductsAgeCheck) {
+      console.log("나이같은지 체크" + sameProductsAgeCheck);
+      //동일상품들의 평균연령층
+
+      //동일상품평균연령대 구하기 -----------
+      let sameProductsAge;
+      // 동일상품이 없을때 1번째 연령대 =평균연령
+      if (sameProducts.length === 1) {
+        sameProductsAge = sameProducts[0].age;
+      }
+      // 동일상품이 있고, age 값이 서로 같으면 첫 번째 age 값을 sameProductsAge에 담기
+      else if (sameProducts.length > 1 && sameProductsAgeCheck === true) {
         // 동일상품들의 age 값이 같으면 첫 번째 age 값을 sameProductsAge에 담기
         sameProductsAge = sameProducts[0].age;
       } else {
         // age 값이 서로 다르면 quantity가 더 많은 요소의 age 값을 sameProductsAge에 담기
         sameProductsAge = sameProducts.reduce((prev, current) => {
-          // 모든 sales의 quantity 합계를 계산
-          let prevTotalQuantity = prev.platforms.sales.reduce(
-            (sum, sale) => sum + sale.quantity,
-            0
-          );
-          let currentTotalQuantity = current.platforms.sales.reduce(
-            (sum, sale) => sum + sale.quantity,
-            0
-          );
+          // 모든 sales의 quantity 합계를 계산, platforms 또는 sales가 없는 경우 기본값 0
+          let prevTotalQuantity =
+            prev.platforms?.sales?.reduce(
+              (sum, sale) => sum + sale.quantity,
+              0
+            ) || 0;
+
+          let currentTotalQuantity =
+            current.platforms?.sales?.reduce(
+              (sum, sale) => sum + sale.quantity,
+              0
+            ) || 0;
 
           return prevTotalQuantity > currentTotalQuantity ? prev : current;
         }).age;
@@ -628,27 +638,29 @@ window.onload = () => {
       sameProductsAge = parseInt(productId.age.replace("s", ""));
       console.log("동일상품들의 평균 연령층:", sameProductsAge);
 
-      //상품구매성별
-      let purchaseGender =
-        productId.gender === "M"
-          ? "남성"
-          : productId.gender === "F"
-          ? "여성"
-          : "알 수 없음";
-      console.log(purchaseGender);
+      // 상품구매성별
+      productId.gender === "M"
+        ? "남성"
+        : productId.gender === "F"
+        ? "여성"
+        : "알 수 없음";
 
-      // 동일상품들의 gender 값이 같은지 확인
+      // 동일상품들의 gender 값이 서로 같은지 확인
       let sameProductsGenderCheck = sameProducts.every(
         (product) => product.gender === sameProducts[0].gender
       );
-      //동일상품들의 평균성별
+      //동일상품들의 평균성별 구하기 --------------
       let sameProductsGender;
 
-      if (sameProductsGenderCheck) {
-        // 모든 gender 값이 같으면 첫 번째 gender 값을 sameProductsGender에 담기
+      // 동일상품이 없을때 1번째 성별 =평균성별
+      if (sameProducts.length === 1) {
+        sameProductsGender = sameProducts[0].age;
+      }
+      // 동일상품이 있고, 성별 값이 서로 같으면 첫 번째 성별 값을 sameProductsGender에 담기
+      else if (sameProducts.length > 1 && sameProductsGenderCheck === true) {
         sameProductsGender = sameProducts[0].gender;
-      } else {
-        // gender 값이 서로 다르면 quantity가 더 많은 요소의 gender 값을 sameProductsGender에 담기
+      } else if (sameProducts.length > 1 && sameProductsGenderCheck === false) {
+        // 동일상품이 있고, gender 값이 서로 다르면 quantity가 더 많은 요소의 gender 값을 sameProductsGender에 담기
         sameProductsGender = sameProducts.reduce((prev, current) => {
           // 모든 sales의 quantity 합계를 계산
           let prevTotalQuantity = prev.platforms.sales.reduce(
@@ -663,7 +675,7 @@ window.onload = () => {
           return prevTotalQuantity > currentTotalQuantity ? prev : current;
         }).gender;
       }
-
+      // 평균성별 영어 -> 한글로
       sameProductsGender =
         sameProductsGender === "M"
           ? "남성"
@@ -677,91 +689,127 @@ window.onload = () => {
       let platformComentHTML = document.querySelector(
         ".platform-analysis-coment"
       );
-      if (productsalesVolume === 0) {
-        platformComentHTML.innerHTML = `
-           <p>리뷰 수가 10개 미만으로 분석이 어렵습니다</p>
-          <p>리뷰 이벤트를 진행해 리뷰 수를 늘려보세요</p>
-        `;
-      } else {
+      // 동일상품이 1개 이상일때
+      if (sameProducts.length >= 1) {
+        // 평균연령이 타겟연령보다 작을 때
         if (sameProductsAge < targetAge) {
           platformComentHTML.innerHTML = `
-                  <p>우리 쇼핑몰 타겟층은 ${targetAge}대 ${targetGender}예요</p>
-                  <p>해당 상품은 ${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
-                  <p>조금 더 성숙한 디자인의 상품기획이 필요해보여요</p>
-                `;
-        } else if (sameProductsAge === targetAge) {
+          <p>우리 쇼핑몰 타겟층은 ${targetAge}대 ${targetGender}예요</p>
+          <p>해당 상품은 ${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
+          <p>조금 더 성숙한 디자인의 상품기획이 필요해보여요</p>
+          `;
+          // 평균연령이 타겟연령과 같을 때
+        } else if ((sameProductsAge = targetAge)) {
           platformComentHTML.innerHTML = `
-                   <p>해당 상품의 타겟층이 우리 쇼핑몰 타겟층인 ${targetAge}대 ${targetGender}과 일치해요</p>
-                   <p>비슷한 디자인의 상품기획을 추천드려요</p>
-                `;
+          <p>해당 상품의 타겟층이 우리 쇼핑몰 타겟층인 ${targetAge}대 ${targetGender}과 일치해요</p>
+          <p>비슷한 디자인의 상품기획을 추천드려요</p>
+          `;
+          // 평균연령이 타겟연령보다 클 때
         } else if (sameProductsAge > targetAge) {
           platformComentHTML.innerHTML = `
-                 <p>우리 쇼핑몰 타겟층은 ${targetAge}대 ${targetGender}예요</p>
-                 <p>해당 상품은 ${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
-                  <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
-                `;
-        } else {
-          platformComentHTML.innerHTML = `
-            <p>총 판매량이 0개입니다</p>
-            <p>판매량이 1개 이상일 때 분석이 가능해요</p>
-           `;
+           <p>우리 쇼핑몰 타겟층은 ${targetAge}대 ${targetGender}예요</p>
+           <p>해당 상품은 ${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
+            <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
+          `;
         }
+      } else if ((productsalesVolume = 0)) {
+        platformComentHTML.innerHTML = `
+      <p>총 판매량이 0개입니다</p>
+      <p>판매량이 1개 이상일 때 분석이 가능해요</p>
+     `;
       }
-
-      let ablyAge = parseInt(platforms[0].age.replace("s", ""));
-      let zigzagAge = parseInt(platforms[1].age.replace("s", ""));
+      // 에이블리 분석----------------------------
+      // 에이블리 동일 상품 찾기
+      let ablyProduct = sameProducts.find(
+        (product) => product.platform === "ably"
+      );
+      // 에이블리 동일 상품의 구매연령
+      let ablyProductAge = ablyProduct
+        ? ablyProduct.age.replace("s", "")
+        : null;
+      console.log("에이블리상품" + ablyProduct);
+      console.log("에이블리상품나이" + ablyProductAge);
+      // 에이블리 동일 상품의 구매자 성별
+      let ablyProductGender = ablyProduct
+        ? ablyProduct.gender.replace("s", "")
+        : null;
+      console.log("에이블리상품성별" + ablyProductGender);
 
       // 플랫폼 분석 - 에이블리 분석 코멘트 요소 선택
       let ablyComentHTML = document.querySelector(".ably-analysis-coment");
-      // if (sameProductsAge === targetAge && purchaseGender === targetGender) {
-
-      if (productId.name === "ably" && productsalesVolume === 0) {
+      // 전체판매량이 0일때
+      if (ablyProduct === undefined) {
         ablyComentHTML.innerHTML = `
-            <p>총 판매량이 0개입니다</p>
+          <p>총 판매량이 0개입니다</p>
             <p>판매량이 1개 이상일 때 분석이 가능해요</p>
-           `;
-      } else if (ablyAge < targetAge) {
-        ablyComentHTML.innerHTML = `
-                <p>${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
-                <p>조금 더 성숙한 디자인의 상품기획이 필요해보여요</p>
-              `;
-      } else if (ablyAge === targetAge) {
-        ablyComentHTML.innerHTML = `
-                 <p>우리 쇼핑몰 타겟층인 ${targetAge}대 ${targetGender}과 일치해요</p>
-                 <p>비슷한 디자인의 상품기획을 추천드려요</p>
-              `;
-      } else if (ablyAge > targetAge) {
-        ablyComentHTML.innerHTML = `
-               <p>${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
-              <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
-              `;
+        `;
+      } else if (ablyProduct != undefined) {
+        if (ablyProductAge < targetAge) {
+          ablyComentHTML.innerHTML = `
+                   <p>${ablyProductAge}대 ${ablyProductGender} 구매율이 높아요</p>
+                      <p>조금 더 성숙한 디자인의 상품기획이 필요해보여요</p>
+                `;
+        } else if ((ablyProductAge = targetAge)) {
+          ablyComentHTML.innerHTML = `
+                       <p>우리 쇼핑몰 타겟층인 ${targetAge}대 ${targetGender}과 일치해요</p>
+                       <p>비슷한 디자인의 상품기획을 추천드려요</p>
+                `;
+        } else if (ablyProductAge > targetAge) {
+          ablyComentHTML.innerHTML = `
+                <p>${ablyProductAge}대 ${ablyProductGender} 구매율이 높아요</p>
+                    <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
+                `;
+        }
       }
+      console.log("에이블리상품", {
+        platform: ablyProduct.platform,
+        age: ablyProduct.age,
+        gender: ablyProduct.gender,
+      });
+      // 지그재그 분석 -------------------------
+      // 지그재그 동일 상품 찾기
+      let zigzagProduct = sameProducts.find(
+        (product) => product.name === "zigzag"
+      );
+      // 지그재그 동일 상품의 구매연령
+      let zigzagProductAge = zigzagProduct
+        ? zigzagProduct.age.replace("s", "")
+        : null;
+      // 지그재그 동일 상품의 구매자 성별
+      let zigzagProductGender = zigzagProduct
+        ? zigzagProduct.gender.replace("s", "")
+        : null;
+      console.log("지그재그상품성별" + zigzagProductGender);
+      console.log("지그재그상품" + zigzagProduct);
+      console.log("지그재그상품 나이" + zigzagProductAge);
+      console.log("지그재그상품 성별" + zigzagProductGender);
+      let zigzagAge = parseInt(platforms[1].age.replace("s", ""));
 
       // 플랫폼 분석 - 에이블리 분석 코멘트 요소 선택
-      let zigzagAnalysisComentHTML = document.querySelector(
-        ".zigzag-analysis-coment"
-      );
-      // if (sameProductsAge === targetAge && purchaseGender === targetGender) {
-      if (zigzagAge === 0) {
-        zigzagAnalysisComentHTML.innerHTML = `
-            <p>총 판매량이 0개입니다</p>
+      let zigzagComentHTML = document.querySelector(".zigzag-analysis-coment");
+      // 전체판매량이 0일때
+      if (zigzagProduct === undefined) {
+        zigzagComentHTML.innerHTML = `
+          <p>총 판매량이 0개입니다</p>
             <p>판매량이 1개 이상일 때 분석이 가능해요</p>
-           `;
-      } else if (zigzagAge < targetAge) {
-        zigzagAnalysisComentHTML.innerHTML = `
-                <p>${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
-                <p>조금 더 성숙한 디자인의 상품기획이 필요해보여요</p>
-              `;
-      } else if (zigzagAge === targetAge) {
-        zigzagAnalysisComentHTML.innerHTML = `
-                 <p>우리 쇼핑몰 타겟층인 ${targetAge}대 ${targetGender}과 일치해요</p>
-                 <p>비슷한 디자인의 상품기획을 추천드려요</p>
-              `;
-      } else if (zigzagAge > targetAge) {
-        zigzagAnalysisComentHTML.innerHTML = `
-               <p>${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
-               <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
-              `;
+        `;
+      } else if (zigzagProduct != undefined) {
+        if (zigzagProductAge < targetAge) {
+          zigzagComentHTML.innerHTML = `
+                   <p>${zigzagProductAge}대 ${zigzagProductGender} 구매율이 높아요</p>
+                      <p>조금 더 성숙한 디자인의 상품기획이 필요해보여요</p>
+                `;
+        } else if ((zigzagProductAge = targetAge)) {
+          zigzagComentHTML.innerHTML = `
+                       <p>우리 쇼핑몰 타겟층인 ${targetAge}대 ${targetGender}과 일치해요</p>
+                       <p>비슷한 디자인의 상품기획을 추천드려요</p>
+                `;
+        } else if (zigzagProductAge > targetAge) {
+          zigzagComentHTML.innerHTML = `
+                <p>${zigzagProductAge}대 ${zigzagProductGender} 구매율이 높아요</p>
+                    <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
+                `;
+        }
       }
     })
   ); // 마지막1
