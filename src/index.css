@@ -18,6 +18,10 @@ body {
   overflow: auto;
 }
 
+#none {
+  display: none;
+}
+
 a {
   text-decoration: none;
   color: white;
