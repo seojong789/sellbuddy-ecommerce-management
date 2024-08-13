@@ -760,7 +760,7 @@ window.onload = () => {
       // 플랫폼 분석 - 에이블리 분석 코멘트 요소 선택
       let zigzagComentHTML = document.querySelector('.zigzag-analysis-coment');
       // 전체판매량이 0일때
-      if (zigzagProduct === undefined) {
+      if (zigzagAge === null) {
         zigzagComentHTML.innerHTML = `
               <p>해당 상품은 지그재그에 등록되어 있지 않아요.</p>
               `;
