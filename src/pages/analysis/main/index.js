@@ -5,8 +5,8 @@ window.onload = () => {
 
   axios
     .all([
-      axios.get('http://127.0.0.1:5500/product.json'),
-      axios.get('http://127.0.0.1:5500/platform1.json'),
+      axios.get("http://127.0.0.1:5500/product.json"),
+      axios.get("http://127.0.0.1:5500/platform1.json"),
     ])
     .then((res) => {
       let products = res[0].data;
@@ -34,7 +34,9 @@ window.onload = () => {
                 product.id
               }" class="product-name">
                 <span>
-                  <img src="/src/assets/images/${product.name}.jpg" alt="상품 대표 이미지" />
+                  <img src="/src/assets/images/${
+                    product.name
+                  }.jpg" alt="상품 대표 이미지" />
                 </span>
                 <span class="registered-product-name">${product.name}</span>
               </a>
@@ -45,8 +47,8 @@ window.onload = () => {
             </li>
           `;
           })
-          .join(''); // 배열을 문자열로 변환하여 HTML에 삽입
-        document.querySelector('.registered-product-list').innerHTML =
+          .join(""); // 배열을 문자열로 변환하여 HTML에 삽입
+        document.querySelector(".registered-product-list").innerHTML =
           productsHTML;
       };
 
@@ -59,19 +61,19 @@ window.onload = () => {
 
             // 기간에 따라 판매 데이터를 필터링
             switch (period) {
-              case 'total':
+              case "total":
                 filteredSales = product.sales.filter(
                   (sale) => new Date(sale.date) <= selectedDate
                 );
                 break;
-              case 'day':
+              case "day":
                 filteredSales = product.sales.filter(
                   (sale) =>
                     new Date(sale.date).toDateString() ===
                     selectedDate.toDateString()
                 );
                 break;
-              case 'week':
+              case "week":
                 const weekAgo = new Date(selectedDate);
                 weekAgo.setDate(weekAgo.getDate() - 7);
                 filteredSales = product.sales.filter(
@@ -80,7 +82,7 @@ window.onload = () => {
                     new Date(sale.date) <= selectedDate
                 );
                 break;
-              case 'month':
+              case "month":
                 filteredSales = product.sales.filter((sale) => {
                   const saleDate = new Date(sale.date);
                   return (
@@ -102,17 +104,17 @@ window.onload = () => {
 
       // 정렬 기능
       document
-        .getElementById('classification')
-        .addEventListener('change', (event) => {
+        .getElementById("classification")
+        .addEventListener("change", (event) => {
           const sortBy = event.target.value;
           const sortFunctions = {
-            'sales-quantity-desc': (a, b) =>
+            "sales-quantity-desc": (a, b) =>
               calculateTotal(b).totalQuantity - calculateTotal(a).totalQuantity,
-            'sales-quantity-asc': (a, b) =>
+            "sales-quantity-asc": (a, b) =>
               calculateTotal(a).totalQuantity - calculateTotal(b).totalQuantity,
-            'sales-desc': (a, b) =>
+            "sales-desc": (a, b) =>
               calculateTotal(b).totalSales - calculateTotal(a).totalSales,
-            'sales-asc': (a, b) =>
+            "sales-asc": (a, b) =>
               calculateTotal(a).totalSales - calculateTotal(b).totalSales,
           };
           filteredProducts.sort(sortFunctions[sortBy]);
@@ -122,10 +124,10 @@ window.onload = () => {
 
       // 날짜 선택 및 필터링 적용
       document
-        .querySelector('.custom-btn.btn-13')
-        .addEventListener('click', () => {
-          const selectedDate = document.getElementById('date-picker').value;
-          const selectedPeriod = document.getElementById('period').value;
+        .querySelector(".custom-btn.btn-13")
+        .addEventListener("click", () => {
+          const selectedDate = document.getElementById("date-picker").value;
+          const selectedPeriod = document.getElementById("period").value;
           filterProductsByDate(selectedDate, selectedPeriod); // 날짜 및 기간 선택에 따라 제품 필터링
         });
 
@@ -138,20 +140,20 @@ window.onload = () => {
         const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
         const paginationHTML = `
         <span class="page-control prev ${
-          currentPage === 1 ? 'disabled' : ''
+          currentPage === 1 ? "disabled" : ""
         }">&lt;</span>
         ${Array.from(
           { length: totalPages },
           (_, i) =>
             `<span class="page-number ${
-              i + 1 === currentPage ? 'active' : ''
+              i + 1 === currentPage ? "active" : ""
             }">${i + 1}</span>`
-        ).join('')}
+        ).join("")}
         <span class="page-control next ${
-          currentPage === totalPages ? 'disabled' : ''
+          currentPage === totalPages ? "disabled" : ""
         }">&gt;</span>
       `;
-        document.querySelector('.pages').innerHTML = paginationHTML;
+        document.querySelector(".pages").innerHTML = paginationHTML;
       };
 
       // 페이지 변경 함수
@@ -173,13 +175,13 @@ window.onload = () => {
       };
 
       // 페이지 클릭 이벤트 리스너
-      document.querySelector('.pages').addEventListener('click', (event) => {
-        if (event.target.classList.contains('page-number')) {
+      document.querySelector(".pages").addEventListener("click", (event) => {
+        if (event.target.classList.contains("page-number")) {
           changePage(parseInt(event.target.textContent));
-        } else if (event.target.classList.contains('prev') && currentPage > 1) {
+        } else if (event.target.classList.contains("prev") && currentPage > 1) {
           changePage(currentPage - 1);
         } else if (
-          event.target.classList.contains('next') &&
+          event.target.classList.contains("next") &&
           currentPage < totalPages
         ) {
           changePage(currentPage + 1);
@@ -204,7 +206,7 @@ window.onload = () => {
       const platformSalesHTML = sortedPlatformSales
         .map((platformSales, index) => {
           const platformNameInKorean =
-            platformSales.platform === 'zigzag' ? '지그재그' : '에이블리';
+            platformSales.platform === "zigzag" ? "지그재그" : "에이블리";
           return `
           <li class="sales-rank">
             <div class="rank">${index + 1}</div>
@@ -213,19 +215,19 @@ window.onload = () => {
           </li>
         `;
         })
-        .join('');
+        .join("");
 
-      document.querySelector('.platform-sales-rank').innerHTML =
+      document.querySelector(".platform-sales-rank").innerHTML =
         platformSalesHTML;
 
       // 해시태그 순위 계산 함수
-      const getHashtagRanking = (data, categoryFilter = 'all') => {
+      const getHashtagRanking = (data, categoryFilter = "all") => {
         const hashtags = {};
 
         // 각 플랫폼과 카테고리에서 해시태그를 집계
         data.forEach((platform) => {
           platform.category.forEach((category) => {
-            if (categoryFilter === 'all' || category.name === categoryFilter) {
+            if (categoryFilter === "all" || category.name === categoryFilter) {
               category.인기해시태그.forEach((tag) => {
                 hashtags[tag] = (hashtags[tag] || 0) + 1;
               });
@@ -241,11 +243,11 @@ window.onload = () => {
 
       // 해시태그 순위를 렌더링하는 함수
       const renderHashtagRankings = () => {
-        const selectedPlatform = document.getElementById('platform-rank').value;
-        const selectedCategory = document.getElementById('category-rank').value;
+        const selectedPlatform = document.getElementById("platform-rank").value;
+        const selectedCategory = document.getElementById("category-rank").value;
 
         let filteredData = platforms;
-        if (selectedPlatform !== 'all') {
+        if (selectedPlatform !== "all") {
           filteredData = platforms.filter(
             (platform) => platform.name === selectedPlatform
           );
@@ -253,27 +255,31 @@ window.onload = () => {
 
         const rankings = getHashtagRanking(filteredData, selectedCategory);
 
-        const hashtagRankList = document.querySelector('.hashtag-rank-list');
-        hashtagRankList.innerHTML = '';
+        const hashtagRankList = document.querySelector(".hashtag-rank-list");
+        hashtagRankList.innerHTML = "";
 
         // 해시태그 순위를 HTML로 렌더링
-        rankings.forEach(([tag, count], index) => {
-          const li = document.createElement('li');
-          li.className = 'hashtag-rank';
+        // rankings.forEach(([tag, count], index) => {
+        for (let i = 0; i < rankings.length; i++) {
+          const li = document.createElement("li");
+          li.className = "hashtag-rank";
           li.innerHTML = `<div class="rank">${
-            index + 1
-          }</div><div class="hashtag-name">#${tag}</div>`;
+            i + 1
+          }</div><div class="hashtag-name">#${rankings[i][0]}</div>`;
           hashtagRankList.appendChild(li);
-        });
+          if (i > 5) {
+            break;
+          }
+        }
       };
 
       // 플랫폼 및 카테고리 선택 변경 시 해시태그 순위 렌더링
       document
-        .getElementById('platform-rank')
-        .addEventListener('change', renderHashtagRankings);
+        .getElementById("platform-rank")
+        .addEventListener("change", renderHashtagRankings);
       document
-        .getElementById('category-rank')
-        .addEventListener('change', renderHashtagRankings);
+        .getElementById("category-rank")
+        .addEventListener("change", renderHashtagRankings);
 
       // 초기 해시태그 순위 렌더링
       renderHashtagRankings();

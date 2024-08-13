@@ -136,14 +136,14 @@ axios
           popularHashtagHTML += `
             <li>
               <span class="list-side">${i}위</span>
-              <span class="list-center">${popularHashtag[i][0]}</span>
+              <span class="list-center">#${popularHashtag[i][0]}</span>
               <span class="list-side">${popularHashtag[i][1]}건</span>
             </li>`;
         } else {
           popularHashtagHTML += `
           <li>
             <span class="list-side">${i + 1}위</span>
-            <span class="list-center">${popularHashtag[i][0]}</span>
+            <span class="list-center">#${popularHashtag[i][0]}</span>
             <span class="list-side">${popularHashtag[i][1]}건</span>
           </li>`;
         }
