@@ -59,12 +59,14 @@ ul .product-info {
 }
 
 .registered-product-list :hover {
+.registered-product-list :hover {
   background-color: #fff;
 }
 
 .item {
   font-weight: bolder;
   color: #000;
+  padding: 3px 0px;
 }
 
 ul .product-info {
@@ -72,7 +74,7 @@ ul .product-info {
   margin-top: 10px;
 }
 
-ul .product-info > a {
+ul .product-info>a {
   color: black;
   font-weight: bold;
 }
@@ -131,7 +133,7 @@ ul .product-info .product-name img {
   justify-content: space-between;
 }
 
-.section-2 .temp > form {
+.section-2 .temp>form {
   margin-right: 10px;
 }
 
@@ -151,6 +153,15 @@ ul .product-info .product-name img {
   grid-template-columns: 50px 3fr;
 }
 
+.hashtag-name {
+  background-color: #3f72b9;
+  border: 1px solid #3f72b9;
+  border-radius: 0.5em;
+  width: fit-content;
+  padding: 3px;
+  color: #ffffff;
+}
+
 .section-2 .hashtag-rank-list {
   background-color: #f8f8f8;
   border-radius: 5px;
@@ -167,11 +178,12 @@ ul .product-info .product-name img {
 .section-3 .sales-rank {
   grid-template-columns: 50px 2fr 120px;
 }
+
 .section-3 .platform-sales-rank :nth-child(1) {
   padding-top: 10px;
 }
 
-.section-3 .sales-rank > div {
+.section-3 .sales-rank>div {
   align-content: center;
 }
 
@@ -183,7 +195,7 @@ ul .product-info .product-name img {
   margin: 10px 0;
 }
 
-input[type='date'],
+input[type="date"],
 select {
   background-color: #313443;
   color: #ffffff;
@@ -259,7 +271,7 @@ optgroup {
 }
 
 .btn-13:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 0;
@@ -289,5 +301,6 @@ optgroup {
 #classification,
 #date-picker,
 .custom-btn {
-  text-align: center; /* 옵션 텍스트를 중앙 정렬 */
+  text-align: center;
+  /* 옵션 텍스트를 중앙 정렬 */
 }
