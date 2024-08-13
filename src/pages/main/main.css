@@ -3,39 +3,39 @@
   background-color: #f8f8f8;
   width: calc(100vw - 80px);
   height: calc(100vh - 20px);
-  padding: 10px;
+  padding: 10px 30px;
 
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto auto 1fr;
   gap: 10px;
-
-  text-align: center;
 }
 
 .content-box {
   background-color: #ffffff;
   border: 1px solid #f2f2f2;
   border-radius: 10px;
+  box-shadow: 0.25em 0.25em 0.625em #f2f2f2;
+  padding: 1vh 1vw;
 }
 
 .title {
-  background-color: skyblue;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   max-height: 50%;
-  padding: 10px;
+  padding: 1vh 1vw;
 
-  font-size: 25px;
+  font-size: clamp(20px, 2.5vw, 25px);
+  text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .title span {
-  margin-left: 10px;
+  margin-left: 1vmin;
 
-  font-size: 15px;
+  font-size: clamp(12px, 1.5vw, 15px);
   white-space: nowrap;
   overflow: hidden;
   box-sizing: border-box;
@@ -59,18 +59,12 @@
 
 #main-order p span {
   width: 25%;
-  padding: 10px;
+  padding: 1vh 1vw;
 
-  font-size: 20px;
+  font-size: clamp(15px, 2vw, 20px);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-#main-order p span:nth-child(1),
-#main-order p span:nth-child(2),
-#main-order p span:nth-child(3) {
-  border-right: 1px solid gray;
 }
 
 /* 공지사항 */
@@ -94,30 +88,38 @@
 /* 공지, 인기 공통 */
 .list {
   border-bottom: 1px solid gray;
-  margin: 0px 10px 10px 10px;
+  margin: 0px 1vmin 1vmin 1vmin;
 }
 
 .sort {
-  height: 20px;
-  padding: 10px;
+  height: 2vh;
+  padding: 1vh 1vw;
 
   display: flex;
   align-items: center;
   justify-content: right;
 
-  font-size: 12px;
+  font-size: clamp(10px, 1.2vw, 12px);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .sort select {
-  font-size: 12px;
+  background-color: #313443;
+  border: 1px solid #313443;
+  border-radius: 5px;
+
+  font-size: clamp(10px, 1.2vw, 12px);
+  font-weight: 400;
+  color: #ffffff;
 }
 
 .list-titles {
-  height: 20px;
-  padding: 10px;
+  height: 2vh;
+  padding: 1vh 1vw;
+
+  font-size: clamp(10px, 1.2vw, 12px);
 
   display: flex;
   justify-content: space-between;
@@ -131,10 +133,8 @@
 
 .list li {
   border-top: 1px solid gray;
-  height: 20px;
-  padding: 10px;
-
-  font-size: 15px;
+  height: 2vh;
+  padding: 1vh 1vw;
 
   display: flex;
   text-align: center;
@@ -143,7 +143,7 @@
 
 .list li span,
 .list li a {
-  font-size: 15px;
+  font-size: clamp(12px, 1.5vw, 15px);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -168,9 +168,9 @@
 }
 
 #main-sales-chart p {
-  height: 20px;
-  padding: 10px;
-  margin: 0px 10px;
+  height: 2vh;
+  padding: 1vh 1vw;
+  margin: 0px 1vw;
 
   display: flex;
   align-items: center;
@@ -178,16 +178,22 @@
 }
 
 #main-sales-chart p select {
-  font-size: 15px;
+  background-color: #313443;
+  border: 1px solid #313443;
+  border-radius: 5px;
+
+  font-size: clamp(12px, 1.5vw, 15px);
+  font-weight: 400;
+  color: #ffffff;
 }
 
 .week-chart {
   height: 75%;
 
-  margin: 0px 10px 10px 10px;
+  margin: 0px 1vmin 1vmin 1vmin;
 }
 
-/* 매출 달력 */
+/* 일간 매출 */
 #main-sales-calendar {
   grid-column: 4/7;
   grid-row-start: 3;
@@ -196,29 +202,29 @@
 #calendar *:not(.title):not(.year-month):not(p) {
   box-sizing: border-box;
 
-  font-size: 12px;
+  font-size: clamp(10px, 1.2vw, 12px);
 }
 
 #calendar {
-  margin: 0px 10px;
+  margin: 0px 1vw;
 }
 
 .year-month {
-  height: 20px;
-  padding: 10px;
+  height: 2vh;
+  padding: 1vh 1vw;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 20px;
+  font-size: clamp(12px, 1.5vw, 15px);
   font-weight: bold;
 }
 
 .weeks {
   border-top: 1px solid black;
   border-left: 1px solid black;
-  height: 30px;
+  height: 3vh;
 
   display: flex;
   align-items: center;
@@ -229,13 +235,13 @@
   border-right: 1px solid black;
   width: calc(100% / 7);
   height: 100%;
-  padding: 10px;
+  padding: 1vh 1vw;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 20px;
+  font-size: clamp(12px, 1.5vw, 15px);
   font-weight: bold;
   text-align: center;
 }
@@ -252,29 +258,30 @@
   border-bottom: 1px solid black;
   border-right: 1px solid black;
   width: calc(100% / 7);
-  height: 50px;
-  padding: 5px;
+  height: 4.5vh;
+  padding: 0.5vh 0.5vw;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  font-size: 1px;
+  font-size: clamp(10px, 1.2vw, 12px);
   text-align: left;
 }
 
-.day:has(.today) {
-  border: 3px solid orange;
+.today {
+  background-color: #3f7ab5;
+  color: white;
 }
 
 .day-number {
-  height: 30px;
+  height: 3vh;
 
   font-weight: bold;
 }
 
 .day-sale {
-  height: 30px;
+  height: 3vh;
 
   color: black;
   text-align: right;
@@ -287,13 +294,14 @@
   background-color: navy;
   width: fit-content;
   height: fit-content;
-  padding: 10px;
+  padding: 1vmin;
   opacity: 1;
 
   color: white;
 
   display: none;
   position: relative;
+  right: 70%;
 }
 
 .day:hover .day-number,
