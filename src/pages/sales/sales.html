@@ -1,9 +1,10 @@
+<!-- sales.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main Page</title>
+    <title>Sales Page</title>
     <link rel="stylesheet" href="../../index.css" />
     <link rel="stylesheet" href="./sales.css" />
     <link
@@ -14,33 +15,36 @@
   <body>
     <div class="sales-container">
       <div class="select-section">
-        <section>
-          <select name="flatform" id="">
+        <section id="platform-select">
+          <h2 id="none">플랫폼 선택</h2>
+          <select name="flatform" class="form-select" id="">
             <option value="total">전체</option>
             <option value="ably">에이블리</option>
             <option value="zigzag">지그재그</option>
           </select>
         </section>
-        <section>
-          <span>일자선택</span>
-          <input type="date" />
-          <button type="submit">확인?</button>
+        <section id="date-select">
+          <h2 id="none">날짜 선택</h2>
+          <label for="date" class="form-label">날짜선택</label>
+          <input type="date" id="date" class="form-input" />
+          <button type="submit" class="form-button">확인</button>
         </section>
         <section id="sales-info">
-          <p><span id="monthly-sales">월 매출 : 0</span></p>
-          <p><span id="daily-sales">일 매출 : 0</span></p>
+          <h3 id="none">월/일 매출</h3>
+          <p><span>월 매출 :</span> <span id="monthly-sales">0</span></p>
+          <p><span>일 매출 :</span> <span id="daily-sales">0</span></p>
         </section>
       </div>
 
       <div class="week-month-section">
         <section>
-          주간 매출 차트
+          <h3>주간 매출 차트</h3>
           <div class="chart-container">
             <canvas id="week"></canvas>
           </div>
         </section>
         <section>
-          분기 매출 차트
+          <h3>분기 매출 차트</h3>
           <div class="chart-container">
             <canvas id="quarter"></canvas>
           </div>
@@ -48,15 +52,17 @@
       </div>
 
       <div class="year-section">
-        <div class="chart-container">
-          월간 매출 차트
-          <canvas id="years"></canvas>
-        </div>
+        <section>
+          <h3>월간 매출 차트</h3>
+          <div class="chart-container">
+            <canvas id="years"></canvas>
+          </div>
+        </section>
       </div>
     </div>
+
     <script src="../../components/sidebar.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js" type="module"></script>
-    <script src="../../components/util.js" type="module"></script>
     <script src="./sales.js" type="module"></script>
   </body>
 </html>

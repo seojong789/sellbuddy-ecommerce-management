@@ -1,7 +1,7 @@
 window.onload = () => {
   // 오늘 날짜를 기본값으로 설정
-  const today = new Date().toISOString().split('T')[0];
-  document.getElementById('date-picker').value = today;
+  // const today = new Date().toISOString().split('T')[0];
+  // document.getElementById('date-picker').value = today;
 
   axios
     .all([
