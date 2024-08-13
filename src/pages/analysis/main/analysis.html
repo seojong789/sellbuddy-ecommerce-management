@@ -27,6 +27,7 @@
         <h1>마이 분석</h1>
       </div>
       <div class="main">
+<!-- --------------------------------섹션 1 --------------------------------------------->
         <section class="section-1">
           <h2>마이 상품 순위</h2>
           <div class="sort">
@@ -34,15 +35,23 @@
               <label for="period"></label>
               <div class="justify-date">
                 <span>기준일 :</span>
-                <input type="date" id="date-picker" value="2023-01-01" min="2023-01-01" max="2023-12-31">
-                
-                <select id="period" name="period">
+                <input
+                  type="date"
+                  id="date-picker"
+                  value="2023-01-01"
+                  min="2023-01-01"
+                  max="2023-12-31"
+                />
+                <select id="period" name="period">.
+                  <option value="">기간 선택 ▼</option>
                   <option value="total">전체</option>
                   <option value="day">1일</option>
                   <option value="week">1주일</option>
                   <option value="month">1개월</option>
                 </select>
-                <div class="frame"><button class="custom-btn btn-13">확인</button></div>
+                <div class="frame">
+                  <button class="custom-btn btn-13">확인</button>
+                </div>
               </div>
             </div>
 
@@ -100,44 +109,46 @@
             <span>></span>
           </div>
         </section>
+      
+        <!-- -----------------------------------섹션 2, 3---------------------------------------------------- -->
+
         <div class="row">
           <section class="section-2">
             <h2>카테고리별 해시태그 순위</h2>
             <div class="temp">
-            <form>
-                  <select id="platform-rank" name="platform-rank">
-                    <option value="all">전체</option>
-                    <option value="zigzag">지그재그</option>
-                    <option value="ably">에이블리</option>
-                  </select>
-            </form>
-            <form>
-                  <select id="category-rank" name="category-rank">
-                    <option value="all">전체</option>
-                    <option value="necklaces">목걸이</option>
-                    <option value="rings">반지</option>
-                    <option value="bracelets">팔찌</option>
-                    <option value="anklets">발찌</option>
-                    <option value="earrings">귀걸이</option>
-                  </select>
-            </form>
-          </div>
+              <form>
+                <select id="platform-rank" name="platform-rank">
+                  <option value="all">전체</option>
+                  <option value="zigzag">지그재그</option>
+                  <option value="ably">에이블리</option>
+                </select>
+              </form>
+              <form>
+                <select id="category-rank" name="category-rank">
+                  <option value="all">전체</option>
+                  <option value="necklaces">목걸이</option>
+                  <option value="rings">반지</option>
+                  <option value="bracelets">팔찌</option>
+                  <option value="anklets">발찌</option>
+                  <option value="earrings">귀걸이</option>
+                </select>
+              </form>
+            </div>
             <ul class="hashtag-rank-list">
-              <li class="hashtag-rank">
-              </li>
+              <li class="hashtag-rank"></li>
             </ul>
           </section>
 
           <section class="section-3">
             <h2>플랫폼 매출 순위</h2>
             <ul class="platform-sales-rank">
-              <li class="sales-rank">
-              </li>
+              <li class="sales-rank"></li>
             </ul>
           </section>
         </div>
       </div>
     </div>
     <script src="/src/components/sidebar.js" type="module"></script>
+    </script>
   </body>
 </html>

@@ -223,5 +223,9 @@ window.onload = () => {
 
     // 초기 해시태그 순위 렌더링
     renderHashtagRankings();
+
+    
   });
+
+  
 };
