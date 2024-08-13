@@ -147,7 +147,7 @@
     "starReview": 3.7,
     "hashtags": ["커플반지", "은반지", "커플링", "심플", "트렌디"],
     "registrationDate": "2023-05-20",
-    "img": "/src/assets/images/",
+    "img": "/src/assets/images/[데일리추천💍] 다이아나 원 진주 반지 [실버925도금].jpg",
     "sales": [
       {
         "date": "2023-01-15",
@@ -2084,6 +2084,138 @@
       {
         "date": "2023-12-15",
         "quantity": 0
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "[윈터착용][BEST] 베이비 하트💕 네크리스",
+    "age": "20s",
+    "gender": "F",
+    "description": "사랑스러운, 하트, 여성용, 데일리, 인기",
+    "price": 26300,
+    "category": "Necklaces",
+    "platform": "zigzag",
+    "visitLastweek": 235,
+    "visitThisweek": 239,
+    "visitTotal": 20111,
+    "reviews": 140,
+    "starReview": 4.6,
+    "hashtags": ["패피", "귀걸이", "세련된", "데일리룩", "트렌디"],
+    "registrationDate": "2023-01-14",
+    "img": "/src/assets/images/[윈터착용][BEST] 베이비 하트💕 네크리스.jpg",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-04-14",
+        "quantity": 1
+      },
+      {
+        "date": "2023-04-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-04-19",
+        "quantity": 1
+      },
+      {
+        "date": "2023-05-04",
+        "quantity": 1
+      },
+      {
+        "date": "2023-05-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-05-19",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-03",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-25",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-10-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      },
+      {
+        "date": "2023-12-17",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-22",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-25",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-28",
+        "quantity": 2
       }
     ]
   }
