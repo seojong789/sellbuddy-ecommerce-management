@@ -3,14 +3,14 @@
 window.onload = () => {
   // 분석 메인의 a태그 상품 id값 가져옴
   const urlParams = new URLSearchParams(location.search);
-  let id = urlParams.get("value");
+  let id = urlParams.get('value');
   console.log(id);
   // 날짜 무조건 23년 12월 31일로 설정
-  const fixedDate = new Date("2023-12-31");
+  const fixedDate = new Date('2023-12-31');
   //================================================================================
 
   // json파일 가져오기
-  axios.all([axios.get("/product.json"), axios.get("/platform1.json")]).then(
+  axios.all([axios.get('/product.json'), axios.get('/platform1.json')]).then(
     axios.spread((productsRes, platformsRes) => {
       // 두 JSON 파일의 데이터를 각각 가져옴
       let products = productsRes.data;
@@ -36,48 +36,48 @@ window.onload = () => {
       // let productVisitThisweek = productId.platforms.visitThisweek; //이번주 방문자수
       // let purchaseConversionRate = 0; //구매전환율
       let targetAge = 20; //내 쇼핑몰 타겟연령층
-      let targetGender = "여성"; //내 쇼핑몰 타겟연령층
+      let targetGender = '여성'; //내 쇼핑몰 타겟연령층
       // // let productDescription = productId.description; //상품키워드
 
       // 상품이미지-------------------------------------------------
       // 실제 product 객체의 img 값을 src로 설정
       // => (수정) product 객체의 name을 이용하여 src과 alt 입력
       // (name과 이미지 파일명을 동일하게 하고 파일형식은 .jpg로 할 것)
-      let productImage = document.querySelector(".product-img");
-      productImage.src = "/src/assets/images/" + productId.name + ".jpg";
-      productImage.alt = productId.name + ".jpg";
+      let productImage = document.querySelector('.product-img');
+      productImage.src = '/src/assets/images/' + productId.name + '.jpg';
+      productImage.alt = productId.name + '.jpg';
 
       // 상품명 ------------------------------------------------------------
-      let productName = document.querySelector(".product-name");
+      let productName = document.querySelector('.product-name');
       productName.innerText = productId.name;
       // 가격-----------------------------------------------------
       let productPrice = productId.price;
-      let productPriceHTML = document.querySelector(".product-price");
+      let productPriceHTML = document.querySelector('.product-price');
       productPriceHTML.innerText = `${productPrice.toLocaleString()}원`;
       // 플랫폼------------------------------------------------------
-      let productPlatform = document.querySelector(".product-platform");
-      if (productId.platform === "ably") {
-        productPlatform.innerText = "에이블리";
-      } else if (productId.platform === "zigzag") {
-        productPlatform.innerText = "지그재그";
+      let productPlatform = document.querySelector('.product-platform');
+      if (productId.platform === 'ably') {
+        productPlatform.innerText = '에이블리';
+      } else if (productId.platform === 'zigzag') {
+        productPlatform.innerText = '지그재그';
       } else {
-        productPlatform.innerText = "-";
+        productPlatform.innerText = '-';
       }
       // 판매량----------------------------------------------------------
       let productsalesVolume = 0; //판매량
-      console.log("판매배열" + productId.sales);
-      console.log("판매배열개수" + productId.sales.length);
+      console.log('판매배열' + productId.sales);
+      console.log('판매배열개수' + productId.sales.length);
       if (productId.sales.length > 0) {
         for (let i = 0; i < productId.sales.length; i++) {
           productsalesVolume += productId.sales[i].quantity;
         }
         let productsalesVolumeHTML = document.querySelector(
-          ".product-sales-volume"
+          '.product-sales-volume'
         );
         productsalesVolumeHTML.innerText = `${productsalesVolume.toLocaleString()}개`;
       } else {
         let productsalesVolumeHTML = document.querySelector(
-          ".product-sales-volume"
+          '.product-sales-volume'
         );
         productsalesVolumeHTML.innerText = `0개`;
       }
@@ -85,14 +85,14 @@ window.onload = () => {
       // 총매출----------------------------------------------------------
       let productTotalSales = Number(productId.price) * productsalesVolume;
       let productTotalSalesHTML = document.querySelector(
-        ".product-total-sales"
+        '.product-total-sales'
       );
       productTotalSalesHTML.innerText = `${productTotalSales.toLocaleString()}원`;
       // 리뷰별점---------------------------------------------------------
       // console.log("리뷰별점 : " + productId.platforms.starReview);
       let starReview = productId.starReview;
       let reviews = productId.reviews;
-      let productReviewHTML = document.querySelector(".product-review");
+      let productReviewHTML = document.querySelector('.product-review');
       productReviewHTML.innerText = `★${starReview} (${reviews}개)`;
 
       // 평균가 최고가 최저가--------------------------------------------------
@@ -101,7 +101,7 @@ window.onload = () => {
         (platforms) =>
           platforms.name.toLowerCase() === productId.platform.toLowerCase()
       );
-      console.log("동일 플랫폼:", matchingPlatform);
+      console.log('동일 플랫폼:', matchingPlatform);
 
       let categoryPriceAVG = null;
       let categoryHighestPrice = null;
@@ -117,37 +117,37 @@ window.onload = () => {
         categoryHighestPrice = matchingCategory.price.highest;
         categoryLowestPrice = matchingCategory.price.lowest;
       } else {
-        console.log("해당 플랫폼에 상품 카테고리와 일치하는 카데고리 없습니다");
+        console.log('해당 플랫폼에 상품 카테고리와 일치하는 카데고리 없습니다');
       }
       let categoryPriceAVGHTML = document.querySelector(
-        ".category-average-price"
+        '.category-average-price'
       );
       categoryPriceAVGHTML.innerText = `${categoryPriceAVG.toLocaleString()}원`;
       let categoryHighestPriceHTML = document.querySelector(
-        ".category-highest-price"
+        '.category-highest-price'
       );
       categoryHighestPriceHTML.innerText = `${categoryHighestPrice.toLocaleString()}원`;
       let categoryLowestPriceHTML = document.querySelector(
-        ".category-lowest-price"
+        '.category-lowest-price'
       );
       categoryLowestPriceHTML.innerText = `${categoryLowestPrice.toLocaleString()}원`;
       // 키워드 ---------------------------------------------
       let keyword = productId.description; //상품키워드
-      let keywordHTML = document.querySelector(".product-description");
+      let keywordHTML = document.querySelector('.product-description');
       keywordHTML.innerText = keyword;
       // 키워드 5개를 ,기준으로 분리
-      let totalkeywords = keyword.split(", ");
+      let totalkeywords = keyword.split(', ');
       // 첫 키워드 3개만 선택
       let keywords = totalkeywords.slice(0, 3);
       // 다시 문자열로
-      keywords = keywords.join(", ");
+      keywords = keywords.join(', ');
 
-      let keywordsHTML = document.querySelector(".product-description");
+      let keywordsHTML = document.querySelector('.product-description');
       keywordsHTML.innerText = keywords;
 
       // 상품등록일 --------------------------------------
       // 날짜 형식 변환 00.00.00
-      let [year, month, day] = productId.registrationDate.split("-");
+      let [year, month, day] = productId.registrationDate.split('-');
       let formattedDate = `${year}.${month}.${day}`;
       // 오늘 날짜와 상품 등록일 계산
       // let today = new Date();
@@ -166,7 +166,7 @@ window.onload = () => {
 
       let registrationDateHTML = document.querySelector(
         //상품등록일
-        ".product-registration-date"
+        '.product-registration-date'
       );
 
       registrationDateHTML.innerText = `${formattedDate} (${daysDiff}일 전)`;
@@ -195,7 +195,7 @@ window.onload = () => {
       // 결과 출력
       console.log(hotHashtags);
 
-      let hashtagsComparison = document.querySelector(".hashtags-comparison");
+      let hashtagsComparison = document.querySelector('.hashtags-comparison');
       hashtagsComparison.innerHTML = `<tr>
                       <th>MY</th>
                       <th>인기</th>
@@ -228,52 +228,52 @@ window.onload = () => {
 
       // 해시태그 비교 상태[좋음]-----------------------
       let hashtagComparisonStatus = document.querySelector(
-        ".hashtag-comparison-status"
+        '.hashtag-comparison-status'
       );
 
       if (hashtagsComparisonCount > 3) {
-        hashtagComparisonStatus.innerText = "좋음";
-        hashtagComparisonStatus.classList.add("hashtag-comparison-good");
+        hashtagComparisonStatus.innerText = '좋음';
+        hashtagComparisonStatus.classList.add('hashtag-comparison-good');
       } else if (hashtagsComparisonCount === 3) {
-        hashtagComparisonStatus.innerText = "보통";
-        hashtagComparisonStatus.classList.add("hashtag-comparison-normal");
+        hashtagComparisonStatus.innerText = '보통';
+        hashtagComparisonStatus.classList.add('hashtag-comparison-normal');
       } else {
-        hashtagComparisonStatus.innerText = "나쁨";
-        hashtagComparisonStatus.classList.add("hashtag-comparison-bad");
+        hashtagComparisonStatus.innerText = '나쁨';
+        hashtagComparisonStatus.classList.add('hashtag-comparison-bad');
       }
 
       // 해시태그 비교 막대그래프 ----------------------
       let hashtagComparisonBar = document.querySelectorAll(
-        ".hashtag-comparison-bar"
+        '.hashtag-comparison-bar'
       );
 
       for (let cnt = 0; cnt < hashtagsComparisonCount; cnt++) {
         if (hashtagsComparisonCount > 3) {
-          hashtagComparisonBar[cnt].classList.add("good");
+          hashtagComparisonBar[cnt].classList.add('good');
         } else if (hashtagsComparisonCount === 3) {
-          hashtagComparisonBar[cnt].classList.add("normal");
+          hashtagComparisonBar[cnt].classList.add('normal');
         } else {
-          hashtagComparisonBar[cnt].classList.add("bad");
+          hashtagComparisonBar[cnt].classList.add('bad');
         }
       }
       // 리뷰 분석 - 리뷰 상태 ---------------------------------------------------------
       let reviewStatus = document.querySelector(
-        ".total-analysis-review-status"
+        '.total-analysis-review-status'
       );
       // 리뷰 분석 - 리뷰 코멘트
       let reviewComment = document.querySelector(
-        ".total-analysis-review-coment"
+        '.total-analysis-review-coment'
       );
 
       // 리뷰수가 10 미만인지 확인
       if (reviews < 10) {
         // 클래스 변경
         reviewStatus.classList.replace(
-          "total-analysis-review-status",
-          "total-analysis-status-null"
+          'total-analysis-review-status',
+          'total-analysis-status-null'
         );
         // 텍스트 변경
-        reviewStatus.innerText = "없음";
+        reviewStatus.innerText = '없음';
         // total-analysis-review-coment 요소 업데이트
         reviewComment.innerHTML = `
           <p>리뷰 수가 10개 미만으로 분석이 어렵습니다</p>
@@ -284,11 +284,11 @@ window.onload = () => {
         if (starReview >= 3.5) {
           // 클래스 변경
           reviewStatus.classList.replace(
-            "total-analysis-review-status",
-            "total-analysis-status-good"
+            'total-analysis-review-status',
+            'total-analysis-status-good'
           );
           // 텍스트 변경
-          reviewStatus.innerText = "좋음";
+          reviewStatus.innerText = '좋음';
           // total-analysis-review-coment 요소 업데이트
           reviewComment.innerHTML = `
           <p>리뷰별점이 ${starReview}점으로 높은 수준입니다</p>
@@ -297,11 +297,11 @@ window.onload = () => {
         } else if (starReview >= 3 && starReview < 3.5) {
           // 클래스 변경
           reviewStatus.classList.replace(
-            "total-analysis-review-status",
-            "total-analysis-status-normal"
+            'total-analysis-review-status',
+            'total-analysis-status-normal'
           );
           // 텍스트 변경
-          reviewStatus.innerText = "보통";
+          reviewStatus.innerText = '보통';
           // total-analysis-review-coment 요소 업데이트
           reviewComment.innerHTML = `
           <p>리뷰별점이 ${starReview}점으로 보통 수준입니다</p>
@@ -310,11 +310,11 @@ window.onload = () => {
         } else {
           // 클래스 변경
           reviewStatus.classList.replace(
-            "total-analysis-review-status",
-            "total-analysis-status-bad"
+            'total-analysis-review-status',
+            'total-analysis-status-bad'
           );
           // 텍스트 변경
-          reviewStatus.innerText = "나쁨";
+          reviewStatus.innerText = '나쁨';
           // total-analysis-review-coment 요소 업데이트
           reviewComment.innerHTML = `
           <p>리뷰별점이 ${starReview}점으로 낮은 수준입니다</p>
@@ -336,22 +336,22 @@ window.onload = () => {
       );
       // 구매전환율 상태 요소 선택
       let purchaseConversionRateStatusHTML = document.querySelector(
-        ".total-analysis-Purchase-conversion-rate-status"
+        '.total-analysis-Purchase-conversion-rate-status'
       );
       // 구매전환율 코멘트 요소 선택
       let purchaseConversionRateComentHTML = document.querySelector(
-        ".total-analysis-Purchase-conversion-rate-coment"
+        '.total-analysis-Purchase-conversion-rate-coment'
       );
       //  1% 미만[나쁨] / 3% 미만[보통] / 3% 이상[좋음]
       if (productsalesVolume === 0) {
         // 클래스 변경(기존 클래스 삭제 새로 추가)
         purchaseConversionRateStatusHTML.classList.remove(
-          "total-analysis-Purchase-conversion-rate-status"
+          'total-analysis-Purchase-conversion-rate-status'
         );
         purchaseConversionRateStatusHTML.classList.add(
-          "total-analysis-status-null"
+          'total-analysis-status-null'
         );
-        purchaseConversionRateStatusHTML.innerText = "없음";
+        purchaseConversionRateStatusHTML.innerText = '없음';
         purchaseConversionRateComentHTML.innerHTML = `
           <p>총 판매량이 0개입니다</p>
           <p>판매량이 1개 이상일 때 분석이 가능해요</p>
@@ -360,36 +360,36 @@ window.onload = () => {
         if (purchaseConversionRate >= 3) {
           // 클래스 변경(기존 클래스 삭제 새로 추가)
           purchaseConversionRateStatusHTML.classList.remove(
-            "total-analysis-Purchase-conversion-rate-status"
+            'total-analysis-Purchase-conversion-rate-status'
           );
           purchaseConversionRateStatusHTML.classList.add(
-            "total-analysis-status-good"
+            'total-analysis-status-good'
           );
-          purchaseConversionRateStatusHTML.innerText = "좋음";
+          purchaseConversionRateStatusHTML.innerText = '좋음';
           purchaseConversionRateComentHTML.innerHTML = `
           <p>구매전환율이 ${purchaseConversionRate}%으로 이커머스 평균 대비 ${purchaseConversionRateComparison}% 높아요</p>
           <p>상품 대표 이미지와 상품이 니즈를 적중했어요</p>
           `;
         } else if (purchaseConversionRate < 3 && purchaseConversionRate >= 1) {
           purchaseConversionRateStatusHTML.classList.remove(
-            "total-analysis-Purchase-conversion-rate-status"
+            'total-analysis-Purchase-conversion-rate-status'
           );
           purchaseConversionRateStatusHTML.classList.add(
-            "total-analysis-status-normal"
+            'total-analysis-status-normal'
           );
-          purchaseConversionRateStatusHTML.innerText = "보통";
+          purchaseConversionRateStatusHTML.innerText = '보통';
           purchaseConversionRateComentHTML.innerHTML = `
           <p>구매전환율이 ${purchaseConversionRate}%으로 이커머스 평균 대비 ${purchaseConversionRateComparison}% 차이가 있어요</p>
           <p>상품 대표 이미지는 적절하나 상품 상세 설명을 보충해보세요</p>
           `;
         } else {
           purchaseConversionRateStatusHTML.classList.remove(
-            "total-analysis-Purchase-conversion-rate-status"
+            'total-analysis-Purchase-conversion-rate-status'
           );
           purchaseConversionRateStatusHTML.classList.add(
-            "total-analysis-status-bad"
+            'total-analysis-status-bad'
           );
-          purchaseConversionRateStatusHTML.innerText = "나쁨";
+          purchaseConversionRateStatusHTML.innerText = '나쁨';
           purchaseConversionRateComentHTML.innerHTML = `
           <p>구매전환율이 ${purchaseConversionRate}%으로 이커머스 평균 대비 ${purchaseConversionRateComparison}% 낮아요</p>
           <p>상품 상세 설명을 상품 대표 이미지와 일치시켜 보세요</p>
@@ -406,19 +406,19 @@ window.onload = () => {
 
       // 가격 상태 요소 선택
       let priceStatusHTML = document.querySelector(
-        ".total-analysis-price-status"
+        '.total-analysis-price-status'
       );
       // 가격 코멘트 요소 선택
       let priceComentHTML = document.querySelector(
-        ".total-analysis-price-coment"
+        '.total-analysis-price-coment'
       );
       // 평균가보다 -5%미만[나쁨] /평균가 ± 5%[보통] / 평균가+5%이상[좋음]
       if (categoryPricePercent > 5) {
         // 클래스 변경
-        priceStatusHTML.classList.remove("total-analysis-price-status");
-        priceStatusHTML.classList.add("total-analysis-status-good");
+        priceStatusHTML.classList.remove('total-analysis-price-status');
+        priceStatusHTML.classList.add('total-analysis-status-good');
         // 텍스트 변경
-        priceStatusHTML.innerText = "좋음";
+        priceStatusHTML.innerText = '좋음';
         // 가격 코멘트 요소 업데이트
         priceComentHTML.innerHTML = `
           <p>${productCategory}카테고리 평균가보다 ${categoryPricePercent}% 높아요</p>
@@ -426,10 +426,10 @@ window.onload = () => {
           `;
       } else if (categoryPricePercent <= 5 && categoryPricePercent >= -5) {
         // 클래스 변경
-        priceStatusHTML.classList.remove("total-analysis-price-status");
-        priceStatusHTML.classList.add("total-analysis-status-normal");
+        priceStatusHTML.classList.remove('total-analysis-price-status');
+        priceStatusHTML.classList.add('total-analysis-status-normal');
         // 텍스트 변경
-        priceStatusHTML.innerText = "보통";
+        priceStatusHTML.innerText = '보통';
         // 가격 코멘트 요소 업데이트
         priceComentHTML.innerHTML = `
           <p>${productCategory}카테고리 평균가와 ${categoryPricePercent}% 차이가 있어요</p>
@@ -437,10 +437,10 @@ window.onload = () => {
           `;
       } else {
         // 클래스 변경
-        priceStatusHTML.classList.remove("total-analysis-price-status");
-        priceStatusHTML.classList.add("total-analysis-status-bad");
+        priceStatusHTML.classList.remove('total-analysis-price-status');
+        priceStatusHTML.classList.add('total-analysis-status-bad');
         // 텍스트 변경
-        priceStatusHTML.innerText = "나쁨";
+        priceStatusHTML.innerText = '나쁨';
         // 가격 코멘트 요소 업데이트
         priceComentHTML.innerHTML = `
       <p>${productCategory}카테고리 평균가보다 ${categoryPricePercent}% 낮아요</p>
@@ -451,8 +451,8 @@ window.onload = () => {
       // 날짜를 yyyy-mm-dd 형식으로 변환하는 함수
       function formatDate(date) {
         let year = date.getFullYear();
-        let month = String(date.getMonth() + 1).padStart(2, "0");
-        let day = String(date.getDate()).padStart(2, "0");
+        let month = String(date.getMonth() + 1).padStart(2, '0');
+        let day = String(date.getDate()).padStart(2, '0');
         return `${year}-${month}-${day}`;
       }
       // 오늘 날짜와 7일 전, 14일 전 날짜 계산
@@ -498,31 +498,31 @@ window.onload = () => {
       }
 
       // 결과 출력
-      console.log("판매량 비교:", salesRate + "%");
-      console.log("오늘 포함 7일간 판매량:", salesLast7Days);
-      console.log("14일 전 ~ 7일 전까지 판매량:", salesPrevious7Days);
+      console.log('판매량 비교:', salesRate + '%');
+      console.log('오늘 포함 7일간 판매량:', salesLast7Days);
+      console.log('14일 전 ~ 7일 전까지 판매량:', salesPrevious7Days);
 
       // 판매율 추이 HTML-------------------------------------------------------
       // 판매율 상태 요소 선택
       let salesRateStatusHTML = document.querySelector(
-        ".total-analysis-sales-comparison-status"
+        '.total-analysis-sales-comparison-status'
       );
       // 판매율 코멘트 요소 선택
       let salesRateComentHTML = document.querySelector(
-        ".total-analysis-sales-comparison-coment"
+        '.total-analysis-sales-comparison-coment'
       );
-      console.log("지난 7일 판매량" + salesLast7Days);
-      console.log("총판매량" + productsalesVolume);
-      console.log("판매율추이" + salesRate);
+      console.log('지난 7일 판매량' + salesLast7Days);
+      console.log('총판매량' + productsalesVolume);
+      console.log('판매율추이' + salesRate);
       // 판매량 상태에 따라 클래스 변경 및 텍스트 업데이트
       if (productsalesVolume === 0) {
         // 클래스 변경
         salesRateStatusHTML.classList.remove(
-          "total-analysis-sales-comparison-status"
+          'total-analysis-sales-comparison-status'
         );
-        salesRateStatusHTML.classList.add("total-analysis-status-null");
+        salesRateStatusHTML.classList.add('total-analysis-status-null');
         // 텍스트 변경
-        salesRateStatusHTML.innerText = "없음";
+        salesRateStatusHTML.innerText = '없음';
         // 판매율추이 코멘트 요소 업데이트
         salesRateComentHTML.innerHTML = `
                     <p>총 판매량이 0개입니다</p>
@@ -532,11 +532,11 @@ window.onload = () => {
         if (salesRate > 5) {
           // 클래스 변경
           salesRateStatusHTML.classList.remove(
-            "total-analysis-sales-comparison-status"
+            'total-analysis-sales-comparison-status'
           );
-          salesRateStatusHTML.classList.add("total-analysis-status-good");
+          salesRateStatusHTML.classList.add('total-analysis-status-good');
           // 텍스트 변경
-          salesRateStatusHTML.innerText = "좋음";
+          salesRateStatusHTML.innerText = '좋음';
           // 판매율추이 코멘트 요소 업데이트
           salesRateComentHTML.innerHTML = `
                   <p>지난 주 판매량보다 ${salesRate}% 증가했어요</p>
@@ -546,20 +546,20 @@ window.onload = () => {
           // 클래스 변경
           if (salesRate === 0 && salesLast7Days > 0) {
             salesRateStatusHTML.classList.remove(
-              "total-analysis-sales-comparison-status"
+              'total-analysis-sales-comparison-status'
             );
-            salesRateStatusHTML.classList.add("total-analysis-status-normal");
-            salesRateStatusHTML.innerText = "보통";
+            salesRateStatusHTML.classList.add('total-analysis-status-normal');
+            salesRateStatusHTML.innerText = '보통';
             salesRateComentHTML.innerHTML = `
                     <p>지난 주 판매량과 동일해요</p>
                     <p>인기 해시태그를 적용해 클릭률을 늘려보세요</p>
                   `;
           } else if (salesRate === 0 && salesLast7Days === 0) {
             salesRateStatusHTML.classList.remove(
-              "total-analysis-sales-comparison-status"
+              'total-analysis-sales-comparison-status'
             );
-            salesRateStatusHTML.classList.add("total-analysis-status-bad");
-            salesRateStatusHTML.innerText = "나쁨";
+            salesRateStatusHTML.classList.add('total-analysis-status-bad');
+            salesRateStatusHTML.innerText = '나쁨';
             salesRateComentHTML.innerHTML = `
                     <p>지난주부터 이번주까지 판매량이 0개예요</p>
                     <p>인기 해시태그를 적용해 클릭률을 늘려보세요</p>
@@ -568,11 +568,11 @@ window.onload = () => {
         } else if (salesRate < -5) {
           // 클래스 변경
           salesRateStatusHTML.classList.remove(
-            "total-analysis-sales-comparison-status"
+            'total-analysis-sales-comparison-status'
           );
-          salesRateStatusHTML.classList.add("total-analysis-status-bad");
+          salesRateStatusHTML.classList.add('total-analysis-status-bad');
           // 텍스트 변경
-          salesRateStatusHTML.innerText = "나쁨";
+          salesRateStatusHTML.innerText = '나쁨';
           // 판매율추이 코멘트 요소 업데이트
           salesRateComentHTML.innerHTML = `
                   <p>지난 주 판매량보다 ${salesRate}% 감소했어요</p>
@@ -581,11 +581,11 @@ window.onload = () => {
         } else {
           // 클래스 변경
           salesRateStatusHTML.classList.remove(
-            "total-analysis-sales-comparison-status"
+            'total-analysis-sales-comparison-status'
           );
-          salesRateStatusHTML.classList.add("total-analysis-status-null");
+          salesRateStatusHTML.classList.add('total-analysis-status-null');
           // 텍스트 변경
-          salesRateStatusHTML.innerText = "없음";
+          salesRateStatusHTML.innerText = '없음';
           // 판매율추이 코멘트 요소 업데이트
           salesRateComentHTML.innerHTML = `
                   <p>총 판매량이 0개입니다</p>
@@ -598,14 +598,14 @@ window.onload = () => {
       let sameProducts = products.filter(
         (product) => product.name === productId.name
       );
-      console.log("Same Products:", sameProducts);
+      console.log('Same Products:', sameProducts);
 
       // 동일상품들의 age 값이 서로 같은지 확인
       let sameProductsAgeCheck = sameProducts.every(
         (product) => product.age === sameProducts[0].age
       );
 
-      console.log("나이같은지 체크" + sameProductsAgeCheck);
+      console.log('나이같은지 체크' + sameProductsAgeCheck);
       //동일상품들의 평균연령층
 
       //동일상품평균연령대 구하기 -----------
@@ -638,15 +638,15 @@ window.onload = () => {
         }).age;
       }
       // 동일상품구매평균연령 s빼고 int형
-      sameProductsAge = parseInt(productId.age.replace("s", ""));
-      console.log("동일상품들의 평균 연령층:", sameProductsAge);
+      sameProductsAge = parseInt(productId.age.replace('s', ''));
+      console.log('동일상품들의 평균 연령층:', sameProductsAge);
 
       // 상품구매성별
-      productId.gender === "M"
-        ? "남성"
-        : productId.gender === "F"
-        ? "여성"
-        : "알 수 없음";
+      productId.gender === 'M'
+        ? '남성'
+        : productId.gender === 'F'
+        ? '여성'
+        : '알 수 없음';
 
       // 동일상품들의 gender 값이 서로 같은지 확인
       let sameProductsGenderCheck = sameProducts.every(
@@ -680,17 +680,17 @@ window.onload = () => {
       }
       // 평균성별 영어 -> 한글로
       sameProductsGender =
-        sameProductsGender === "M"
-          ? "남성"
-          : productId.gender === "F"
-          ? "여성"
-          : "알 수 없음";
+        sameProductsGender === 'M'
+          ? '남성'
+          : productId.gender === 'F'
+          ? '여성'
+          : '알 수 없음';
 
-      console.log("동일상품들의 평균성별:", sameProductsGender);
+      console.log('동일상품들의 평균성별:', sameProductsGender);
 
       // 플랫폼분석-종합분석 코멘트 요소 선택
       let platformComentHTML = document.querySelector(
-        ".platform-analysis-coment"
+        '.platform-analysis-coment'
       );
       // 동일상품이 1개 이상일때
       if (sameProducts.length >= 1) {
@@ -725,16 +725,16 @@ window.onload = () => {
       let ablyAge = null;
       let zigzagAge = null;
       productsRes.data.forEach((product) => {
-        if (product.name === productId.name && product.platform === "ably") {
-          ablyAge = parseInt(platforms[0].age.replace("s", ""));
+        if (product.name === productId.name && product.platform === 'ably') {
+          ablyAge = parseInt(platforms[0].age.replace('s', ''));
         }
-        if (product.name === productId.name && product.platform === "zigzag") {
-          zigzagAge = parseInt(platforms[1].age.replace("s", ""));
+        if (product.name === productId.name && product.platform === 'zigzag') {
+          zigzagAge = parseInt(platforms[1].age.replace('s', ''));
         }
       });
 
       // 플랫폼 분석 - 에이블리 분석 코멘트 요소 선택
-      let ablyComentHTML = document.querySelector(".ably-analysis-coment");
+      let ablyComentHTML = document.querySelector('.ably-analysis-coment');
       // 전체판매량이 0일때
       if (ablyProduct === undefined) {
         ablyComentHTML.innerHTML = `
@@ -763,7 +763,7 @@ window.onload = () => {
       }
 
       // 플랫폼 분석 - 에이블리 분석 코멘트 요소 선택
-      let zigzagComentHTML = document.querySelector(".zigzag-analysis-coment");
+      let zigzagComentHTML = document.querySelector('.zigzag-analysis-coment');
       // 전체판매량이 0일때
       if (zigzagProduct === undefined) {
         zigzagComentHTML.innerHTML = `
