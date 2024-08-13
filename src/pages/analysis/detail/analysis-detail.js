@@ -525,8 +525,8 @@ window.onload = () => {
         salesRateStatusHTML.innerText = "없음";
         // 판매율추이 코멘트 요소 업데이트
         salesRateComentHTML.innerHTML = `
-                    <p>총 판매량이 0개입니다</p>
-                  <p>판매량이 1개 이상일 때 분석이 가능해요</p>
+                <p>총 판매량이 0개입니다</p>
+                <p>판매량이 1개 이상일 때 분석이 가능해요</p>
                 `;
       } else {
         if (salesRate > 5) {
@@ -702,7 +702,7 @@ window.onload = () => {
           <p>조금 더 성숙한 디자인의 상품기획이 필요해보여요</p>
           `;
           // 평균연령이 타겟연령과 같을 때
-        } else if ((sameProductsAge = targetAge)) {
+        } else if (sameProductsAge == targetAge) {
           platformComentHTML.innerHTML = `
           <p>해당 상품의 타겟층이 우리 쇼핑몰 타겟층인 ${targetAge}대 ${targetGender}과 일치해요</p>
           <p>비슷한 디자인의 상품기획을 추천드려요</p>
@@ -710,15 +710,15 @@ window.onload = () => {
           // 평균연령이 타겟연령보다 클 때
         } else if (sameProductsAge > targetAge) {
           platformComentHTML.innerHTML = `
-                 <p>우리 쇼핑몰 타겟층은 ${targetAge}대 ${targetGender}예요</p>
-                 <p>해당 상품은 ${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
-                  <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
-                `;
+          <p>우리 쇼핑몰 타겟층은 ${targetAge}대 ${targetGender}예요</p>
+          <p>해당 상품은 ${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
+          <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
+          `;
         } else {
           platformComentHTML.innerHTML = `
-            <p>총 판매량이 0개입니다</p>
-            <p>판매량이 1개 이상일 때 분석이 가능해요</p>
-           `;
+          <p>총 판매량이 0개입니다</p>
+          <p>판매량이 1개 이상일 때 분석이 가능해요</p>
+          `;
         }
       }
 
@@ -735,59 +735,49 @@ window.onload = () => {
 
       // 플랫폼 분석 - 에이블리 분석 코멘트 요소 선택
       let ablyComentHTML = document.querySelector(".ably-analysis-coment");
-      // 전체판매량이 0일때
-      if (ablyProduct === undefined) {
+      // 플랫폼 미등록
+      if (ablyAge === null) {
         ablyComentHTML.innerHTML = `
-          <p>총 판매량이 0개입니다</p>
-            <p>판매량이 1개 이상일 때 분석이 가능해요</p>
-           `;
-      } else if (ablyAge === null) {
-        ablyComentHTML.innerHTML = `
-            <p>해당 상품은 에이블리에 등록되어 있지 않아요.</p>
-           `;
+        <p>해당 상품은 에이블리에 등록되어 있지 않아요.</p>
+        `;
       } else if (ablyAge < targetAge) {
         ablyComentHTML.innerHTML = `
-                <p>${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
-                <p>조금 더 성숙한 디자인의 상품기획이 필요해보여요</p>
+              <p>${ablyAge}대 ${sameProductsGender} 구매율이 높아요</p>
+              <p>조금 더 성숙한 디자인의 상품기획이 필요해보여요</p>
               `;
       } else if (ablyAge === targetAge) {
         ablyComentHTML.innerHTML = `
-                 <p>우리 쇼핑몰 타겟층인 ${targetAge}대 ${targetGender}과 일치해요</p>
-                 <p>비슷한 디자인의 상품기획을 추천드려요</p>
+              <p>우리 쇼핑몰 타겟층인 ${targetAge}대 ${targetGender}과 일치해요</p>
+              <p>비슷한 디자인의 상품기획을 추천드려요</p>
               `;
       } else if (ablyAge > targetAge) {
         ablyComentHTML.innerHTML = `
-               <p>${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
+              <p>${ablyAge}대 ${sameProductsGender} 구매율이 높아요</p>
               <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
               `;
       }
 
       // 플랫폼 분석 - 에이블리 분석 코멘트 요소 선택
       let zigzagComentHTML = document.querySelector(".zigzag-analysis-coment");
-      // 전체판매량이 0일때
-      if (zigzagProduct === undefined) {
+      // 플랫폼 미등록
+      if (zigzagAge === null) {
         zigzagComentHTML.innerHTML = `
-          <p>총 판매량이 0개입니다</p>
-            <p>판매량이 1개 이상일 때 분석이 가능해요</p>
-           `;
-      } else if (zigzagAge === null) {
-        zigzagAnalysisComentHTML.innerHTML = `
-            <p>해당 상품은 지그재그에 등록되어 있지 않아요.</p>
-           `;
+              <p>해당 상품은 지그재그에 등록되어 있지 않아요.</p>
+              `;
       } else if (zigzagAge < targetAge) {
-        zigzagAnalysisComentHTML.innerHTML = `
-                <p>${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
-                <p>조금 더 성숙한 디자인의 상품기획이 필요해보여요</p>
+        zigzagComentHTML.innerHTML = `
+              <p>${zigzagAge}대 ${sameProductsGender} 구매율이 높아요</p>
+              <p>조금 더 성숙한 디자인의 상품기획이 필요해보여요</p>
               `;
       } else if (zigzagAge === targetAge) {
-        zigzagAnalysisComentHTML.innerHTML = `
-                 <p>우리 쇼핑몰 타겟층인 ${targetAge}대 ${targetGender}과 일치해요</p>
-                 <p>비슷한 디자인의 상품기획을 추천드려요</p>
+        zigzagComentHTML.innerHTML = `
+              <p>우리 쇼핑몰 타겟층인 ${targetAge}대 ${targetGender}과 일치해요</p>
+              <p>비슷한 디자인의 상품기획을 추천드려요</p>
               `;
       } else if (zigzagAge > targetAge) {
-        zigzagAnalysisComentHTML.innerHTML = `
-               <p>${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
-               <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
+        zigzagComentHTML.innerHTML = `
+              <p>${zigzagAge}대 ${sameProductsGender} 구매율이 높아요</p>
+              <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
               `;
       }
     })
