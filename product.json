@@ -1,2178 +1,2090 @@
 [
-    {
-        "id": 1,
-        "name": "[윈터착용][BEST] 베이비 하트💕 네크리스",
-        "age": "40s",
-        "gender": "F",
-        "description": "사랑스러운, 하트, 여성용, 데일리, 인기",
-        "price": 26300,
-        "category": "Necklaces",
-        "platform": "ably",
-        "visitLastweek": 235,
-        "visitThisweek": 239,
-        "visitTotal": 20111,
-        "reviews": 140,
-        "starReview": 4.6,
-        "hashtags": [
-            "패피",
-            "귀걸이",
-            "세련된",
-            "데일리룩",
-            "트렌디"
-        ],
-        "registrationDate": "2023-01-14",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-04-14",
-                "quantity": 4
-            },
-            {
-                "date": "2023-04-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-04-19",
-                "quantity": 2
-            },
-            {
-                "date": "2023-05-04",
-                "quantity": 1
-            },
-            {
-                "date": "2023-05-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-05-19",
-                "quantity": 3
-            },
-            {
-                "date": "2023-06-03",
-                "quantity": 2
-            },
-            {
-                "date": "2023-06-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-25",
-                "quantity": 3
-            },
-            {
-                "date": "2023-08-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-15",
-                "quantity": 3
-            },
-            {
-                "date": "2023-10-20",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 2
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "name": "[데일리추천💍] 다이아나 원 진주 반지 [실버925도금]",
-        "age": "40s",
-        "gender": "F",
-        "description": "고급스러운, 진주, 반지, 실버, 데일리",
-        "price": 38540,
-        "category": "Rings",
-        "platform": "ably",
-        "visitLastweek": 473,
-        "visitThisweek": 158,
-        "visitTotal": 71547,
-        "reviews": 496,
-        "starReview": 3.7,
-        "hashtags": [
-            "커플반지",
-            "은반지",
-            "커플링",
-            "심플",
-            "트렌디"
-        ],
-        "registrationDate": "2023-05-20",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-02",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-03",
-                "quantity": 2
-            },
-            {
-                "date": "2023-06-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-04",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-19",
-                "quantity": 3
-            },
-            {
-                "date": "2023-07-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-25",
-                "quantity": 3
-            },
-            {
-                "date": "2023-08-03",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-18",
-                "quantity": 4
-            },
-            {
-                "date": "2023-08-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-23",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-07",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-15",
-                "quantity": 3
-            },
-            {
-                "date": "2023-09-22",
-                "quantity": 3
-            },
-            {
-                "date": "2023-10-07",
-                "quantity": 2
-            },
-            {
-                "date": "2023-10-20",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 2
-            }
-        ]
-    },
-    {
-        "id": 3,
-        "name": "[여름특가] 심플 진주 발찌",
-        "age": "50s",
-        "gender": "F",
-        "description": "심플, 진주, 여름, 발찌, 여성용",
-        "price": 18850,
-        "category": "Anklets",
-        "platform": "ably",
-        "visitLastweek": 435,
-        "visitThisweek": 238,
-        "visitTotal": 32878,
-        "reviews": 11,
-        "starReview": 4.7,
-        "hashtags": [
-            "심플",
-            "비즈발찌",
-            "발찌",
-            "데일리",
-            "모던"
-        ],
-        "registrationDate": "2023-03-18",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-04-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-05-02",
-                "quantity": 2
-            },
-            {
-                "date": "2023-05-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-05-17",
-                "quantity": 3
-            },
-            {
-                "date": "2023-06-01",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-16",
-                "quantity": 4
-            },
-            {
-                "date": "2023-06-21",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-06",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-21",
-                "quantity": 3
-            },
-            {
-                "date": "2023-07-25",
-                "quantity": 3
-            },
-            {
-                "date": "2023-08-05",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-15",
-                "quantity": 3
-            },
-            {
-                "date": "2023-10-20",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 2
-            }
-        ]
-    },
-    {
-        "id": 4,
-        "name": "[재입고] 데일리 실버 반지",
-        "age": "20s",
-        "gender": "F",
-        "description": "고급스러운, 진주, 반지, 실버, 데일리",
-        "price": 34510,
-        "category": "Rings",
-        "platform": "ably",
-        "visitLastweek": 497,
-        "visitThisweek": 214,
-        "visitTotal": 202267,
-        "reviews": 450,
-        "starReview": 3.5,
-        "hashtags": [
-            "심플",
-            "커플링",
-            "커플반지",
-            "알러지프리",
-            "우정링"
-        ],
-        "registrationDate": "2023-04-16",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-04-29",
-                "quantity": 1
-            },
-            {
-                "date": "2023-05-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-05-31",
-                "quantity": 2
-            },
-            {
-                "date": "2023-06-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-15",
-                "quantity": 3
-            },
-            {
-                "date": "2023-06-30",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-25",
-                "quantity": 3
-            },
-            {
-                "date": "2023-08-04",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-19",
-                "quantity": 3
-            },
-            {
-                "date": "2023-08-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-03",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-15",
-                "quantity": 3
-            },
-            {
-                "date": "2023-10-20",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 2
-            }
-        ]
-    },
-    {
-        "id": 5,
-        "name": "[한정판매] 빈티지 골드 체인 목걸이",
-        "age": "40s",
-        "gender": "F",
-        "description": "스퀘어, 큐빅, 써지컬스틸, 체인, 목걸이",
-        "price": 38290,
-        "category": "Necklaces",
-        "platform": "ably",
-        "visitLastweek": 263,
-        "visitThisweek": 416,
-        "visitTotal": 2785,
-        "reviews": 155,
-        "starReview": 4.4,
-        "hashtags": [
-            "모던",
-            "심플",
-            "세련된",
-            "비즈목걸이",
-            "귀걸이"
-        ],
-        "registrationDate": "2023-12-01",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-02",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-03",
-                "quantity": 2
-            },
-            {
-                "date": "2023-12-04",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-06",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-08",
-                "quantity": 0
-            },
-            {
-                "date": "2023-12-09",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-12-11",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-12",
-                "quantity": 2
-            },
-            {
-                "date": "2023-12-13",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-14",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 2
-            },
-            {
-                "date": "2023-12-16",
-                "quantity": 2
-            },
-            {
-                "date": "2023-12-17",
-                "quantity": 1
-            }
-        ]
-    },
-    {
-        "id": 6,
-        "name": "[여름특가] 컬러믹스 팔찌 세트",
-        "age": "10s",
-        "gender": "F",
-        "description": "컬러풀한, 비비드, 여름, 팔찌, 세트",
-        "price": 15350,
-        "category": "Bracelets",
-        "platform": "ably",
-        "visitLastweek": 467,
-        "visitThisweek": 67,
-        "visitTotal": 14918,
-        "reviews": 359,
-        "starReview": 3.7,
-        "hashtags": [
-            "세련된",
-            "실팔찌",
-            "패션템",
-            "스타일링",
-            "팔찌"
-        ],
-        "registrationDate": "2023-05-02",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-05-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-05-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-16",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-01",
-                "quantity": 3
-            },
-            {
-                "date": "2023-07-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-16",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-25",
-                "quantity": 3
-            },
-            {
-                "date": "2023-07-31",
-                "quantity": 4
-            },
-            {
-                "date": "2023-08-05",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-04",
-                "quantity": 3
-            },
-            {
-                "date": "2023-09-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-15",
-                "quantity": 3
-            },
-            {
-                "date": "2023-09-19",
-                "quantity": 2
-            },
-            {
-                "date": "2023-10-20",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 2
-            }
-        ]
-    },
-    {
-        "id": 7,
-        "name": "[여름특가] 컬러믹스 팔찌 세트",
-        "age": "10s",
-        "gender": "F",
-        "description": "컬러풀한, 비비드, 여름, 팔찌, 세트",
-        "price": 15350,
-        "category": "Bracelets",
-        "platform": "zigzag",
-        "visitLastweek": 317,
-        "visitThisweek": 338,
-        "visitTotal": 38127,
-        "reviews": 309,
-        "starReview": 3.1,
-        "hashtags": [
-            "세련된",
-            "실팔찌",
-            "데일리룩",
-            "스타일링",
-            "모던"
-        ],
-        "registrationDate": "2023-01-07",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-04-07",
-                "quantity": 4
-            },
-            {
-                "date": "2023-04-12",
-                "quantity": 2
-            },
-            {
-                "date": "2023-04-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-04-27",
-                "quantity": 1
-            },
-            {
-                "date": "2023-05-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-05-12",
-                "quantity": 3
-            },
-            {
-                "date": "2023-05-27",
-                "quantity": 2
-            },
-            {
-                "date": "2023-06-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-25",
-                "quantity": 3
-            },
-            {
-                "date": "2023-08-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-15",
-                "quantity": 3
-            },
-            {
-                "date": "2023-10-20",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 2
-            }
-        ]
-    },
-    {
-        "id": 8,
-        "name": "[한정판] 모던 큐빅 드롭 귀걸이",
-        "age": "30s",
-        "gender": "F",
-        "description": "모던, 큐빅, 드롭, 귀걸이, 여성용",
-        "price": 35910,
-        "category": "Earrings",
-        "platform": "ably",
-        "visitLastweek": 401,
-        "visitThisweek": 244,
-        "visitTotal": 4345,
-        "reviews": 112,
-        "starReview": 2.1,
-        "hashtags": [
-            "오오티디",
-            "데일리",
-            "귀걸이",
-            "모던",
-            "커플템"
-        ],
-        "registrationDate": "2023-11-06",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-07",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-08",
-                "quantity": 2
-            },
-            {
-                "date": "2023-11-09",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-11",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-13",
-                "quantity": 2
-            },
-            {
-                "date": "2023-11-14",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-15",
-                "quantity": 2
-            },
-            {
-                "date": "2023-11-16",
-                "quantity": 3
-            },
-            {
-                "date": "2023-11-17",
-                "quantity": 2
-            },
-            {
-                "date": "2023-11-18",
-                "quantity": 3
-            },
-            {
-                "date": "2023-11-19",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-11-21",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 2
-            },
-            {
-                "date": "2023-12-21",
-                "quantity": 2
-            }
-        ]
-    },
-    {
-        "id": 9,
-        "name": "[겨울추천] 러블리 핸드메이드 귀걸이",
-        "age": "30s",
-        "gender": "F",
-        "description": "모던, 큐빅, 드롭, 귀걸이, 여성용",
-        "price": 37340,
-        "category": "Earrings",
-        "platform": "ably",
-        "visitLastweek": 231,
-        "visitThisweek": 444,
-        "visitTotal": 97398,
-        "reviews": 242,
-        "starReview": 2.1,
-        "hashtags": [
-            "심플",
-            "트렌디",
-            "알러지프리",
-            "세련된",
-            "데일리"
-        ],
-        "registrationDate": "2023-02-23",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-04-09",
-                "quantity": 2
-            },
-            {
-                "date": "2023-04-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-04-24",
-                "quantity": 3
-            },
-            {
-                "date": "2023-05-09",
-                "quantity": 1
-            },
-            {
-                "date": "2023-05-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-05-24",
-                "quantity": 4
-            },
-            {
-                "date": "2023-05-29",
-                "quantity": 2
-            },
-            {
-                "date": "2023-06-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-13",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-28",
-                "quantity": 3
-            },
-            {
-                "date": "2023-07-13",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-25",
-                "quantity": 3
-            },
-            {
-                "date": "2023-08-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-15",
-                "quantity": 3
-            },
-            {
-                "date": "2023-10-20",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 2
-            }
-        ]
-    },
-    {
-        "id": 10,
-        "name": "[봄신상] 플라워 패턴 비즈 팔찌",
-        "age": "40s",
-        "gender": "F",
-        "description": "컬러풀한, 비비드, 여름, 팔찌, 세트",
-        "price": 16080,
-        "category": "Bracelets",
-        "platform": "ably",
-        "visitLastweek": 339,
-        "visitThisweek": 233,
-        "visitTotal": 38763,
-        "reviews": 159,
-        "starReview": 3.8,
-        "hashtags": [
-            "실팔찌",
-            "모던",
-            "데일리룩",
-            "세련된",
-            "트렌디"
-        ],
-        "registrationDate": "2023-07-28",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-29",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-04",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-07",
-                "quantity": 3
-            },
-            {
-                "date": "2023-08-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-11",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-12",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-13",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-11",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-15",
-                "quantity": 3
-            },
-            {
-                "date": "2023-09-26",
-                "quantity": 3
-            },
-            {
-                "date": "2023-10-11",
-                "quantity": 1
-            },
-            {
-                "date": "2023-10-20",
-                "quantity": 1
-            },
-            {
-                "date": "2023-10-26",
-                "quantity": 4
-            },
-            {
-                "date": "2023-10-31",
-                "quantity": 2
-            },
-            {
-                "date": "2023-11-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-30",
-                "quantity": 3
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 2
-            }
-        ]
-    },
-    {
-        "id": 11,
-        "name": "[봄신상] 플라워 패턴 비즈 팔찌",
-        "age": "40s",
-        "gender": "F",
-        "description": "컬러풀한, 비비드, 여름, 팔찌, 세트",
-        "price": 16080,
-        "category": "Bracelets",
-        "platform": "zigzag",
-        "visitLastweek": 414,
-        "visitThisweek": 153,
-        "visitTotal": 13791,
-        "reviews": 113,
-        "starReview": 1.4,
-        "hashtags": [
-            "팔찌",
-            "패션템",
-            "실팔찌",
-            "트렌디",
-            "세련된"
-        ],
-        "registrationDate": "2023-07-23",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-24",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-25",
-                "quantity": 3
-            },
-            {
-                "date": "2023-07-30",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-06",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-07",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-06",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-15",
-                "quantity": 3
-            },
-            {
-                "date": "2023-09-21",
-                "quantity": 3
-            },
-            {
-                "date": "2023-10-06",
-                "quantity": 1
-            },
-            {
-                "date": "2023-10-20",
-                "quantity": 1
-            },
-            {
-                "date": "2023-10-21",
-                "quantity": 4
-            },
-            {
-                "date": "2023-10-26",
-                "quantity": 2
-            },
-            {
-                "date": "2023-11-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-25",
-                "quantity": 3
-            },
-            {
-                "date": "2023-12-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 2
-            }
-        ]
-    },
-    {
-        "id": 12,
-        "name": "[겨울한정] 블랙 스퀘어 목걸이",
-        "age": "40s",
-        "gender": "F",
-        "description": "스타일리시, 트렌디, 유니크, 액세서리",
-        "price": 28780,
-        "category": "Necklaces",
-        "platform": "ably",
-        "visitLastweek": 277,
-        "visitThisweek": 427,
-        "visitTotal": 1115581,
-        "reviews": 212,
-        "starReview": 2.2,
-        "hashtags": [
-            "심플",
-            "데일리룩",
-            "귀걸이",
-            "모던",
-            "세련된"
-        ],
-        "registrationDate": "2023-04-28",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-05-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-05-11",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-12",
-                "quantity": 2
-            },
-            {
-                "date": "2023-06-27",
-                "quantity": 3
-            },
-            {
-                "date": "2023-07-12",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-25",
-                "quantity": 3
-            },
-            {
-                "date": "2023-07-27",
-                "quantity": 4
-            },
-            {
-                "date": "2023-08-01",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-16",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-31",
-                "quantity": 3
-            },
-            {
-                "date": "2023-09-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-15",
-                "quantity": 3
-            },
-            {
-                "date": "2023-10-20",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 2
-            }
-        ]
-    },
-    {
-        "id": 13,
-        "name": "[자체제작] 스퀘어 큐빅 써지컬 체인 목걸이",
-        "age": "40s",
-        "gender": "F",
-        "description": "스퀘어, 큐빅, 써지컬스틸, 체인, 목걸이",
-        "price": 38480,
-        "category": "Necklaces",
-        "platform": "ably",
-        "visitLastweek": 369,
-        "visitThisweek": 409,
-        "visitTotal": 260520,
-        "reviews": 95,
-        "starReview": 1.5,
-        "hashtags": [
-            "커플템",
-            "트렌디",
-            "비즈목걸이",
-            "패피",
-            "세련된"
-        ],
-        "registrationDate": "2023-06-10",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-23",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-24",
-                "quantity": 2
-            },
-            {
-                "date": "2023-06-25",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-25",
-                "quantity": 3
-            },
-            {
-                "date": "2023-08-09",
-                "quantity": 3
-            },
-            {
-                "date": "2023-08-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-24",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-08",
-                "quantity": 4
-            },
-            {
-                "date": "2023-09-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-13",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-15",
-                "quantity": 3
-            },
-            {
-                "date": "2023-09-28",
-                "quantity": 1
-            },
-            {
-                "date": "2023-10-13",
-                "quantity": 3
-            },
-            {
-                "date": "2023-10-20",
-                "quantity": 1
-            },
-            {
-                "date": "2023-10-28",
-                "quantity": 2
-            },
-            {
-                "date": "2023-11-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 2
-            }
-        ]
-    },
-    {
-        "id": 14,
-        "name": "[신상품] 트렌디 로즈골드 팔찌",
-        "age": "20s",
-        "gender": "F",
-        "description": "컬러풀한, 비비드, 여름, 팔찌, 세트",
-        "price": 34770,
-        "category": "Bracelets",
-        "platform": "ably",
-        "visitLastweek": 432,
-        "visitThisweek": 177,
-        "visitTotal": 21183,
-        "reviews": 373,
-        "starReview": 4.8,
-        "hashtags": [
-            "스타일링",
-            "모던",
-            "세련된",
-            "팔찌",
-            "커플템"
-        ],
-        "registrationDate": "2023-03-26",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-04-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-05-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-05-25",
-                "quantity": 3
-            },
-            {
-                "date": "2023-06-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-09",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-24",
-                "quantity": 4
-            },
-            {
-                "date": "2023-06-29",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-14",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-25",
-                "quantity": 3
-            },
-            {
-                "date": "2023-07-29",
-                "quantity": 3
-            },
-            {
-                "date": "2023-08-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-13",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-15",
-                "quantity": 3
-            },
-            {
-                "date": "2023-10-20",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 2
-            }
-        ]
-    },
-    {
-        "id": 15,
-        "name": "[한정판매] 다이아몬드 라운드 링 [실버]",
-        "age": "10s",
-        "gender": "F",
-        "description": "스타일리시, 트렌디, 유니크, 액세서리",
-        "price": 29710,
-        "category": "Rings",
-        "platform": "ably",
-        "visitLastweek": 134,
-        "visitThisweek": 385,
-        "visitTotal": 35260,
-        "reviews": 103,
-        "starReview": 3.5,
-        "hashtags": [
-            "데일리",
-            "커플반지",
-            "심플",
-            "골드",
-            "커플링"
-        ],
-        "registrationDate": "2023-05-02",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-05-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-05-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-16",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-01",
-                "quantity": 3
-            },
-            {
-                "date": "2023-07-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-16",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-25",
-                "quantity": 3
-            },
-            {
-                "date": "2023-07-31",
-                "quantity": 4
-            },
-            {
-                "date": "2023-08-05",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-04",
-                "quantity": 3
-            },
-            {
-                "date": "2023-09-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-15",
-                "quantity": 3
-            },
-            {
-                "date": "2023-09-19",
-                "quantity": 2
-            },
-            {
-                "date": "2023-10-20",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 2
-            }
-        ]
-    },
-    {
-        "id": 16,
-        "name": "[한정판매] 다이아몬드 라운드 링 [실버]",
-        "age": "10s",
-        "gender": "F",
-        "description": "스타일리시, 트렌디, 유니크, 액세서리",
-        "price": 29710,
-        "category": "Rings",
-        "platform": "zigzag",
-        "visitLastweek": 418,
-        "visitThisweek": 307,
-        "visitTotal": 1779,
-        "reviews": 144,
-        "starReview": 2.7,
-        "hashtags": [
-            "심플",
-            "트렌디",
-            "데일리",
-            "클래식",
-            "은반지"
-        ],
-        "registrationDate": "2023-12-05",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-06",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-07",
-                "quantity": 2
-            },
-            {
-                "date": "2023-12-08",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-09",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-12",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-13",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-14",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-16",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-17",
-                "quantity": 2
-            },
-            {
-                "date": "2023-12-18",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-19",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-12-21",
-                "quantity": 2
-            }
-        ]
-    },
-    {
-        "id": 17,
-        "name": "[여름특가] 비치 스타일 발찌",
-        "age": "50s",
-        "gender": "F",
-        "description": "심플, 진주, 여름, 발찌, 여성용",
-        "price": 22280,
-        "category": "Anklets",
-        "platform": "ably",
-        "visitLastweek": 125,
-        "visitThisweek": 137,
-        "visitTotal": 134912,
-        "reviews": 75,
-        "starReview": 3.6,
-        "hashtags": [
-            "발찌",
-            "세련된",
-            "골드",
-            "심플",
-            "데일리"
-        ],
-        "registrationDate": "2023-01-24",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-04-09",
-                "quantity": 1
-            },
-            {
-                "date": "2023-04-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-04-24",
-                "quantity": 4
-            },
-            {
-                "date": "2023-04-29",
-                "quantity": 2
-            },
-            {
-                "date": "2023-05-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-05-14",
-                "quantity": 1
-            },
-            {
-                "date": "2023-05-29",
-                "quantity": 3
-            },
-            {
-                "date": "2023-06-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-13",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-25",
-                "quantity": 3
-            },
-            {
-                "date": "2023-08-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-15",
-                "quantity": 3
-            },
-            {
-                "date": "2023-10-20",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 2
-            }
-        ]
-    },
-    {
-        "id": 18,
-        "name": "[프리미엄] 골드 큐빅 귀걸이",
-        "age": "10s",
-        "gender": "F",
-        "description": "모던, 큐빅, 드롭, 귀걸이, 여성용",
-        "price": 30160,
-        "category": "Earrings",
-        "platform": "ably",
-        "visitLastweek": 182,
-        "visitThisweek": 151,
-        "visitTotal": 21517,
-        "reviews": 356,
-        "starReview": 1.1,
-        "hashtags": [
-            "알러지프리",
-            "세련된",
-            "데일리",
-            "모던",
-            "심플"
-        ],
-        "registrationDate": "2023-03-27",
-        "img": "/src/assets/images/",
-        "sales": [
-            {
-                "date": "2023-01-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-02-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-03-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-04-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-05-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-05-11",
-                "quantity": 2
-            },
-            {
-                "date": "2023-05-26",
-                "quantity": 3
-            },
-            {
-                "date": "2023-06-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-06-25",
-                "quantity": 4
-            },
-            {
-                "date": "2023-06-30",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-07-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-07-25",
-                "quantity": 3
-            },
-            {
-                "date": "2023-07-30",
-                "quantity": 3
-            },
-            {
-                "date": "2023-08-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-14",
-                "quantity": 2
-            },
-            {
-                "date": "2023-08-15",
-                "quantity": 1
-            },
-            {
-                "date": "2023-08-20",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-05",
-                "quantity": 1
-            },
-            {
-                "date": "2023-09-10",
-                "quantity": 2
-            },
-            {
-                "date": "2023-09-15",
-                "quantity": 3
-            },
-            {
-                "date": "2023-10-20",
-                "quantity": 1
-            },
-            {
-                "date": "2023-11-10",
-                "quantity": 1
-            },
-            {
-                "date": "2023-12-15",
-                "quantity": 0
-            }
-        ]
-    }
+  {
+    "id": 1,
+    "name": "[윈터착용][BEST] 베이비 하트💕 네크리스",
+    "age": "40s",
+    "gender": "F",
+    "description": "사랑스러운, 하트, 여성용, 데일리, 인기",
+    "price": 26300,
+    "category": "Necklaces",
+    "platform": "ably",
+    "visitLastweek": 235,
+    "visitThisweek": 239,
+    "visitTotal": 20111,
+    "reviews": 140,
+    "starReview": 4.6,
+    "hashtags": ["패피", "귀걸이", "세련된", "데일리룩", "트렌디"],
+    "registrationDate": "2023-01-14",
+    "img": "/src/assets/images/[윈터착용][BEST] 베이비 하트💕 네크리스.jpg",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-04-14",
+        "quantity": 4
+      },
+      {
+        "date": "2023-04-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-04-19",
+        "quantity": 2
+      },
+      {
+        "date": "2023-05-04",
+        "quantity": 1
+      },
+      {
+        "date": "2023-05-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-05-19",
+        "quantity": 3
+      },
+      {
+        "date": "2023-06-03",
+        "quantity": 2
+      },
+      {
+        "date": "2023-06-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-25",
+        "quantity": 3
+      },
+      {
+        "date": "2023-08-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-10-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      },
+      {
+        "date": "2023-12-17",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-22",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-25",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-28",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "[데일리추천💍] 다이아나 원 진주 반지 [실버925도금]",
+    "age": "40s",
+    "gender": "F",
+    "description": "고급스러운, 진주, 반지, 실버, 데일리",
+    "price": 38540,
+    "category": "Rings",
+    "platform": "ably",
+    "visitLastweek": 473,
+    "visitThisweek": 158,
+    "visitTotal": 71547,
+    "reviews": 496,
+    "starReview": 3.7,
+    "hashtags": ["커플반지", "은반지", "커플링", "심플", "트렌디"],
+    "registrationDate": "2023-05-20",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-02",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-03",
+        "quantity": 2
+      },
+      {
+        "date": "2023-06-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-04",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-19",
+        "quantity": 3
+      },
+      {
+        "date": "2023-07-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-25",
+        "quantity": 3
+      },
+      {
+        "date": "2023-08-03",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-18",
+        "quantity": 4
+      },
+      {
+        "date": "2023-08-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-23",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-07",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-09-22",
+        "quantity": 3
+      },
+      {
+        "date": "2023-10-07",
+        "quantity": 2
+      },
+      {
+        "date": "2023-10-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "[여름특가] 심플 진주 발찌",
+    "age": "50s",
+    "gender": "F",
+    "description": "심플, 진주, 여름, 발찌, 여성용",
+    "price": 18850,
+    "category": "Anklets",
+    "platform": "ably",
+    "visitLastweek": 435,
+    "visitThisweek": 238,
+    "visitTotal": 32878,
+    "reviews": 11,
+    "starReview": 4.7,
+    "hashtags": ["심플", "비즈발찌", "발찌", "데일리", "모던"],
+    "registrationDate": "2023-03-18",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-04-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-05-02",
+        "quantity": 2
+      },
+      {
+        "date": "2023-05-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-05-17",
+        "quantity": 3
+      },
+      {
+        "date": "2023-06-01",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-16",
+        "quantity": 4
+      },
+      {
+        "date": "2023-06-21",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-06",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-21",
+        "quantity": 3
+      },
+      {
+        "date": "2023-07-25",
+        "quantity": 3
+      },
+      {
+        "date": "2023-08-05",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-10-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "[재입고] 데일리 실버 반지",
+    "age": "20s",
+    "gender": "F",
+    "description": "고급스러운, 진주, 반지, 실버, 데일리",
+    "price": 34510,
+    "category": "Rings",
+    "platform": "ably",
+    "visitLastweek": 497,
+    "visitThisweek": 214,
+    "visitTotal": 202267,
+    "reviews": 450,
+    "starReview": 3.5,
+    "hashtags": ["심플", "커플링", "커플반지", "알러지프리", "우정링"],
+    "registrationDate": "2023-04-16",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-04-29",
+        "quantity": 1
+      },
+      {
+        "date": "2023-05-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-05-31",
+        "quantity": 2
+      },
+      {
+        "date": "2023-06-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-06-30",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-25",
+        "quantity": 3
+      },
+      {
+        "date": "2023-08-04",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-19",
+        "quantity": 3
+      },
+      {
+        "date": "2023-08-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-03",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-10-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "[한정판매] 빈티지 골드 체인 목걸이",
+    "age": "40s",
+    "gender": "F",
+    "description": "스퀘어, 큐빅, 써지컬스틸, 체인, 목걸이",
+    "price": 38290,
+    "category": "Necklaces",
+    "platform": "ably",
+    "visitLastweek": 263,
+    "visitThisweek": 416,
+    "visitTotal": 2785,
+    "reviews": 155,
+    "starReview": 4.4,
+    "hashtags": ["모던", "심플", "세련된", "비즈목걸이", "귀걸이"],
+    "registrationDate": "2023-12-01",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-02",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-03",
+        "quantity": 2
+      },
+      {
+        "date": "2023-12-04",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-06",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-08",
+        "quantity": 0
+      },
+      {
+        "date": "2023-12-09",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-12-11",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-12",
+        "quantity": 2
+      },
+      {
+        "date": "2023-12-13",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-14",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      },
+      {
+        "date": "2023-12-16",
+        "quantity": 2
+      },
+      {
+        "date": "2023-12-17",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "[여름특가] 컬러믹스 팔찌 세트",
+    "age": "10s",
+    "gender": "F",
+    "description": "컬러풀한, 비비드, 여름, 팔찌, 세트",
+    "price": 15350,
+    "category": "Bracelets",
+    "platform": "ably",
+    "visitLastweek": 467,
+    "visitThisweek": 67,
+    "visitTotal": 14918,
+    "reviews": 359,
+    "starReview": 3.7,
+    "hashtags": ["세련된", "실팔찌", "패션템", "스타일링", "팔찌"],
+    "registrationDate": "2023-05-02",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-05-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-05-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-16",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-01",
+        "quantity": 3
+      },
+      {
+        "date": "2023-07-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-16",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-25",
+        "quantity": 3
+      },
+      {
+        "date": "2023-07-31",
+        "quantity": 4
+      },
+      {
+        "date": "2023-08-05",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-04",
+        "quantity": 3
+      },
+      {
+        "date": "2023-09-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-09-19",
+        "quantity": 2
+      },
+      {
+        "date": "2023-10-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "[여름특가] 컬러믹스 팔찌 세트",
+    "age": "10s",
+    "gender": "F",
+    "description": "컬러풀한, 비비드, 여름, 팔찌, 세트",
+    "price": 15350,
+    "category": "Bracelets",
+    "platform": "zigzag",
+    "visitLastweek": 317,
+    "visitThisweek": 338,
+    "visitTotal": 38127,
+    "reviews": 309,
+    "starReview": 3.1,
+    "hashtags": ["세련된", "실팔찌", "데일리룩", "스타일링", "모던"],
+    "registrationDate": "2023-01-07",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-04-07",
+        "quantity": 4
+      },
+      {
+        "date": "2023-04-12",
+        "quantity": 2
+      },
+      {
+        "date": "2023-04-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-04-27",
+        "quantity": 1
+      },
+      {
+        "date": "2023-05-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-05-12",
+        "quantity": 3
+      },
+      {
+        "date": "2023-05-27",
+        "quantity": 2
+      },
+      {
+        "date": "2023-06-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-25",
+        "quantity": 3
+      },
+      {
+        "date": "2023-08-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-10-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "[한정판] 모던 큐빅 드롭 귀걸이",
+    "age": "30s",
+    "gender": "F",
+    "description": "모던, 큐빅, 드롭, 귀걸이, 여성용",
+    "price": 35910,
+    "category": "Earrings",
+    "platform": "ably",
+    "visitLastweek": 401,
+    "visitThisweek": 244,
+    "visitTotal": 4345,
+    "reviews": 112,
+    "starReview": 2.1,
+    "hashtags": ["오오티디", "데일리", "귀걸이", "모던", "커플템"],
+    "registrationDate": "2023-11-06",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-07",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-08",
+        "quantity": 2
+      },
+      {
+        "date": "2023-11-09",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-11",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-13",
+        "quantity": 2
+      },
+      {
+        "date": "2023-11-14",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-15",
+        "quantity": 2
+      },
+      {
+        "date": "2023-11-16",
+        "quantity": 3
+      },
+      {
+        "date": "2023-11-17",
+        "quantity": 2
+      },
+      {
+        "date": "2023-11-18",
+        "quantity": 3
+      },
+      {
+        "date": "2023-11-19",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-11-21",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      },
+      {
+        "date": "2023-12-21",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "[겨울추천] 러블리 핸드메이드 귀걸이",
+    "age": "30s",
+    "gender": "F",
+    "description": "모던, 큐빅, 드롭, 귀걸이, 여성용",
+    "price": 37340,
+    "category": "Earrings",
+    "platform": "ably",
+    "visitLastweek": 231,
+    "visitThisweek": 444,
+    "visitTotal": 97398,
+    "reviews": 242,
+    "starReview": 2.1,
+    "hashtags": ["심플", "트렌디", "알러지프리", "세련된", "데일리"],
+    "registrationDate": "2023-02-23",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-04-09",
+        "quantity": 2
+      },
+      {
+        "date": "2023-04-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-04-24",
+        "quantity": 3
+      },
+      {
+        "date": "2023-05-09",
+        "quantity": 1
+      },
+      {
+        "date": "2023-05-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-05-24",
+        "quantity": 4
+      },
+      {
+        "date": "2023-05-29",
+        "quantity": 2
+      },
+      {
+        "date": "2023-06-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-13",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-28",
+        "quantity": 3
+      },
+      {
+        "date": "2023-07-13",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-25",
+        "quantity": 3
+      },
+      {
+        "date": "2023-08-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-10-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "[봄신상] 플라워 패턴 비즈 팔찌",
+    "age": "40s",
+    "gender": "F",
+    "description": "컬러풀한, 비비드, 여름, 팔찌, 세트",
+    "price": 16080,
+    "category": "Bracelets",
+    "platform": "ably",
+    "visitLastweek": 339,
+    "visitThisweek": 233,
+    "visitTotal": 38763,
+    "reviews": 159,
+    "starReview": 3.8,
+    "hashtags": ["실팔찌", "모던", "데일리룩", "세련된", "트렌디"],
+    "registrationDate": "2023-07-28",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-29",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-04",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-07",
+        "quantity": 3
+      },
+      {
+        "date": "2023-08-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-11",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-12",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-13",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-11",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-09-26",
+        "quantity": 3
+      },
+      {
+        "date": "2023-10-11",
+        "quantity": 1
+      },
+      {
+        "date": "2023-10-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-10-26",
+        "quantity": 4
+      },
+      {
+        "date": "2023-10-31",
+        "quantity": 2
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-30",
+        "quantity": 3
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "[봄신상] 플라워 패턴 비즈 팔찌",
+    "age": "40s",
+    "gender": "F",
+    "description": "컬러풀한, 비비드, 여름, 팔찌, 세트",
+    "price": 16080,
+    "category": "Bracelets",
+    "platform": "zigzag",
+    "visitLastweek": 414,
+    "visitThisweek": 153,
+    "visitTotal": 13791,
+    "reviews": 113,
+    "starReview": 1.4,
+    "hashtags": ["팔찌", "패션템", "실팔찌", "트렌디", "세련된"],
+    "registrationDate": "2023-07-23",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-24",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-25",
+        "quantity": 3
+      },
+      {
+        "date": "2023-07-30",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-06",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-07",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-06",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-09-21",
+        "quantity": 3
+      },
+      {
+        "date": "2023-10-06",
+        "quantity": 1
+      },
+      {
+        "date": "2023-10-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-10-21",
+        "quantity": 4
+      },
+      {
+        "date": "2023-10-26",
+        "quantity": 2
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-25",
+        "quantity": 3
+      },
+      {
+        "date": "2023-12-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "[겨울한정] 블랙 스퀘어 목걸이",
+    "age": "40s",
+    "gender": "F",
+    "description": "스타일리시, 트렌디, 유니크, 액세서리",
+    "price": 28780,
+    "category": "Necklaces",
+    "platform": "ably",
+    "visitLastweek": 277,
+    "visitThisweek": 427,
+    "visitTotal": 1115581,
+    "reviews": 212,
+    "starReview": 2.2,
+    "hashtags": ["심플", "데일리룩", "귀걸이", "모던", "세련된"],
+    "registrationDate": "2023-04-28",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-05-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-05-11",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-12",
+        "quantity": 2
+      },
+      {
+        "date": "2023-06-27",
+        "quantity": 3
+      },
+      {
+        "date": "2023-07-12",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-25",
+        "quantity": 3
+      },
+      {
+        "date": "2023-07-27",
+        "quantity": 4
+      },
+      {
+        "date": "2023-08-01",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-16",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-31",
+        "quantity": 3
+      },
+      {
+        "date": "2023-09-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-10-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "[자체제작] 스퀘어 큐빅 써지컬 체인 목걸이",
+    "age": "40s",
+    "gender": "F",
+    "description": "스퀘어, 큐빅, 써지컬스틸, 체인, 목걸이",
+    "price": 38480,
+    "category": "Necklaces",
+    "platform": "ably",
+    "visitLastweek": 369,
+    "visitThisweek": 409,
+    "visitTotal": 260520,
+    "reviews": 95,
+    "starReview": 1.5,
+    "hashtags": ["커플템", "트렌디", "비즈목걸이", "패피", "세련된"],
+    "registrationDate": "2023-06-10",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-23",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-24",
+        "quantity": 2
+      },
+      {
+        "date": "2023-06-25",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-25",
+        "quantity": 3
+      },
+      {
+        "date": "2023-08-09",
+        "quantity": 3
+      },
+      {
+        "date": "2023-08-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-24",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-08",
+        "quantity": 4
+      },
+      {
+        "date": "2023-09-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-13",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-09-28",
+        "quantity": 1
+      },
+      {
+        "date": "2023-10-13",
+        "quantity": 3
+      },
+      {
+        "date": "2023-10-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-10-28",
+        "quantity": 2
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "[신상품] 트렌디 로즈골드 팔찌",
+    "age": "20s",
+    "gender": "F",
+    "description": "컬러풀한, 비비드, 여름, 팔찌, 세트",
+    "price": 34770,
+    "category": "Bracelets",
+    "platform": "ably",
+    "visitLastweek": 432,
+    "visitThisweek": 177,
+    "visitTotal": 21183,
+    "reviews": 373,
+    "starReview": 4.8,
+    "hashtags": ["스타일링", "모던", "세련된", "팔찌", "커플템"],
+    "registrationDate": "2023-03-26",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-04-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-05-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-05-25",
+        "quantity": 3
+      },
+      {
+        "date": "2023-06-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-09",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-24",
+        "quantity": 4
+      },
+      {
+        "date": "2023-06-29",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-14",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-25",
+        "quantity": 3
+      },
+      {
+        "date": "2023-07-29",
+        "quantity": 3
+      },
+      {
+        "date": "2023-08-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-13",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-10-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "[한정판매] 다이아몬드 라운드 링 [실버]",
+    "age": "10s",
+    "gender": "F",
+    "description": "스타일리시, 트렌디, 유니크, 액세서리",
+    "price": 29710,
+    "category": "Rings",
+    "platform": "ably",
+    "visitLastweek": 134,
+    "visitThisweek": 385,
+    "visitTotal": 35260,
+    "reviews": 103,
+    "starReview": 3.5,
+    "hashtags": ["데일리", "커플반지", "심플", "골드", "커플링"],
+    "registrationDate": "2023-05-02",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-05-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-05-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-16",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-01",
+        "quantity": 3
+      },
+      {
+        "date": "2023-07-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-16",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-25",
+        "quantity": 3
+      },
+      {
+        "date": "2023-07-31",
+        "quantity": 4
+      },
+      {
+        "date": "2023-08-05",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-04",
+        "quantity": 3
+      },
+      {
+        "date": "2023-09-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-09-19",
+        "quantity": 2
+      },
+      {
+        "date": "2023-10-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "[한정판매] 다이아몬드 라운드 링 [실버]",
+    "age": "10s",
+    "gender": "F",
+    "description": "스타일리시, 트렌디, 유니크, 액세서리",
+    "price": 29710,
+    "category": "Rings",
+    "platform": "zigzag",
+    "visitLastweek": 418,
+    "visitThisweek": 307,
+    "visitTotal": 1779,
+    "reviews": 144,
+    "starReview": 2.7,
+    "hashtags": ["심플", "트렌디", "데일리", "클래식", "은반지"],
+    "registrationDate": "2023-12-05",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-06",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-07",
+        "quantity": 2
+      },
+      {
+        "date": "2023-12-08",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-09",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-12",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-13",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-14",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-16",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-17",
+        "quantity": 2
+      },
+      {
+        "date": "2023-12-18",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-19",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-12-21",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "[여름특가] 비치 스타일 발찌",
+    "age": "50s",
+    "gender": "F",
+    "description": "심플, 진주, 여름, 발찌, 여성용",
+    "price": 22280,
+    "category": "Anklets",
+    "platform": "ably",
+    "visitLastweek": 125,
+    "visitThisweek": 137,
+    "visitTotal": 134912,
+    "reviews": 75,
+    "starReview": 3.6,
+    "hashtags": ["발찌", "세련된", "골드", "심플", "데일리"],
+    "registrationDate": "2023-01-24",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-04-09",
+        "quantity": 1
+      },
+      {
+        "date": "2023-04-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-04-24",
+        "quantity": 4
+      },
+      {
+        "date": "2023-04-29",
+        "quantity": 2
+      },
+      {
+        "date": "2023-05-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-05-14",
+        "quantity": 1
+      },
+      {
+        "date": "2023-05-29",
+        "quantity": 3
+      },
+      {
+        "date": "2023-06-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-13",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-25",
+        "quantity": 3
+      },
+      {
+        "date": "2023-08-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-10-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "[프리미엄] 골드 큐빅 귀걸이",
+    "age": "10s",
+    "gender": "F",
+    "description": "모던, 큐빅, 드롭, 귀걸이, 여성용",
+    "price": 30160,
+    "category": "Earrings",
+    "platform": "ably",
+    "visitLastweek": 182,
+    "visitThisweek": 151,
+    "visitTotal": 21517,
+    "reviews": 356,
+    "starReview": 1.1,
+    "hashtags": ["알러지프리", "세련된", "데일리", "모던", "심플"],
+    "registrationDate": "2023-03-27",
+    "img": "/src/assets/images/",
+    "sales": [
+      {
+        "date": "2023-01-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-02-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-03-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-04-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-05-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-05-11",
+        "quantity": 2
+      },
+      {
+        "date": "2023-05-26",
+        "quantity": 3
+      },
+      {
+        "date": "2023-06-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-06-25",
+        "quantity": 4
+      },
+      {
+        "date": "2023-06-30",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-07-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-07-25",
+        "quantity": 3
+      },
+      {
+        "date": "2023-07-30",
+        "quantity": 3
+      },
+      {
+        "date": "2023-08-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-14",
+        "quantity": 2
+      },
+      {
+        "date": "2023-08-15",
+        "quantity": 1
+      },
+      {
+        "date": "2023-08-20",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-05",
+        "quantity": 1
+      },
+      {
+        "date": "2023-09-10",
+        "quantity": 2
+      },
+      {
+        "date": "2023-09-15",
+        "quantity": 3
+      },
+      {
+        "date": "2023-10-20",
+        "quantity": 1
+      },
+      {
+        "date": "2023-11-10",
+        "quantity": 1
+      },
+      {
+        "date": "2023-12-15",
+        "quantity": 0
+      }
+    ]
+  }
 ]
