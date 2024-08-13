@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
   var played = [0, 0, 0];
 
-  // Helper function to animate text typing effect
-  function typeText(container, textArray, fontSize, delay, color) {
+  function typeText(container, textArray, fontSize, delay, color, onComplete) {
     let containerElement = document.querySelector(container);
 
-    // Check if container exists
     if (!containerElement) {
       console.error(`Container ${container} not found.`);
       return;
@@ -13,68 +11,117 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let textIndex = 0;
 
-    // Centering the text container
-    containerElement.style.display = 'flex';
-    containerElement.style.flexDirection = 'column';
-    containerElement.style.justifyContent = 'center';
-    containerElement.style.alignItems = 'center';
-    containerElement.style.height = '100%'; // Ensure it takes the full height of the parent
+    containerElement.style.position = 'absolute';
+    containerElement.style.top = '180px';
+    containerElement.style.left = '100px';
+    containerElement.style.textAlign = 'left';
 
     function type() {
       if (textIndex < textArray.length) {
-        let div = document.createElement('div'); // Block-level element for each text line
+        let div = document.createElement('div');
         div.style.fontSize = fontSize + 'px';
         div.style.color = color || '#000';
-        div.style.textAlign = 'center'; // Center text within the line
+        div.style.textAlign = 'left';
         containerElement.appendChild(div);
 
         let charIndex = 0;
         let interval = setInterval(() => {
           if (charIndex < textArray[textIndex].length) {
-            div.textContent += textArray[textIndex][charIndex];
-            charIndex++;
+            if (
+              textArray[textIndex].substring(charIndex, charIndex + 5) ===
+              '<br/>'
+            ) {
+              div.appendChild(document.createElement('br'));
+              charIndex += 5;
+            } else {
+              let span = document.createElement('span');
+              let char = textArray[textIndex][charIndex];
+              span.textContent = char === ' ' ? '\u00A0' : char; // 공백은 non-breaking space로 처리
+              span.style.display = 'none';
+              div.appendChild(span);
+
+              setTimeout(() => {
+                span.style.display = 'inline-block';
+              }, charIndex * 100);
+              charIndex++;
+            }
           } else {
             clearInterval(interval);
             textIndex++;
             setTimeout(type, delay);
           }
-        }, 100); // Typing speed (ms per character)
+        }, 100);
+      } else if (onComplete) {
+        setTimeout(onComplete, delay);
       }
     }
 
     type();
   }
 
-  // Define text content for each page
+  function ClickRedirect() {
+    window.location.href = '/src/pages/login/login.html';
+  }
+
   var textContent = [
     [
-      { text: '2024년 08월 02일', fontSize: 12, color: '#000', delay: 500 },
+      { text: 'SellBuddy는 ', fontSize: 17, color: '#b36060', delay: 300 },
+      { text: '<br/>', fontSize: 17, color: '#000', delay: 300 },
+      { text: '여러 쇼핑몰의 ', fontSize: 17, color: '#000', delay: 300 },
       {
-        text: '프로젝트를 시작했습니다.', fontSize: 14, delay: 1000,},
-
-      { text: '비록 2명은 탈주했지만...', fontSize: 14, delay: 2000 },
-      {
-        text: '저희 4명은 끝까지 포기하지 않았습니다.', fontSize: 14, color: '#3f51b5', delay: 500,
+        text: '매출, 해시태그, 리뷰 등을 ',
+        fontSize: 17,
+        color: '#000',
+        delay: 300,
       },
+      { text: '통합적으로 분석하여 ', fontSize: 17, delay: 300 },
+      { text: '<br/>', fontSize: 17, color: '#000', delay: 300 },
+      { text: '온라인 쇼핑몰 초보자도 ', fontSize: 17, delay: 300 },
+      { text: '쉽게 이해하고 사용할 수 있는 ', fontSize: 17, delay: 300 },
+      { text: '<br/>', fontSize: 17, color: '#000', delay: 300 },
+      { text: '분석 정보를 제공하는 ', fontSize: 17, delay: 300 },
+      { text: '웹 서비스입니다.', fontSize: 17, delay: 300 },
     ],
     [
-      { 
-      text: '시작부터 다사다난했던', fontSize: 12, color: '#000', delay: 1000 
+      {
+        text: '한눈에 파악할 수 있는 ',
+        fontSize: 17,
+        color: '#000',
+        delay: 300,
       },
-      { text: '저희 작업물을 함께 보시죠', fontSize: 12, color: '#000', delay: 2000 },
-      { text: '쇼핑몰 통합 분석 프로그램', fontSize: 12, color: '#000', delay: 2000 },
-      { text: '그래프로 한눈에 보는 매출분석과,', fontSize: 14, delay: 2000 },
-      { text: '플랫폼별 인기 해쉬태그 분석까지', fontSize: 14, delay: 3500 },
+      { text: '그래프를 통해 ', fontSize: 17, color: '#000', delay: 300 },
+      { text: '<br/>', fontSize: 17, delay: 300 },
+      { text: '매출 정보를 직관적으로 분석하고, ', fontSize: 17, delay: 300 },
+      { text: '취약 부분을 진단하여 ', fontSize: 17, delay: 300 },
+      { text: '<br/>', fontSize: 17, delay: 300 },
+      { text: '간단한 개선 방안을 제시함으로써 ', fontSize: 17, delay: 300 },
+      { text: '사용자의 매출 증대를 지원합니다.', fontSize: 17, delay: 300 },
     ],
     [
-      { text: '어려울 것 없습니다.',fontSize: 12, color: '#000', delay: 2000 },
-      { text: '부담 없이 그냥 시작해보세요', fontSize: 14, delay: 2000 },
-      { text: '평생 무료 0원 !!', fontSize: 14, delay: 2000 },
-      { text: '"샐버디" 와 함께 0원하세요 !!', fontSize: 14, color: '#3f51b5', delay: 1500 },
+      {
+        text: '시작부터 다사다난했던 ',
+        fontSize: 17,
+        color: '#000',
+        delay: 700,
+      },
+      { text: '<br/>', fontSize: 17, delay: 700 },
+      { text: '저희 4조의 SellBuddy, ', fontSize: 17, delay: 700 },
+      { text: '<br/>', fontSize: 17, delay: 700 },
+      { text: '<br/>', fontSize: 17, delay: 700 },
+      {
+        text: '지금 소개합니다.',
+        fontSize: 17,
+        color: '#b36060',
+        delay: 700,
+        onComplete: () => {
+          const lastText = document.querySelector('#vara-container3');
+          lastText.style.cursor = 'pointer';
+          lastText.addEventListener('click', ClickRedirect);
+        },
+      },
     ],
   ];
 
-  // Add click event listeners to the pages
   document.querySelectorAll('.front:not(.last)').forEach((element, index) => {
     element.addEventListener('click', function () {
       document.querySelector('.book').classList.add('open');
@@ -90,8 +137,9 @@ document.addEventListener('DOMContentLoaded', function () {
               `#vara-container${index + 1}`,
               [item.text],
               item.fontSize,
-              item.delay || 1000,
-              item.color
+              item.delay || 300,
+              item.color,
+              item.onComplete
             );
           }, delay);
           delay += item.delay;
