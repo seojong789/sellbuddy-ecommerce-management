@@ -195,19 +195,27 @@ const updateChart = (charLabel, chartData, dataLabel) => {
             data: chartData,
             borderWidth: 1,
             backgroundColor: [
-              'dodgerblue',
-              'dodgerblue',
-              'dodgerblue',
-              'dodgerblue',
-              'dodgerblue',
-              'dodgerblue',
-              'orange'
+              '#3F7AB5',
+              '#3F7AB5',
+              '#3F7AB5',
+              '#3F7AB5',
+              '#3F7AB5',
+              '#3F7AB5',
+              '#1F4078'
             ],
             maxBarThickness: 50
           },
         ],
       },
-      options: chartOptions,
+      options: {
+        ...chartOptions,
+        indexAxis: 'y',
+        scales: {
+          y: {
+            reverse: true,
+          }
+        }
+      },
     }
   );
 };
@@ -263,13 +271,13 @@ printChart();
 // 드롭다운 변경 시 재실행
 dataSelect.addEventListener("change", printChart);
 
-// 매출 달력
+// 일간 매출
 const printCalender = () => {
   // 달력의 연, 월
   const viewYear = today.getFullYear();
   const viewMonth = today.getMonth();
   document.querySelector(".year-month").innerHTML = `<p>${viewYear}년 ${viewMonth + 1}월</p>`;
-  // 전월과 당일의 마지막날
+  // 전월과 당월의 마지막날
   const prevLast = new Date(viewYear, viewMonth, 0);
   const thisLast = new Date(viewYear, viewMonth + 1, 0);
   // 전월 막일의 일자, 요일
