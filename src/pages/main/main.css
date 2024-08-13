@@ -215,7 +215,7 @@
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
 
   font-size: clamp(12px, 1.5vw, 15px);
   font-weight: bold;
@@ -292,6 +292,7 @@
 
 .day-sale-detail {
   background-color: navy;
+  border-radius: 10px;
   width: fit-content;
   height: fit-content;
   padding: 1vmin;
@@ -301,7 +302,7 @@
 
   display: none;
   position: relative;
-  right: 70%;
+  right: 50%;
 }
 
 .day:hover .day-number,

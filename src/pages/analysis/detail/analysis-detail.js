@@ -1,4 +1,5 @@
 // 8.11수정
+// 8.13수정(양성규)
 window.onload = () => {
   // 분석 메인의 a태그 상품 id값 가져옴
   const urlParams = new URLSearchParams(location.search);
@@ -40,8 +41,11 @@ window.onload = () => {
 
       // 상품이미지-------------------------------------------------
       // 실제 product 객체의 img 값을 src로 설정
+      // => (수정) product 객체의 name을 이용하여 src과 alt 입력
+      // (name과 이미지 파일명을 동일하게 하고 파일형식은 .jpg로 할 것)
       let productImage = document.querySelector(".product-img");
-      productImage.src = productId.img;
+      productImage.src = "/src/assets/images/" + productId.name + ".jpg";
+      productImage.alt = productId.name + ".jpg";
 
       // 상품명 ------------------------------------------------------------
       let productName = document.querySelector(".product-name");
@@ -118,16 +122,15 @@ window.onload = () => {
       let categoryPriceAVGHTML = document.querySelector(
         ".category-average-price"
       );
-      categoryPriceAVGHTML.innerText = `${categoryPriceAVG.toLowerCase()}원`;
-
+      categoryPriceAVGHTML.innerText = `${categoryPriceAVG.toLocaleString()}원`;
       let categoryHighestPriceHTML = document.querySelector(
         ".category-highest-price"
       );
-      categoryHighestPriceHTML.innerText = `${categoryHighestPrice.toLowerCase()}원`;
+      categoryHighestPriceHTML.innerText = `${categoryHighestPrice.toLocaleString()}원`;
       let categoryLowestPriceHTML = document.querySelector(
         ".category-lowest-price"
       );
-      categoryLowestPriceHTML.innerText = `${categoryLowestPrice.toLowerCase()}원`;
+      categoryLowestPriceHTML.innerText = `${categoryLowestPrice.toLocaleString()}원`;
       // 키워드 ---------------------------------------------
       let keyword = productId.description; //상품키워드
       let keywordHTML = document.querySelector(".product-description");
@@ -707,33 +710,28 @@ window.onload = () => {
           // 평균연령이 타겟연령보다 클 때
         } else if (sameProductsAge > targetAge) {
           platformComentHTML.innerHTML = `
-           <p>우리 쇼핑몰 타겟층은 ${targetAge}대 ${targetGender}예요</p>
-           <p>해당 상품은 ${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
-            <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
-          `;
+                 <p>우리 쇼핑몰 타겟층은 ${targetAge}대 ${targetGender}예요</p>
+                 <p>해당 상품은 ${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
+                  <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
+                `;
+        } else {
+          platformComentHTML.innerHTML = `
+            <p>총 판매량이 0개입니다</p>
+            <p>판매량이 1개 이상일 때 분석이 가능해요</p>
+           `;
         }
-      } else if ((productsalesVolume = 0)) {
-        platformComentHTML.innerHTML = `
-      <p>총 판매량이 0개입니다</p>
-      <p>판매량이 1개 이상일 때 분석이 가능해요</p>
-     `;
       }
-      // 에이블리 분석----------------------------
-      // 에이블리 동일 상품 찾기
-      let ablyProduct = sameProducts.find(
-        (product) => product.platform === "ably"
-      );
-      // 에이블리 동일 상품의 구매연령
-      let ablyProductAge = ablyProduct
-        ? ablyProduct.age.replace("s", "")
-        : null;
-      console.log("에이블리상품" + ablyProduct);
-      console.log("에이블리상품나이" + ablyProductAge);
-      // 에이블리 동일 상품의 구매자 성별
-      let ablyProductGender = ablyProduct
-        ? ablyProduct.gender.replace("s", "")
-        : null;
-      console.log("에이블리상품성별" + ablyProductGender);
+
+      let ablyAge = null;
+      let zigzagAge = null;
+      productsRes.data.forEach((product) => {
+        if (product.name === productId.name && product.platform === "ably") {
+          ablyAge = parseInt(platforms[0].age.replace("s", ""));
+        }
+        if (product.name === productId.name && product.platform === "zigzag") {
+          zigzagAge = parseInt(platforms[1].age.replace("s", ""));
+        }
+      });
 
       // 플랫폼 분석 - 에이블리 분석 코멘트 요소 선택
       let ablyComentHTML = document.querySelector(".ably-analysis-coment");
@@ -742,48 +740,27 @@ window.onload = () => {
         ablyComentHTML.innerHTML = `
           <p>총 판매량이 0개입니다</p>
             <p>판매량이 1개 이상일 때 분석이 가능해요</p>
-        `;
-      } else if (ablyProduct != undefined) {
-        if (ablyProductAge < targetAge) {
-          ablyComentHTML.innerHTML = `
-                   <p>${ablyProductAge}대 ${ablyProductGender} 구매율이 높아요</p>
-                      <p>조금 더 성숙한 디자인의 상품기획이 필요해보여요</p>
-                `;
-        } else if ((ablyProductAge = targetAge)) {
-          ablyComentHTML.innerHTML = `
-                       <p>우리 쇼핑몰 타겟층인 ${targetAge}대 ${targetGender}과 일치해요</p>
-                       <p>비슷한 디자인의 상품기획을 추천드려요</p>
-                `;
-        } else if (ablyProductAge > targetAge) {
-          ablyComentHTML.innerHTML = `
-                <p>${ablyProductAge}대 ${ablyProductGender} 구매율이 높아요</p>
-                    <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
-                `;
-        }
+           `;
+      } else if (ablyAge === null) {
+        ablyComentHTML.innerHTML = `
+            <p>해당 상품은 에이블리에 등록되어 있지 않아요.</p>
+           `;
+      } else if (ablyAge < targetAge) {
+        ablyComentHTML.innerHTML = `
+                <p>${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
+                <p>조금 더 성숙한 디자인의 상품기획이 필요해보여요</p>
+              `;
+      } else if (ablyAge === targetAge) {
+        ablyComentHTML.innerHTML = `
+                 <p>우리 쇼핑몰 타겟층인 ${targetAge}대 ${targetGender}과 일치해요</p>
+                 <p>비슷한 디자인의 상품기획을 추천드려요</p>
+              `;
+      } else if (ablyAge > targetAge) {
+        ablyComentHTML.innerHTML = `
+               <p>${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
+              <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
+              `;
       }
-      console.log("에이블리상품", {
-        platform: ablyProduct.platform,
-        age: ablyProduct.age,
-        gender: ablyProduct.gender,
-      });
-      // 지그재그 분석 -------------------------
-      // 지그재그 동일 상품 찾기
-      let zigzagProduct = sameProducts.find(
-        (product) => product.name === "zigzag"
-      );
-      // 지그재그 동일 상품의 구매연령
-      let zigzagProductAge = zigzagProduct
-        ? zigzagProduct.age.replace("s", "")
-        : null;
-      // 지그재그 동일 상품의 구매자 성별
-      let zigzagProductGender = zigzagProduct
-        ? zigzagProduct.gender.replace("s", "")
-        : null;
-      console.log("지그재그상품성별" + zigzagProductGender);
-      console.log("지그재그상품" + zigzagProduct);
-      console.log("지그재그상품 나이" + zigzagProductAge);
-      console.log("지그재그상품 성별" + zigzagProductGender);
-      let zigzagAge = parseInt(platforms[1].age.replace("s", ""));
 
       // 플랫폼 분석 - 에이블리 분석 코멘트 요소 선택
       let zigzagComentHTML = document.querySelector(".zigzag-analysis-coment");
@@ -792,24 +769,26 @@ window.onload = () => {
         zigzagComentHTML.innerHTML = `
           <p>총 판매량이 0개입니다</p>
             <p>판매량이 1개 이상일 때 분석이 가능해요</p>
-        `;
-      } else if (zigzagProduct != undefined) {
-        if (zigzagProductAge < targetAge) {
-          zigzagComentHTML.innerHTML = `
-                   <p>${zigzagProductAge}대 ${zigzagProductGender} 구매율이 높아요</p>
-                      <p>조금 더 성숙한 디자인의 상품기획이 필요해보여요</p>
-                `;
-        } else if ((zigzagProductAge = targetAge)) {
-          zigzagComentHTML.innerHTML = `
-                       <p>우리 쇼핑몰 타겟층인 ${targetAge}대 ${targetGender}과 일치해요</p>
-                       <p>비슷한 디자인의 상품기획을 추천드려요</p>
-                `;
-        } else if (zigzagProductAge > targetAge) {
-          zigzagComentHTML.innerHTML = `
-                <p>${zigzagProductAge}대 ${zigzagProductGender} 구매율이 높아요</p>
-                    <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
-                `;
-        }
+           `;
+      } else if (zigzagAge === null) {
+        zigzagAnalysisComentHTML.innerHTML = `
+            <p>해당 상품은 지그재그에 등록되어 있지 않아요.</p>
+           `;
+      } else if (zigzagAge < targetAge) {
+        zigzagAnalysisComentHTML.innerHTML = `
+                <p>${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
+                <p>조금 더 성숙한 디자인의 상품기획이 필요해보여요</p>
+              `;
+      } else if (zigzagAge === targetAge) {
+        zigzagAnalysisComentHTML.innerHTML = `
+                 <p>우리 쇼핑몰 타겟층인 ${targetAge}대 ${targetGender}과 일치해요</p>
+                 <p>비슷한 디자인의 상품기획을 추천드려요</p>
+              `;
+      } else if (zigzagAge > targetAge) {
+        zigzagAnalysisComentHTML.innerHTML = `
+               <p>${sameProductsAge}대 ${sameProductsGender} 구매율이 높아요</p>
+               <p>조금 더 젊어보이는 디자인의 상품기획이 필요해보여요</p>
+              `;
       }
     })
   ); // 마지막1

@@ -19,9 +19,9 @@
           "목걸이"
         ],
         "price": {
-          "highest": "150,000",
-          "average": "70,000",
-          "lowest": "30,000"
+          "highest": 150000,
+          "average": 70000,
+          "lowest": 30000
         }
       },
       {
@@ -39,9 +39,9 @@
           "패션링"
         ],
         "price": {
-          "highest": "180,000",
-          "average": "90,000",
-          "lowest": "40,000"
+          "highest": 180000,
+          "average": 90000,
+          "lowest": 40000
         }
       },
       {
@@ -58,9 +58,9 @@
           "스타일링"
         ],
         "price": {
-          "highest": "170,000",
-          "average": "85,000",
-          "lowest": "35,000"
+          "highest": 170000,
+          "average": 85000,
+          "lowest": 35000
         }
       },
       {
@@ -78,9 +78,9 @@
           "스타일링"
         ],
         "price": {
-          "highest": "130,000",
-          "average": "65,000",
-          "lowest": "25,000"
+          "highest": 130000,
+          "average": 65000,
+          "lowest": 25000
         }
       },
       {
@@ -98,9 +98,9 @@
           "오오티디패션"
         ],
         "price": {
-          "highest": "140,000",
-          "average": "70,000",
-          "lowest": "28,000"
+          "highest": 140000,
+          "average": 70000,
+          "lowest": 28000
         }
       }
     ]
@@ -126,9 +126,9 @@
           "목걸이"
         ],
         "price": {
-          "highest": "150,000",
-          "average": "70,000",
-          "lowest": "30,000"
+          "highest": 150000,
+          "average": 70000,
+          "lowest": 30000
         }
       },
       {
@@ -146,9 +146,9 @@
           "패션링"
         ],
         "price": {
-          "highest": "180,000",
-          "average": "90,000",
-          "lowest": "40,000"
+          "highest": 180000,
+          "average": 90000,
+          "lowest": 40000
         }
       },
       {
@@ -165,9 +165,9 @@
           "스타일"
         ],
         "price": {
-          "highest": "170,000",
-          "average": "85,000",
-          "lowest": "35,000"
+          "highest": 170000,
+          "average": 85000,
+          "lowest": 35000
         }
       },
       {
@@ -185,9 +185,9 @@
           "모던"
         ],
         "price": {
-          "highest": "130,000",
-          "average": "65,000",
-          "lowest": "25,000"
+          "highest": 130000,
+          "average": 65000,
+          "lowest": 25000
         }
       },
       {
@@ -205,9 +205,9 @@
           "BTS뷔"
         ],
         "price": {
-          "highest": "140,000",
-          "average": "70,000",
-          "lowest": "28,000"
+          "highest": 140000,
+          "average": 70000,
+          "lowest": 28000
         }
       }
     ]
