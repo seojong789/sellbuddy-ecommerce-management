@@ -45,22 +45,35 @@
 #main-order {
   grid-column: 1/7;
   grid-row-start: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 #main-order p {
-  max-height: 50%;
+  max-height: 100%;
 
   display: flex;
   align-items: center;
   justify-content: space-around;
 
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #main-order p span {
-  width: 25%;
+  background-color: #3f72b9;
+  border: 1px solid #3f72b9;
+  border-radius: 0.5em;
+  width: fit-content;
   padding: 1vh 1vw;
+  margin: 1vh 1vw;
 
+
+  color: #ffffff;
   font-size: clamp(15px, 2vw, 20px);
   white-space: nowrap;
   overflow: hidden;
@@ -83,6 +96,17 @@
 #main-popular-hashtag {
   grid-column: 5/7;
   grid-row-start: 2;
+}
+
+#main-popular-hashtag .list-center {
+  background-color: #3f72b9;
+  border: 1px solid #3f72b9;
+  border-radius: 0.5em;
+  width: fit-content;
+  padding: .25vh .25vw;
+
+  font-size: clamp(10px, 1.2vw, 12px);
+  color: #ffffff;
 }
 
 /* 공지, 인기 공통 */
@@ -133,11 +157,11 @@
 
 .list li {
   border-top: 1px solid gray;
-  height: 2vh;
+  height: 2.5vh;
   padding: 1vh 1vw;
 
   display: flex;
-  text-align: center;
+  text-align: left;
   justify-content: space-between;
 }
 
