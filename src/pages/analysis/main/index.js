@@ -275,7 +275,17 @@ window.onload = () => {
         .getElementById('category-rank')
         .addEventListener('change', renderHashtagRankings);
 
+<<<<<<< HEAD
       // 초기 해시태그 순위 렌더링
       renderHashtagRankings();
     });
+=======
+    // 초기 해시태그 순위 렌더링
+    renderHashtagRankings();
+
+    
+  });
+
+  
+>>>>>>> refactor/analysisFinal
 };

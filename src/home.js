@@ -50,28 +50,27 @@ document.addEventListener('DOMContentLoaded', function () {
     [
       { text: '2024년 08월 02일', fontSize: 12, color: '#000', delay: 500 },
       {
-        text: '프로젝트를 시작했습니다.',
-        fontSize: 14,
-        delay: 1000,
-      },
-      { text: '비록 2명은 탈주했지만...', fontSize: 14, delay: 4500 },
+        text: '프로젝트를 시작했습니다.', fontSize: 14, delay: 1000,},
+
+      { text: '비록 2명은 탈주했지만...', fontSize: 14, delay: 2000 },
       {
-        text: '저희 4명은 끝까지 포기하지 않았습니다.',
-        fontSize: 14,
-        color: '#3f51b5',
-        delay: 500,
+        text: '저희 4명은 끝까지 포기하지 않았습니다.', fontSize: 14, color: '#3f51b5', delay: 500,
       },
     ],
     [
-      { text: '16 Jan 2019', fontSize: 12, color: '#000', delay: 500 },
-      { text: 'Try to create something else.', fontSize: 14, delay: 4000 },
-      { text: 'Like a diary or a todo list.', fontSize: 14, delay: 3500 },
+      { 
+      text: '시작부터 다사다난했던', fontSize: 12, color: '#000', delay: 1000 
+      },
+      { text: '저희 작업물을 함께 보시죠', fontSize: 12, color: '#000', delay: 2000 },
+      { text: '쇼핑몰 통합 분석 프로그램', fontSize: 12, color: '#000', delay: 2000 },
+      { text: '그래프로 한눈에 보는 매출분석과,', fontSize: 14, delay: 2000 },
+      { text: '플랫폼별 인기 해쉬태그 분석까지', fontSize: 14, delay: 3500 },
     ],
     [
-      { text: '17 Jan 2019', fontSize: 12, color: '#000', delay: 500 },
-      { text: 'Creating a Diary.', fontSize: 14, delay: 4000 },
-      { text: 'View the library on,', fontSize: 14, delay: 3500 },
-      { text: '시작해보세요.', fontSize: 14, color: '#3f51b5', delay: 1500 },
+      { text: '어려울 것 없습니다.',fontSize: 12, color: '#000', delay: 2000 },
+      { text: '부담 없이 그냥 시작해보세요', fontSize: 14, delay: 2000 },
+      { text: '평생 무료 0원 !!', fontSize: 14, delay: 2000 },
+      { text: '"샐버디" 와 함께 0원하세요 !!', fontSize: 14, color: '#3f51b5', delay: 1500 },
     ],
   ];
 
