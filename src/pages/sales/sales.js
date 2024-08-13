@@ -1,18 +1,117 @@
 import { animateValue } from '../../components/util.js';
 
+function createGradient(ctx, area) {
+  const gradient = ctx.createLinearGradient(0, 0, 0, area.bottom);
+  gradient.addColorStop(0, 'rgba(31, 64, 120, 0.3)');
+  gradient.addColorStop(1, 'rgba(31, 64, 120, 0)');
+  return gradient;
+}
+
 const chartOptions = {
   responsive: true,
-  maintainAspectRatio: false,
+  maintainAspectRatio: true,
+  aspectRatio: 3,
   scales: {
     y: {
       beginAtZero: true,
+      grid: {
+        color: 'rgba(200, 200, 200, 0.4)',
+        borderDash: [8, 4],
+      },
+      ticks: {
+        color: '#1F4078',
+        font: {
+          size: 12,
+          weight: 'bold',
+        },
+        padding: 10,
+      },
+    },
+    x: {
+      grid: {
+        color: 'rgba(200, 200, 200, 0.2)',
+        borderDash: [8, 4],
+      },
+      ticks: {
+        color: '#1F4078',
+        font: {
+          size: 12,
+          weight: 'bold',
+        },
+        padding: 10,
+      },
     },
   },
   plugins: {
     legend: {
       display: true,
       position: 'top',
+      labels: {
+        color: '#1F4078',
+        font: {
+          size: 14,
+          weight: 'bold',
+          family: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+        },
+      },
     },
+    tooltip: {
+      backgroundColor: 'rgba(0, 0, 0, 0.7)',
+      titleColor: '#fff',
+      bodyColor: '#fff',
+      cornerRadius: 6,
+      titleFont: {
+        size: 14,
+        weight: 'bold',
+        family: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+      },
+      bodyFont: {
+        size: 12,
+      },
+      padding: 12,
+      callbacks: {
+        label: function (context) {
+          return (
+            '💰 ' +
+            context.dataset.label +
+            ': ' +
+            context.raw.toLocaleString() +
+            ' 원'
+          );
+        },
+      },
+    },
+  },
+  elements: {
+    line: {
+      tension: 0.4,
+      borderWidth: 3,
+      borderColor: '#3F7AB5',
+      backgroundColor: function (context) {
+        const chart = context.chart;
+        const { ctx, chartArea } = chart;
+
+        if (!chartArea) {
+          return null;
+        }
+        return createGradient(ctx, chartArea);
+      },
+    },
+    point: {
+      radius: 6,
+      backgroundColor: '#142b42', // 포인트 색상
+      borderColor: 'white', // 포인트 테두리 색상을 흰색으로 설정하여 대비를 줌
+      borderWidth: 1,
+      hoverRadius: 7,
+      hoverBorderWidth: 4,
+      hoverBackgroundColor: '#2ECC71', // 호버 시 녹색으로 변경
+      hoverBorderColor: '#27AE60',
+      pointStyle: 'triangle', // 데이터 포인트 모양을 둥근 사각형으로 설정
+    },
+  },
+  animation: {
+    duration: 2000,
+    easing: 'easeInOutQuart',
   },
 };
 
@@ -77,7 +176,10 @@ async function initializeCharts() {
           },
         ],
       },
-      options: chartOptions,
+      options: {
+        ...chartOptions,
+        aspectRatio: 6,
+      },
     }
   );
 
@@ -96,8 +198,6 @@ async function initializeCharts() {
       );
 
       weeklyChart.data.labels = Object.keys(salesData.weeklySales);
-      console.log(salesData);
-      console.log(salesData.weeklySales);
       weeklyChart.data.datasets[0].data = Object.values(salesData.weeklySales);
       weeklyChart.update();
 
@@ -132,9 +232,8 @@ function calculateSales(data, selectedDate = null, platform = 'total') {
 
   const selectedDateObj = new Date(selectedDate);
   const startDate = new Date(selectedDateObj);
-  startDate.setDate(selectedDateObj.getDate() - 6); // 7일 전 날짜 계산
+  startDate.setDate(selectedDateObj.getDate() - 6);
 
-  // 7일간의 날짜 키 생성
   for (let i = 0; i < 7; i++) {
     const currentDate = new Date(startDate);
     currentDate.setDate(startDate.getDate() + i);
@@ -148,7 +247,6 @@ function calculateSales(data, selectedDate = null, platform = 'total') {
         const saleDate = new Date(sale.date);
         const saleAmount = sale.quantity * product.price;
 
-        // 주간 매출 (선택한 날짜 기준 마지막 7일 동안의 매출만 계산)
         if (saleDate >= startDate && saleDate <= selectedDateObj) {
           const dateKey = saleDate.toISOString().split('T')[0];
           if (weeklySales[dateKey] !== undefined) {
@@ -156,14 +254,11 @@ function calculateSales(data, selectedDate = null, platform = 'total') {
           }
         }
 
-        // 분기 매출
         const quarter = Math.floor(saleDate.getMonth() / 3);
         quarterlySales[quarter] += saleAmount;
 
-        // 월간 매출
         monthlySales[saleDate.getMonth()] += saleAmount;
 
-        // 연간 매출
         yearlySales += saleAmount;
       });
     }
