@@ -34,7 +34,7 @@ window.onload = () => {
                 product.id
               }" class="product-name">
                 <span>
-                  <img src="/src/assets/images/목걸이1.jpg" alt="상품 대표 이미지" />
+                  <img src="/src/assets/images/${product.name}.jpg" alt="상품 대표 이미지" />
                 </span>
                 <span class="registered-product-name">${product.name}</span>
               </a>
