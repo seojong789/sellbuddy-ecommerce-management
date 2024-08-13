@@ -3,7 +3,7 @@ today.setHours(0, 0, 0, 0);
 let compareDate;
 
 axios
-  .get("http://localhost:5500/product.json")
+  .get("/product.json")
   .then((res) => {
     const products = res.data;
     // 주문현황
@@ -44,7 +44,6 @@ axios
           if (product.platform == productPlatformSelect.value) {
             compareDate = new Date(sale.date);
             compareDate.setHours(0, 0, 0, 0);
-            // console.log(today, compareDate)
             if (today.getTime() == compareDate.getTime()) {
               popularProduct.push([product.name, sale.quantity]);
             }
@@ -226,7 +225,7 @@ const printChart = () => {
   let dataLabel;
 
   axios
-    .get("http://localhost:5500/product.json")
+    .get("/product.json")
     .then((res) => {
       const products = res.data;
       for (let n = 0; n < 7; n++) {
@@ -309,7 +308,7 @@ const printCalender = () => {
   dateBase.setDate(1 - firstDateIndex);
 
   axios
-    .get("http://localhost:5500/product.json")
+    .get("/product.json")
     .then((res) => {
       const products = res.data;
       dates.forEach((date, i) => {
