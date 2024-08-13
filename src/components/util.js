@@ -1,4 +1,3 @@
-// utils.js
 export function animateValue(id, start, end, duration) {
   const element = document.getElementById(id);
   const startTime = performance.now();

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <nav class="sidebar-navigation">
     <ul>
       <a href="/src/pages/main/main.html">
-        <li class="active">
+        <li>
           <i class="fa-sharp-duotone fa-solid fa-house"></i>
           <span class="tooltip">Main</span>
         </li>
