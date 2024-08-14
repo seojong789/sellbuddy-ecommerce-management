@@ -179,10 +179,10 @@
 
 | 이름       | 역할                | GitHub                                            |
 |------------|---------------------|---------------------------------------------------|
-| **팀원 1** | 프론트엔드 개발자   | [GitHub 프로필](https://github.com/username1)     |
-| **팀원 2** | 백엔드 개발자       | [GitHub 프로필](https://github.com/username2)     |
-| **팀원 3** | 디자이너            | [GitHub 프로필](https://github.com/username3)     |
-| **팀원 4** | 프로젝트 매니저     | [GitHub 프로필](https://github.com/username4)     |
+| **서종필** | PM    | [GitHub 프로필](https://github.com/seojong789)     |
+| **라주엽** | xx 개발       | [GitHub 프로필](https://github.com/username2)     |
+| **송지현** | xx 개발            | [GitHub 프로필](https://github.com/username3)     |
+| **양성규** | xx 개발     | [GitHub 프로필](https://github.com/username4)     |
 
 
 <br>
