@@ -1,5 +1,8 @@
 # 🛒 셀버디 (SellBuddy)
 
+<br>
+<br>
+
 <div align="center">
   
 ![logo4](https://github.com/user-attachments/assets/b85c59c6-9cd1-4ae5-a21c-5d4b964c9b7e)
@@ -14,6 +17,7 @@
 ![CSS Icon](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript Icon](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 ![Babel Icon](https://img.shields.io/badge/Babel-F9DC3E?logo=babel&logoColor=black)
+
 ![Miro Icon](https://img.shields.io/badge/Miro-FFD700?logo=miro&logoColor=white)
 ![Figma Icon](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white)
 ![Notion Icon](https://img.shields.io/badge/Notion-000000?logo=notion&logoColor=white)
