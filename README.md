@@ -21,20 +21,72 @@
 
 </div>
 
+<br>
 
-## 📝 프로젝트 개요
+## 👥 Contributors
+
+<br>
+
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/seojong789">
+        <img src="https://github.com/seojong789.png" width="100px;" alt="서종필"/>
+        <br />
+        <b>서종필</b>
+      </a>
+      <br />
+      <span>PM</span>
+    </td>
+    <td align="center">
+      <a href="https://github.com/username2">
+        <img src="https://github.com/username2.png" width="100px;" alt="라주엽"/>
+        <br />
+        <b>라주엽</b>
+      </a>
+      <br />
+      <span>xx 개발</span>
+    </td>
+    <td align="center">
+      <a href="https://github.com/username3">
+        <img src="https://github.com/username3.png" width="100px;" alt="송지현"/>
+        <br />
+        <b>송지현</b>
+      </a>
+      <br />
+      <span>xx 개발</span>
+    </td>
+    <td align="center">
+      <a href="https://github.com/username4">
+        <img src="https://github.com/username4.png" width="100px;" alt="양성규"/>
+        <br />
+        <b>양성규</b>
+      </a>
+      <br />
+      <span>xx 개발</span>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+<br>
+
+## 📝 Project Overview
 &nbsp;셀버디(SellBuddy)는 온라인 쇼핑몰을 운영하는 판매자들을 위해 다양한 플랫폼에서 발생하는 매출 데이터를 통합 관리하고 분석할 수 있는 솔루션입니다. 여러 쇼핑몰 플랫폼에서 개별적으로 제공되는 매출 데이터를 한 곳에서 모아 체계적으로 관리함으로써, 판매자들이 전략적인 의사결정을 내릴 수 있도록 돕습니다.
 
 셀버디는 매출 관리, 상품 분석, 사용자 인증 기능을 포함한 포괄적인 관리 도구로, 소규모 비즈니스부터 대규모 전자상거래 사이트까지 다양한 규모의 비즈니스에서 활용될 수 있습니다.
 
 <br>
 
-## 🚀 라이브 데모
+## 🚀 Live Demo
 [프로젝트 링크](https://example.com) - (준비중)
 
 <br>
 
-## 📋 주요 기능 & 사진
+## 📋 Key Features & Screenshots
 ### **1. 메인 페이지**
 
 ![프로젝트 스크린샷-메인](./assets/screenshot.png)
@@ -129,21 +181,21 @@
 
 <br>
 
-## 💻 설치 및 실행
+## 💻 Installation & Execution
 
-### 🛠 설치 방법
+### 🛠 Installation Steps
 로컬 환경에서 셀버디 프로젝트를 실행하는 방법:
 
-1. **저장소 클론**:
+1. **Clone the repository**:
     ```bash
     git clone https://github.com/seojong789/sellbuddy-ecommerce-management.git
     cd sellbuddy
     ```
-2. **의존성 설치**:
+2. **Install dependencies**:
     ```bash
     npm install
     ```
-3. **애플리케이션 실행**:
+3. **Run the application**:
     ```bash
     npm start
     ```
@@ -151,41 +203,8 @@
 
 <br>
 
-## 🤝 Git 사용법
+## 🤝 Git Usage
 &nbsp;다음 단계를 따라주세요:
 
-1. **저장소 포크**: 
-   프로젝트를 포크하여 자신의 GitHub 계정에 복사합니다.
-2. **새 브랜치 생성**:
-    ```bash
-    git checkout -b feat/Feature
-    ```
-3. **변경 사항 커밋**:
-    ```bash
-    git commit -m 'FEAT: content'
-    ```
-4. **푸시**:
-    ```bash
-    git checkout dev
-    git merge --no -ff feat/Feature
-    git push origin dev
-    ```
-5. **풀 리퀘스트 생성**:
-   프로젝트의 메인 저장소로 풀 리퀘스트를 보냅니다.
-
-<br>
-
-## 👥 팀원들
-
-| 이름       | 역할                | GitHub                                            |
-|------------|---------------------|---------------------------------------------------|
-| **서종필** | PM    | [GitHub 프로필](https://github.com/seojong789)     |
-| **라주엽** | xx 개발       | [GitHub 프로필](https://github.com/username2)     |
-| **송지현** | xx 개발            | [GitHub 프로필](https://github.com/username3)     |
-| **양성규** | xx 개발     | [GitHub 프로필](https://github.com/username4)     |
-
-
-<br>
-
-## 📜 라이선스
-&nbsp;이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참조하세요.
+1. **Fork the repository**: 
+아래는 요청하신 팀원들 섹션을 더 이쁘게 꾸며서 제공한 마크다운 템플릿입니다:
