@@ -1,6 +1,25 @@
 # 🛒 셀버디 (SellBuddy)
 
+<div align="center">
+  
+![logo4](https://github.com/user-attachments/assets/b85c59c6-9cd1-4ae5-a21c-5d4b964c9b7e)
+
+</div>
+
+<div align="center">
+  
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/seojong789/sellbuddy-ecommerce-management)
+![VSCode Icon](https://img.shields.io/badge/VSCode-007ACC?logo=visual-studio-code&logoColor=white)
+![HTML Icon](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS Icon](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript Icon](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![Babel Icon](https://img.shields.io/badge/Babel-F9DC3E?logo=babel&logoColor=black)
+![Miro Icon](https://img.shields.io/badge/Miro-FFD700?logo=miro&logoColor=white)
+![Figma Icon](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white)
+![Notion Icon](https://img.shields.io/badge/Notion-000000?logo=notion&logoColor=white)
+![Node.js Icon](https://img.shields.io/badge/Node.js-43853D?logo=node.js&logoColor=white)
+
+</div>
 
 ## 📝 프로젝트 개요
 &nbsp;셀버디(SellBuddy)는 온라인 쇼핑몰을 운영하는 판매자들을 위해 다양한 플랫폼에서 발생하는 매출 데이터를 통합 관리하고 분석할 수 있는 솔루션입니다. 여러 쇼핑몰 플랫폼에서 개별적으로 제공되는 매출 데이터를 한 곳에서 모아 체계적으로 관리함으로써, 판매자들이 전략적인 의사결정을 내릴 수 있도록 돕습니다.
@@ -110,22 +129,6 @@
 <br>
 
 ## 💻 설치 및 실행
-### 🔧 프로젝트에 사용한 툴
-
-![VSCode Icon](https://img.shields.io/badge/VSCode-007ACC?logo=visual-studio-code&logoColor=white) 
-- 프로젝트의 개발 환경으로 사용되었습니다. 
-
-![Miro Icon](https://img.shields.io/badge/Miro-FFD700?logo=miro&logoColor=black)
-- 아이디어와 워크플로우를 시각화하기 위해 사용되었습니다. 
-
-![Figma Icon](https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white) 
-- UI 디자인을 위해 사용되었습니다. 
-
-![Notion Icon](https://img.shields.io/badge/Notion-000000?logo=notion&logoColor=white) 
-- 프로젝트 관리를 위해 사용되었습니다. 
-
-![Node.js Icon](https://img.shields.io/badge/Node.js-43853D?logo=node.js&logoColor=white)
-- 추후 Babel을 위해 필요할지도..
 
 ### 🛠 설치 방법
 로컬 환경에서 셀버디 프로젝트를 실행하는 방법:
@@ -168,6 +171,14 @@
     ```
 5. **풀 리퀘스트 생성**:
    프로젝트의 메인 저장소로 풀 리퀘스트를 보냅니다.
+
+<br>
+
+## 👥 팀원들
+- **팀원 1**: 역할 (예: 프론트엔드 개발자)
+- **팀원 2**: 역할 (예: 백엔드 개발자)
+- **팀원 3**: 역할 (예: 디자이너)
+- **팀원 4**: 역할 (예: 프로젝트 매니저)
 
 <br>
 
