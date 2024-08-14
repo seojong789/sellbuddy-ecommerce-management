@@ -57,27 +57,27 @@
 
 ## 💻 설치 및 실행
 
-### 🔧 사전 요구 사항
-프로젝트를 실행하기 위해 다음과 같은 환경이 필요합니다:
-- **Node.js 및 npm**: 프로젝트의 백엔드와 패키지 관리를 위해 필요합니다.
-- **MySQL**: 데이터베이스 서버로 사용되며, 프로젝트의 데이터를 저장합니다.
+### 🔧 사전 요구 사항 (Babel관련 내용으로 바꿀 것.)
+~~프로젝트를 실행하기 위해 다음과 같은 환경이 필요합니다:
+~- **Node.js 및 npm**: 프로젝트의 백엔드와 패키지 관리를 위해 필요합니다.
+~- **MySQL**: 데이터베이스 서버로 사용되며, 프로젝트의 데이터를 저장합니다.~~
 
 ### 🛠 설치 방법
 로컬 환경에서 셀버디 프로젝트를 실행하는 방법은 다음과 같습니다:
 
 1. **저장소 클론**:
     ```bash
-    git clone https://github.com/username/sellbuddy.git
+    git clone https://github.com/seojong789/sellbuddy-ecommerce-management.git
     cd sellbuddy
     ```
 2. **의존성 설치**:
     ```bash
     npm install
     ```
-3. **데이터베이스 설정**:
-   - MySQL에서 데이터베이스를 생성하고, `config/db.js` 파일에서 데이터베이스 설정을 업데이트합니다.
-   - 데이터베이스 초기화 및 마이그레이션을 수행합니다.
-   - 예제:
+``3. **데이터베이스 설정**:~~
+   ~~- MySQL에서 데이터베이스를 생성하고, `config/db.js` 파일에서 데이터베이스 설정을 업데이트합니다.~~
+   ~~- 데이터베이스 초기화 및 마이그레이션을 수행합니다.~~
+   ~~- 예제:
      ```bash
      mysql -u root -p
      CREATE DATABASE sellbuddy;
@@ -86,7 +86,7 @@
     ```bash
     npm start
     ```
-    - 서버가 시작되면, 웹 브라우저에서 `http://localhost:3000`으로 접속합니다.
+    - 서버가 시작되면, 웹 브라우저에서 `http://localhost:3000`으로 접속합니다.~~
 
 ## 🤝 기여
 
@@ -96,18 +96,20 @@
    프로젝트를 포크하여 자신의 GitHub 계정에 복사합니다.
 2. **새 브랜치 생성**:
     ```bash
-    git checkout -b feature/AmazingFeature
+    git checkout -b feat/Feature
     ```
 3. **변경 사항 커밋**:
     ```bash
-    git commit -m 'Add some AmazingFeature'
+    git commit -m 'FEAT: content'
     ```
-4. **브랜치에 푸시**:
+4. **푸시**:
     ```bash
-    git push origin feature/AmazingFeature
+    git checkout dev
+    git merge --no -ff feat/Feature
+    git push origin dev
     ```
 5. **풀 리퀘스트 생성**:
    프로젝트의 메인 저장소로 풀 리퀘스트를 보냅니다.
 
-## 📜 라이선스
-이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참조하세요.
+~~## 📜 라이선스
+이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참조하세요.~~
