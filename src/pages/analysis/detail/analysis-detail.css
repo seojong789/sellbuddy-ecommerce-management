@@ -1,8 +1,5 @@
-/* 8.11수정 */
-
 main {
   width: calc(100vw - 80px);
-  /* margin-left: 80px; */
   height: 100vh;
   background-color: #f8f8f8;
 }
@@ -12,8 +9,8 @@ h1 {
 }
 .container {
   display: flex;
-  justify-content: space-between; /* 요소 사이의 공간을 균등하게 분배 */
-  align-items: flex-start; /* 상단 정렬 */
+  justify-content: space-between;
+  align-items: flex-start;
   box-sizing: border-box;
   padding-left: 5vw;
   padding-right: 5vw;
@@ -30,8 +27,6 @@ h1 {
   padding-top: 2vh;
   padding-bottom: 2vh;
 }
-/* 컨테이너 섹션-------------------------------------------------------------- */
-/* 상품정보 */
 .product-info {
   border: 1px solid #f2f2f2;
   border-radius: 0.5em;
@@ -39,20 +34,15 @@ h1 {
   width: 58vw;
   height: 38vh;
   background-color: #ffffff;
-  /* flex-direction: row; */
 }
-/* 해시태그 비교 */
 #hashtag-comparison {
   border: 1px solid #f2f2f2;
   border-radius: 0.5em;
   box-shadow: 0.25em 0.25em 0.625em #f2f2f2;
-  width: 25vw;
+  width: 30vw;
   height: 38vh;
   background-color: #ffffff;
-  /* margin-left: 1vw; */
-  /* flex-direction: ; */
 }
-/* 종합분석 */
 #total-analysis {
   border: 1px solid #f2f2f2;
   border-radius: 0.5em;
@@ -61,7 +51,6 @@ h1 {
   height: 45vh;
   background-color: #ffffff;
 }
-/* 플랫폼분석 */
 #platform-analysis {
   border: 1px solid #f2f2f2;
   border-radius: 0.5em;
@@ -71,34 +60,25 @@ h1 {
   background-color: #ffffff;
 }
 
-/* 섹션 컨텐츠 ------------------------------------------------------------------ */
 .product-img {
   width: 200px;
   height: 200px;
 }
-/* 상품정보 컨텐츠 */
 .product-detail-info {
-  /* border: 1px solid red; */
   display: flex;
   text-align: left;
   padding-left: 3vw;
   padding-right: 3vw;
-  /* padding-bottom: 5vh; */
 }
 
 .product-detail-info-table1 {
-  /* border: 1px solid blue; */
   width: 100%;
   height: 100%;
   justify-content: space-between;
   text-align: left;
-  /* padding-top: 2vh; */
-  /* padding-bottom: 2vh; */
   padding-left: 5vh;
-  /* padding-right: 5vh; */
 }
 #product-detail-info-table1-basic {
-  /* border: 2px solid yellow; */
   width: 100%;
   height: 17vh;
   padding-bottom: 1vh;
@@ -114,17 +94,11 @@ h1 {
 #product-detail-info-table1-basic tr td:last-child {
   color: #4b5675;
 }
-/* #product-detail-info-table1-basic tr td :last-child {
-  color: black;
-  font-weight: bold;
 
-} */
-/* -------------------------------------------------------------------- */
 .product-detail-info-table2 {
-  /* border: 2px solid green; */
   display: flex;
   justify-content: first baseline;
-  align-items: flex-start; /* 상단 정렬 */
+  align-items: flex-start;
   text-align: left;
   height: 9.5vh;
   width: 100%;
@@ -133,13 +107,10 @@ h1 {
 .product-detail-info-table2 tr {
   height: 3vh;
 }
-/* .product-detail-info-table2 td {
-  border: 1px solid salmon;
-} */
+
 .product-detail-info-table2 table:first-child {
   padding-right: 5vh;
 }
-/* 평균가, 최고가, 최저가 */
 .product-detail-info-table2-price tr td:first-child {
   color: black;
   font-weight: bold;
@@ -149,9 +120,7 @@ h1 {
   color: #4b5675;
   width: 6vw;
   text-align: right;
-  /* justify-self: right; */
 }
-/* 총매출, 핵심키워드, 등록일 */
 .product-detail-info-table2-etc tr td:first-child {
   color: black;
   font-weight: bold;
@@ -164,39 +133,31 @@ h1 {
 .product-info hr {
   color: #dbdfe9;
 }
-/* 해시태그 비교 ---------------------------------------------------------------------- */
 .hashtag-comparison-content {
-  /* border: 1px solid red; */
   display: flex;
-  /* text-align: left; */
   padding-left: 3vw;
   padding-right: 3vw;
-  /* padding-bottom: 5vh; */
   flex-direction: column;
-  /* height: ; */
 }
 .hashtag-comparison-graph {
-  /* border: 1px solid yellow; */
   display: flex;
   flex-direction: row;
   height: 7vh;
-  /* justify-items: center; */
   align-items: center;
   justify-content: first baseline;
 }
 .hashtag-comparison-bar-graph {
   display: flex;
   justify-content: space-between;
-  width: 14.5vw; /* 그래프 전체 너비 */
+  width: 14.5vw;
 }
 
 .hashtag-comparison-bar {
-  width: 2.9vw; /* 각 막대 너비 */
-  height: 3.5vh; /* 각 막대 높이 */
-  background-color: #e0e3e9; /* 막대그래프 기본색 */
+  width: 2.9vw;
+  height: 3.5vh;
+  background-color: #e0e3e9;
   position: relative;
 }
-/* 채워진 막대그래프 */
 .hashtag-comparison-bar.good {
   background-color: #39a1f4;
 }
@@ -226,7 +187,7 @@ h1 {
   font-weight: bold;
   border-radius: 4px;
   text-align: center;
-  line-height: 25px; /* height와 동일하게 설정 */
+  line-height: 25px;
 }
 
 .hashtag-comparison-bad {
@@ -238,10 +199,9 @@ h1 {
   font-weight: bold;
   border-radius: 4px;
   text-align: center;
-  line-height: 25px; /* height와 동일하게 설정 */
+  line-height: 25px;
 }
 .hashtags-comparison {
-  /* border: 1px solid green; */
   height: 22vh;
   border-collapse: collapse;
 }
@@ -252,30 +212,22 @@ h1 {
   color: #4b5675;
   text-align: center;
   border-bottom: 1px dotted #dbdfe9;
-  /* border top: 1px solid palevioletred; */
   width: 50%;
 }
 
 .hashtag-comparison-bar-graph {
   padding-left: 2vw;
 }
-/* 종합분석---------------------------------------------- */
 .total-analysis-content {
-  /* border: 1px solid red; */
   display: flex;
-  /* text-align: left; */
   padding-left: 3vw;
   padding-right: 3vw;
   padding-bottom: 5vh;
   padding-top: 2vh;
   flex-direction: column;
-  /* height: ; */
 }
-.total-analysis-table {
-  /* border: 1px solid green; */
-}
+
 .total-analysis-table td {
-  /* border: 1px solid green; */
   height: 7vh;
 }
 
@@ -293,7 +245,7 @@ h1 {
   font-weight: bold;
   border-radius: 4px;
   text-align: center;
-  line-height: 25px; /* height와 동일하게 설정 */
+  line-height: 25px;
 }
 .total-analysis-status-good {
   width: 40px;
@@ -304,7 +256,7 @@ h1 {
   font-weight: bold;
   border-radius: 4px;
   text-align: center;
-  line-height: 25px; /* height와 동일하게 설정 */
+  line-height: 25px;
 }
 .total-analysis-status-normal {
   width: 40px;
@@ -315,7 +267,7 @@ h1 {
   font-weight: bold;
   border-radius: 4px;
   text-align: center;
-  line-height: 25px; /* height와 동일하게 설정 */
+  line-height: 25px;
 }
 
 .total-analysis-status-bad {
@@ -327,34 +279,23 @@ h1 {
   font-weight: bold;
   border-radius: 4px;
   text-align: center;
-  line-height: 25px; /* height와 동일하게 설정 */
+  line-height: 25px;
 }
-/* .total-analysis-table {
 
-  font-size: smaller;
-  padding: 3px 0 3px 1vw;
-} */
 .total-analysis-table tr td:nth-child(3) p {
   font-size: smaller;
   padding: 3px 0 3px 1vw;
 }
-/* 플랫폼 분석---------------------------------------------- */
 .platform-analysis-content {
-  /* border: 1px solid red; */
   display: flex;
-  /* text-align: left; */
   padding-left: 3vw;
   padding-right: 3vw;
   padding-bottom: 5vh;
   padding-top: 2vh;
   flex-direction: column;
-  /* height: ; */
 }
-/* .platform-analysis-table {
-  border: 1px solid green;
-} */
+
 .platform-analysis-table td {
-  /* border: 1px solid green; */
   height: 9vh;
 }
 
@@ -365,8 +306,6 @@ h1 {
 }
 
 .total-analysis-coment {
-  /* width: 7vw;
-  height: 7vh; */
   font-size: smaller;
   padding: 3px 0 3px 1vw;
 }

@@ -1,4 +1,3 @@
-/* Basics */
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +22,6 @@ a {
   color: white;
 }
 
-/* Sidebar */
 .sidebar-navigation {
   display: flex;
   flex-direction: column;
