@@ -60,8 +60,7 @@ typings/
 *.sln
 *.sw?
 
-# json 추가하지마.
-
 /src/assets
 platform1.json
 product.json
+dist

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
               let span = document.createElement('span');
               let char = textArray[textIndex][charIndex];
-              span.textContent = char === ' ' ? '\u00A0' : char; // 공백은 non-breaking space로 처리
+              span.textContent = char === ' ' ? '\u00A0' : char;
               span.style.display = 'none';
               div.appendChild(span);
 
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function ClickRedirect() {
-    window.location.href = '/src/pages/login/login.html';
+    window.location.href = '/login.html';
   }
 
   var textContent = [
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
               item.fontSize,
               item.delay || 300,
               item.color,
-              item.onComplete
+              item.onComplete,
             );
           }, delay);
           delay += item.delay;
