@@ -47,8 +47,7 @@ signupForm.addEventListener('submit', function (e) {
       password: password,
     };
 
-    // netlify 배포할 때, 보안 상의 이유로 주석처리
-    // sessionStorage.setItem('userData', JSON.stringify(userData));
+    sessionStorage.setItem('userData', JSON.stringify(userData));
 
     alert('계정이 성공적으로 생성되었습니다!');
 
@@ -73,34 +72,26 @@ document
 loginForm.addEventListener('submit', function (e) {
   e.preventDefault();
 
-  // 아래 코드를 주석 해제하면 현재 코드 주석처리
-  sessionStorage.setItem('isLoggedIn', 'true');
-  alert(
-    'Server가 없으며.. \n보안 상의 이유로 입력값과 무관하게 \n로그인이 완료되었습니다...',
-  );
-  window.location.href = '/main.html';
+  if (validateLoginEmailInput() && validateLoginPassword()) {
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
 
-  // netlify 배포할 때, 보안 상의 이유로 주석처리
-  // if (validateLoginEmailInput() && validateLoginPassword()) {
-  //   const email = document.getElementById('email').value.trim();
-  //   const password = document.getElementById('password').value.trim();
+    const storedUserData = JSON.parse(sessionStorage.getItem('userData'));
 
-  //   const storedUserData = JSON.parse(sessionStorage.getItem('userData'));
-
-  //   if (
-  //     storedUserData &&
-  //     storedUserData.email === email &&
-  //     storedUserData.password === password
-  //   ) {
-  //     sessionStorage.setItem('isLoggedIn', 'true');
-  //     alert('로그인 성공!');
-  //     window.location.href = '/main.html';
-  //   } else {
-  //     alert('이메일 또는 비밀번호가 올바르지 않습니다.');
-  //   }
-  // } else {
-  //   alert('로그인 정보를 확인해주세요.');
-  // }
+    if (
+      storedUserData &&
+      storedUserData.email === email &&
+      storedUserData.password === password
+    ) {
+      sessionStorage.setItem('isLoggedIn', 'true');
+      alert('로그인 성공!');
+      window.location.href = '/main.html';
+    } else {
+      alert('이메일 또는 비밀번호가 올바르지 않습니다.');
+    }
+  } else {
+    alert('로그인 정보를 확인해주세요.');
+  }
 });
 
 function validateEmail(email) {
