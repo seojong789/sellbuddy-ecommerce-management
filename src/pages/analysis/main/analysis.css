@@ -186,8 +186,6 @@ ul .product-info .product-name img {
   align-content: center;
 }
 
-/* ------------------------------드롭다운------------------------------ */
-
 .sort {
   display: flex;
   justify-content: space-between;

@@ -85,7 +85,7 @@ loginForm.addEventListener('submit', function (e) {
     ) {
       sessionStorage.setItem('isLoggedIn', 'true');
       alert('로그인 성공!');
-      window.location.href = '/src/pages/main/main.html';
+      window.location.href = '/main.html';
     } else {
       alert('이메일 또는 비밀번호가 올바르지 않습니다.');
     }

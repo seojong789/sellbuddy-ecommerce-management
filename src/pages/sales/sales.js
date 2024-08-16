@@ -99,14 +99,14 @@ const chartOptions = {
     },
     point: {
       radius: 6,
-      backgroundColor: '#142b42', // 포인트 색상
-      borderColor: 'white', // 포인트 테두리 색상을 흰색으로 설정하여 대비를 줌
+      backgroundColor: '#142b42',
+      borderColor: 'white',
       borderWidth: 1,
       hoverRadius: 7,
       hoverBorderWidth: 4,
-      hoverBackgroundColor: '#2ECC71', // 호버 시 녹색으로 변경
+      hoverBackgroundColor: '#2ECC71',
       hoverBorderColor: '#27AE60',
-      pointStyle: 'triangle', // 데이터 포인트 모양을 둥근 사각형으로 설정
+      pointStyle: 'triangle',
     },
   },
   animation: {
@@ -119,7 +119,7 @@ async function initializeCharts() {
   let jsonData = [];
 
   try {
-    const response = await fetch('/product.json');
+    const response = await fetch('/assets/json/product.json');
     jsonData = await response.json();
   } catch (error) {
     console.error('Error loading JSON data:', error);
@@ -141,7 +141,7 @@ async function initializeCharts() {
         ],
       },
       options: chartOptions,
-    }
+    },
   );
 
   const quarterlyChart = new Chart(
@@ -159,7 +159,7 @@ async function initializeCharts() {
         ],
       },
       options: chartOptions,
-    }
+    },
   );
 
   const yearlyChart = new Chart(
@@ -180,21 +180,21 @@ async function initializeCharts() {
         ...chartOptions,
         aspectRatio: 6,
       },
-    }
+    },
   );
 
   document
     .querySelector('button[type="submit"]')
     .addEventListener('click', () => {
       const selectedPlatform = document.querySelector(
-        'select[name="flatform"]'
+        'select[name="flatform"]',
       ).value;
       const selectedDate = document.querySelector('input[type="date"]').value;
 
       const salesData = calculateSales(
         jsonData,
         selectedDate,
-        selectedPlatform
+        selectedPlatform,
       );
 
       weeklyChart.data.labels = Object.keys(salesData.weeklySales);
