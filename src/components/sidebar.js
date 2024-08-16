@@ -47,6 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
   logoutButton.addEventListener('click', () => {
     sessionStorage.clear();
     alert('정상적으로 로그아웃 되었습니다.');
-    window.location.href = '/src/pages/login/login.html';
+    window.location.href = './login.html';
   });
 });
