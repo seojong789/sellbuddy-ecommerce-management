@@ -227,9 +227,9 @@
    ```
 3. **Run the application**:
    ```bash
-   npm start
+   npm run dev
    ```
-   - 서버가 시작되면, 웹 브라우저에서 `http://localhost:3000`으로 접속합니다.
+   - 서버가 시작되면, 웹 브라우저에서 `http://localhost:8080`으로 접속합니다.
 
 <br>
 
