@@ -84,7 +84,7 @@
 
 ## 🚀 Live Demo
 
-[프로젝트 링크]([[https://example.com](https://sellbuddy-notserver.netlify.app/)])
+[프로젝트 링크](https://sellbuddy-notserver.netlify.app/)
 
 <br>
 
