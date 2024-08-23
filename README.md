@@ -208,6 +208,8 @@
 
 - 새로운 사용자는 필수 정보를 입력하여 계정을 생성할 수 있습니다.
 
+![1-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/af64df38-dfd1-43ba-925a-ce2d6acc63b6)
+
 <br>
 
 ## 💻 Installation & Execution
